@@ -1,24 +1,25 @@
-# README
+# LiffeyAPP
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby on Rails web application for oversea language studying student.
 
-Things you may want to cover:
+## Ruby on Rails application. 
 
-* Ruby version
 
-* System dependencies
+<!-- ![](https://i.imgur.com/nF26Arb.png)
+![](https://i.imgur.com/CLGVmGi.png) -->
 
-* Configuration
+<!-- 
+## How to run
 
-* Database creation
+### Backend
+```
+Run using Visual Studio
+```
 
-* Database initialization
+### Frontend
+```
+WheelOfFateAPI/WheelOfFateClient/ClientApp$ npm install
+WheelOfFateAPI/WheelOfFateClient/ClientApp$ ng serve
+``` -->
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## [License MIT © JinLim](https://limjinsun.github.io/)
