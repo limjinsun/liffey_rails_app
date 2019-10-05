@@ -1,4 +1,4 @@
-# LiffeyAPP
+# liffey web app for student
 
 Ruby on Rails web application for oversea language studying student.
 
