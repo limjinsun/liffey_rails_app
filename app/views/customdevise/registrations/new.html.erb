@@ -1,0 +1,43 @@
+<div class="container is-fullhd">
+  <section class="hero is-fullheight">
+    <div class="hero-body">
+      <div class="container">
+        
+       
+          <div class="column is-half is-offset-one-quarter">
+            <h2 class="title"><%= t('.sign_up') %></h2>
+            <br/>
+            <p><i> 이메일 주소 이외에 어떤 정보도 가입시에 필요하지 않습니다. 리피의 아일랜드 기본회원 가입은 무료입니다</i> </p>
+            <% if @minimum_password_length %>
+              <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
+            <% end %><br />
+            <br/>
+            <br/>
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name))do |f| %>
+              <%= render "devise/shared/error_messages", resource: resource %>
+              <div class="field">
+                <%= f.label :email %><br />
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input', placeholder: '이메일' %>
+              </div>
+              <br/>
+              <div class="field">
+                <%= f.label :password %><br />
+                <%= f.password_field :password, autocomplete: "new-password", class: 'input', placeholder: '비밀번호' %>
+              </div>
+              <br/>
+              <div class="field">
+                <%= f.label :password_confirmation %><br />
+                <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'input', placeholder: '비밀번호 확인' %>
+              </div>
+              <div class="actions">
+                <%= f.submit t('.sign_up'), :class => 'button is-black' %>
+              </div>
+            <% end %>
+            <%= render :partial => "customdevise/shared/links" %>
+          </div>
+       
+
+      </div>
+    </div>
+  </section>
+</div>

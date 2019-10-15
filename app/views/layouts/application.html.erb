@@ -1,17 +1,47 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Liffeyapp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "https://use.fontawesome.com/releases/v5.3.1/js/all.js" %>
   </head>
-
   <body>
+    <nav class="level is-mobile">
+      <div class="level-left">
+        <div class="level-item">
+          <a class="navbar-item" href="/">
+            <%= image_tag("bulma-logo.png", width: '112px', height: '28px') %>
+          </a>
+        </div>
+      </div>
+      <div class="level-right">
+        <% if user_signed_in? %>
+            <div class="buttons"> 
+            <%= link_to '내정보수정', edit_user_registration_path, :class => 'button is-black' %>
+            <%= link_to "로그아웃", destroy_user_session_path, method: :delete, :class => 'button is-light'  %>
+            </div>
+        <% else %>
+            <div class="buttons"> 
+            <%= link_to '가입하기', new_user_registration_path, :class => 'button is-black' %>
+            <%= link_to "로그인하기", new_user_session_path, :class => 'button is-light'  %>
+            </div>
+        <% end %>
+        
+      </div>
+    </nav>
 
-    <p class="navbar-text pull-right">
+
+<!--     <% if user_signed_in? %>
+      Logged in as <strong><%= current_user.email %></strong>.
+    <% else %>
+      user not logged in yet
+    <% end %> -->
+    <!-- 
     <% if user_signed_in? %>
       Logged in as <strong><%= current_user.email %></strong>.
       <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
@@ -20,15 +50,27 @@
       <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
       <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
     <% end %>
-    </p>
-
+   
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
     <% end %>
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
+ -->
+
 
     <%= yield %>
+
+    <footer class="footer border">
+      <div class="content has-text-centered">
+        <p>
+          <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+          is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+        </p>
+      </div>
+    </footer>
+
   </body>
 </html>
