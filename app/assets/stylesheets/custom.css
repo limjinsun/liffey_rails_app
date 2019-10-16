@@ -1,9 +1,9 @@
 .level.is-mobile {
-    margin: 0.5em;
+    padding: 0em 0.5em;
 }
 
 .border {
-	border: 1px solid black;
+	border: 1px solid grey;
 }
 
 .button{
@@ -17,8 +17,6 @@
 		border-radius: 0px !important;
 	}
 }
-
-
 
 .title {
     color: #363636;
@@ -60,8 +58,12 @@
     list-style: none !important;
 }
 
+/*.hero.is-fullheight {
+    min-height: calc(100vh - 52px);
+}*/
+
 .hero.is-fullheight {
-    min-height: calc(100vh - 57px);
+    min-height: calc(100vh - 52px);
 }
 
 .hero-body {
@@ -69,4 +71,9 @@
     flex-shrink: 0;
     padding: 0rem 0rem !important;
 }
+
+
+
+
+
 
