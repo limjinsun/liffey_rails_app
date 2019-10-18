@@ -1,3 +1,5 @@
+@import "font-awesome";
+
 .level.is-mobile {
     padding: 0em 0.5em;
 }
@@ -7,13 +9,13 @@
 }
 
 .button{
-    width: 10em;
+    min-width: 10em;
     border-radius: 0px !important;
 }
 
 @media only screen and (max-width: 960px) {
 	.button{
-		width: 6em;
+		min-width: 6em;
 		border-radius: 0px !important;
 	}
 }
@@ -63,7 +65,7 @@
 }*/
 
 .hero.is-fullheight {
-    min-height: calc(100vh - 52px);
+    min-height: calc(100vh - 64px);
 }
 
 .hero-body {
@@ -72,8 +74,47 @@
     padding: 0rem 0rem !important;
 }
 
+.centerme {
+    margin-left: 33.3%;
+}
+
+@media only screen and (max-width: 768px) {
+  .centerme {
+    margin-left: 0%;
+  }
+}
+
+.vertical-tabs .tab {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  cursor: default !important;
+  opacity: 0.5;
+  transition-duration: 86ms;
+  will-change: opacity;
+  transition-duration: 86ms;
+}
+
+.section.is-hero .section-header {
+    max-width: 100% !important;
+}
+
+.storybuilder .story-caption {
+    font-size: 1.125rem;
+    margin-bottom: 4px;
+}
 
 
+@media only screen and (max-width: 1086px) {
+  .container {
+    margin: 0;
+    position: relative;
+  }
+}
 
-
+.margin-bottom-small {
+  margin-bottom: 0.5em;
+}
 

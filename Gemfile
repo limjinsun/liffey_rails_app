@@ -66,3 +66,5 @@ gem 'devise-i18n'
 
 ### 27/SEP/2019
 gem 'rails-i18n', '~> 6.0.0' # For 6.0.0 or higher
+
+gem 'font-awesome-rails'

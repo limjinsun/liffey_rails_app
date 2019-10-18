@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'introduction/join'
+  get 'introduction/consulting'
   devise_for :users, :controllers => { 
   	:sessions => 'customdevise/sessions',
   	:passwords => 'customdevise/passwords',
