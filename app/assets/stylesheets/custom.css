@@ -118,3 +118,26 @@
   margin-bottom: 0.5em;
 }
 
+
+.app-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: calc(100vh - 64px) !important;
+}
+
+.navbar.is-fixed-top {
+  opacity: 0.98;
+}
+
+.section {
+  height: 100%;
+}
+
+html.has-navbar-fixed-top, body.has-navbar-fixed-top {
+    padding-top: 4em;
+}
+
+
+

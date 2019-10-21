@@ -3,9 +3,13 @@
     <div class="hero-body">
       <div class="container">
         <div class="column is-half is-offset-one-quarter">
-          <h3 class="title">로그아웃</h3>
-          <%= link_to "로그아웃", destroy_user_session_path, method: :delete, :class => 'button is-black'  %>
-          <br><br><br>
+
+          <% if false %>
+            <h3 class="title">로그아웃</h3>
+            <%= link_to "로그아웃", destroy_user_session_path, method: :delete, :class => 'button is-black'  %>
+            <br><br><br>
+          <% end %>
+
           <h2 class="title"><%= t('.title', resource: resource.model_name.human) %></h2>
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
             <%= render "devise/shared/error_messages", resource: resource %>

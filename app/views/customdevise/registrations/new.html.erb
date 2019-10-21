@@ -1,19 +1,38 @@
-<div class="container is-fullhd">
-  <section class="hero is-fullheight">
+<div class="">
+
+  <section class="hero section is-hero is-info" style="min-height: 17vh;">
+    <div class="container">
+      <div class="columns is-vcentered">
+        <div class="column is-6 is-5-fullhd is-offset-1-fullhd">
+          <div class="section-header">
+             <h2 class="title is-2 is-spaced">Sign Up<span
+                                        class="spacer is-horizontal is-05"></span>
+              </h2>
+              <h2 class="subtitle is-6">
+                 <p><em>리피의 아일랜드 기본회원 가입은 무료입니다</em> <br/> 
+                  <em> 이메일 주소 이외에 어떤 정보도 가입시에 필요하지 않습니다.</em>
+                  <br/>
+                </p>
+                <% if @minimum_password_length %>
+                  <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
+                <% end %><br />
+              </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="hero is-halfheight">
     <div class="hero-body">
       <div class="container">
         <div class="column is-half is-offset-one-quarter">
+          <br/>
+          <br/>
           <h2 class="title"><%= t('.sign_up') %></h2>
           <br/>
-          <p><em>리피의 아일랜드 기본회원 가입은 무료입니다</em> <br/> 
-            <em> 이메일 주소 이외에 어떤 정보도 가입시에 필요하지 않습니다.</em>
-            <br/>
-          </p>
-          <% if @minimum_password_length %>
-            <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
-          <% end %><br />
-          <br/>
-          <br/>
+         
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name))do |f| %>
             <%= render "devise/shared/error_messages", resource: resource %>
             <div class="field">
@@ -35,6 +54,8 @@
             </div>
           <% end %>
           <%= render :partial => "customdevise/shared/links" %>
+          <br/>
+          <br/>
         </div>
       </div>
     </div>
