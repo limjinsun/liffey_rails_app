@@ -1,0 +1,92 @@
+<%= form_with(model: order, local: true) do |form| %>
+  <% if order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+        <% order.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+      <!-- t.string :name
+      t.string :address
+      t.string :school
+      t.datetime :arrival
+      t.string :duration_homestay
+      t.string :exitexam
+      t.boolean :medical_insurance
+      t.datetime :vacation1_start
+      t.datetime :vacation1_end
+      t.datetime :vacation2_start
+      t.datetime :vacation2_end -->
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :school %>
+    <%= form.text_field :school %>
+  </div>
+
+  <div class="field">
+    <%= form.label :arrival %>
+    <%= form.datetime_select :arrival, :ampm => true, :minute_step => 15 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :duration_homestay %>
+    <%= form.text_field :duration_homestay %>
+  </div>
+
+  <div class="field">
+    <%= form.label :exitexam %><br />
+    <%= form.radio_button :exitexam, 'ielts' %> 
+    <%= form.label :exitexam, 'ielts', :value => 'ielts' %>
+    <%= form.radio_button :exitexam, 'cambridge' %>
+    <%= form.label :exitexam, 'cambridge', :value => 'cambridge' %>
+    <%= form.radio_button :exitexam, 'tie' %>
+    <%= form.label :exitexam, 'tie', :value => 'tie' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :medical_insurance %>
+    <%= form.check_box :medical_insurance %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vacation1_start %>
+    <%= form.datetime_select :vacation1_start, :ampm => true, :minute_step => 15 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vacation1_end %>
+    <%= form.datetime_select :vacation1_end, :ampm => true, :minute_step => 15 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vacation2_start %>
+    <%= form.datetime_select :vacation2_start, :ampm => true, :minute_step => 15 %>
+  </div>
+
+   <div class="field">
+    <%= form.label :vacation2_end %>
+    <%= form.datetime_select :vacation2_end, :ampm => true, :minute_step => 15 %>
+  </div>
+
+  
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

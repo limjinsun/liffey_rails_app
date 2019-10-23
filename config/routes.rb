@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :orders
   get 'profile/userdetail'
   get 'introduction/join'
   get 'introduction/consulting'
