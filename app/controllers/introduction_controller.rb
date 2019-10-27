@@ -4,4 +4,7 @@ class IntroductionController < ApplicationController
 
   def consulting
   end
+
+  def confirmed 
+  end
 end

@@ -1,4 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+
+<% for attribute in @order.attributes.keys %>
+  <p><%= attribute.humanize %> <%= @order.attributes[attribute].to_s %></p>
+<% end %>
+
+
+
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>

@@ -1,2 +1,2 @@
-json.extract! order, :id, :created_at, :updated_at
+json.extract! order, :id, :name, :address, :school, :arrival, :duration_homestay, :exitexam, :medical_insurance, :vacation1_start, :vacation1_end, :vacation2_start, :vacation2_end, :created_at, :updated_at
 json.url order_url(order, format: :json)

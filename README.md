@@ -24,9 +24,6 @@ https://dev.to/neshaz/everything-there-is-to-know-about-associations-in-rails-52
 
 https://stackoverflow.com/questions/15098586/rails-one-to-one-relationship
 
-
-
-
 <!-- ![](https://i.imgur.com/nF26Arb.png)
 ![](https://i.imgur.com/CLGVmGi.png) -->
 

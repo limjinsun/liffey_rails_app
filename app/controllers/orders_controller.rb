@@ -5,12 +5,22 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
+    if !current_user.admin? # 관리자가 아니면 경고와함께 리다이렉트해줌. 
+      flash.now[:alert] = "접근할 수 있는 권한이 없습니다."
+      render template: "profile/userdetail"
+    end
     @orders = Order.all
   end
 
   # GET /orders/1
   # GET /orders/1.json
   def show
+    if @order.user_id.to_s == current_user.id.to_s || current_user.admin? #접근할려는 게시물의 해당 유저이거나, 관리자인 경우에만 show 를 렌더.
+      render "show"
+    else
+      flash.now[:alert] = "접근할 수 있는 권한이 없습니다."
+      render template: "profile/userdetail"
+    end
   end
 
   # GET /orders/new
@@ -20,16 +30,23 @@ class OrdersController < ApplicationController
 
   # GET /orders/1/edit
   def edit
+    if @order.user_id.to_s == current_user.id.to_s || current_user.admin? #접근할려는 게시물의 해당 유저이거나, 관리자인 경우에만 show 를 렌더.
+      render "edit"
+    else
+      flash.now[:alert] = "접근할 수 있는 권한이 없습니다."
+      render template: "profile/userdetail"
+    end
   end
 
   # POST /orders
   # POST /orders.json
   def create
     @order = Order.new(order_params)
+    @order.user = current_user
 
     respond_to do |format|
       if @order.save
-        format.html { redirect_to @order, notice: 'Order was successfully created.' }
+        format.html { redirect_to introduction_confirmed_path, notice: 'Order was successfully created.' }
         format.json { render :show, status: :created, location: @order }
       else
         format.html { render :new }
@@ -85,4 +102,9 @@ class OrdersController < ApplicationController
         :vacation2_end
       )
     end
+
+    # def validate_user
+    #   redirect_to root_path unless current_user.id.to_s == params[:id]
+    # end
+
 end
