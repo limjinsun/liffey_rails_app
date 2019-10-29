@@ -6,10 +6,13 @@ class OrdersController < ApplicationController
   # GET /orders.json
   def index
     if !current_user.admin? # 관리자가 아니면 경고와함께 리다이렉트해줌. 
-      flash.now[:alert] = "접근할 수 있는 권한이 없습니다."
-      render template: "profile/userdetail"
+      puts 'You are not an admin'
+      flash[:alert] = "접근할 수 있는 권한이 없습니다."
+      redirect_to profile_userdetail_path
+    else 
+      @orders = Order.all
     end
-    @orders = Order.all
+
   end
 
   # GET /orders/1
@@ -18,8 +21,8 @@ class OrdersController < ApplicationController
     if @order.user_id.to_s == current_user.id.to_s || current_user.admin? #접근할려는 게시물의 해당 유저이거나, 관리자인 경우에만 show 를 렌더.
       render "show"
     else
-      flash.now[:alert] = "접근할 수 있는 권한이 없습니다."
-      render template: "profile/userdetail"
+      flash[:alert] = "접근할 수 있는 권한이 없습니다."
+      redirect_to profile_userdetail_path
     end
   end
 
@@ -33,8 +36,8 @@ class OrdersController < ApplicationController
     if @order.user_id.to_s == current_user.id.to_s || current_user.admin? #접근할려는 게시물의 해당 유저이거나, 관리자인 경우에만 show 를 렌더.
       render "edit"
     else
-      flash.now[:alert] = "접근할 수 있는 권한이 없습니다."
-      render template: "profile/userdetail"
+      flash[:alert] = "접근할 수 있는 권한이 없습니다."
+      redirect_to profile_userdetail_path
     end
   end
 
@@ -74,7 +77,7 @@ class OrdersController < ApplicationController
   def destroy
     @order.destroy
     respond_to do |format|
-      format.html { redirect_to orders_url, notice: 'Order was successfully destroyed.' }
+      format.html { redirect_to profile_userdetail_path, notice: 'Order was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -99,12 +102,9 @@ class OrdersController < ApplicationController
         :vacation1_start,
         :vacation1_end,
         :vacation2_start,
-        :vacation2_end
+        :vacation2_end,
+        :refprice
       )
     end
-
-    # def validate_user
-    #   redirect_to root_path unless current_user.id.to_s == params[:id]
-    # end
 
 end

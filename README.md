@@ -24,6 +24,15 @@ https://dev.to/neshaz/everything-there-is-to-know-about-associations-in-rails-52
 
 https://stackoverflow.com/questions/15098586/rails-one-to-one-relationship
 
+## insert data on a table based on another table data (after_create)
+
+https://stackoverflow.com/questions/32327882/rails-4-postgresql-insert-data-on-a-table-based-on-another-table-data-after
+
+## How to have a drop down <select> field in a rails form?
+
+https://stackoverflow.com/questions/14113057/how-to-have-a-drop-down-select-field-in-a-rails-form
+
+
 <!-- ![](https://i.imgur.com/nF26Arb.png)
 ![](https://i.imgur.com/CLGVmGi.png) -->
 

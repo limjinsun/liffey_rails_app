@@ -10,6 +10,14 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag "https://use.fontawesome.com/releases/v5.3.1/js/all.js" %>
+
+    <script>
+      <% if flash[:alert] %>
+        alert(" <%= flash[:alert] %> ");
+        <% flash[:alert] = nil %>
+        <% flash.clear %>
+      <% end %>
+    </script>
   </head>
   <body>
    
@@ -29,11 +37,12 @@
           <div class="level-right">
             <% if user_signed_in? %>
               <div class="buttons">
-                <%= link_to '💁🏻‍♀️ 나의어학연수', profile_userdetail_path, :class => 'button is-warning' %>
+                <%= link_to '💁🏻‍♀️ 나의아일랜드', profile_userdetail_path, :class => 'button is-warning' %>
                 <%= link_to "로그아웃", destroy_user_session_path, method: :delete, :class => 'button is-black'  %>
               </div>
             <% else %>
               <div class="buttons">
+                <%= link_to '💁🏻‍♀️ 나의아일랜드', profile_userdetail_path, :class => 'button is-warning' %>
                 <%= link_to "🔑 로그인하기", new_user_session_path, :class => 'button is-black'  %>
               </div>
             <% end %>

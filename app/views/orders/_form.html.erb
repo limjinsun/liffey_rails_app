@@ -1,92 +1,147 @@
-<%= form_with(model: order, local: true) do |form| %>
-  <% if order.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
-
-      <ul>
-        <% order.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+<div class="">
+  <section class="hero section is-hero is-info" style="min-height: 17vh;">
+    <div class="container">
+      <div class="columns is-vcentered">
+        <div class="column is-12 is-11-fullhd is-offset-1-fullhd">
+          <div class="section-header">
+            <h1 class="title is-spaced">아일랜드 어학원 <span class="is-hidden-touch"><br>
+              </span>
+              등록신청</h1>
+           
+              <h2 class="subtitle is-6">
+                 <p><em>리피의 아일랜드 화원만 신청이 가능합니다. 아일랜드내의 모든 어학연수 기관의 신청이 가능합니다.</em> <br/> 
+                  <em>유학원 상담 혹은 공개된 공식 가격을 참고하셨다면, 이미 알고 계신 등록비용을 같이 기입하실 수 있습니다. </em>
+                  <br/>
+                </p>
+              </h2>
+          </div>
+        </div>
+      </div>
     </div>
-  <% end %>
-
-      <!-- t.string :name
-      t.string :address
-      t.string :school
-      t.datetime :arrival
-      t.string :duration_homestay
-      t.string :exitexam
-      t.boolean :medical_insurance
-      t.datetime :vacation1_start
-      t.datetime :vacation1_end
-      t.datetime :vacation2_start
-      t.datetime :vacation2_end -->
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
-  </div>
-
-  <div class="field">
-    <%= form.label :school %>
-    <%= form.text_field :school %>
-  </div>
-
-  <div class="field">
-    <%= form.label :arrival %>
-    <%= form.datetime_select :arrival, :ampm => true, :minute_step => 15 %>
-  </div>
-
-  <div class="field">
-    <%= form.label :duration_homestay %>
-    <%= form.text_field :duration_homestay %>
-  </div>
-
-  <div class="field">
-    <%= form.label :exitexam %><br />
-    <%= form.radio_button :exitexam, 'ielts' %> 
-    <%= form.label :exitexam, 'ielts', :value => 'ielts' %>
-    <%= form.radio_button :exitexam, 'cambridge' %>
-    <%= form.label :exitexam, 'cambridge', :value => 'cambridge' %>
-    <%= form.radio_button :exitexam, 'tie' %>
-    <%= form.label :exitexam, 'tie', :value => 'tie' %>
-  </div>
-
-  <div class="field">
-    <%= form.label :medical_insurance %>
-    <%= form.check_box :medical_insurance %>
-  </div>
-
-  <div class="field">
-    <%= form.label :vacation1_start %>
-    <%= form.datetime_select :vacation1_start, :ampm => true, :minute_step => 15 %>
-  </div>
-
-  <div class="field">
-    <%= form.label :vacation1_end %>
-    <%= form.datetime_select :vacation1_end, :ampm => true, :minute_step => 15 %>
-  </div>
-
-  <div class="field">
-    <%= form.label :vacation2_start %>
-    <%= form.datetime_select :vacation2_start, :ampm => true, :minute_step => 15 %>
-  </div>
-
-   <div class="field">
-    <%= form.label :vacation2_end %>
-    <%= form.datetime_select :vacation2_end, :ampm => true, :minute_step => 15 %>
-  </div>
-
-  
+  </section>
 
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+  <section class="hero is-halfheight">
+    <div class="hero-body">
+      <div class="container">
+        <div class="column is-half is-offset-one-quarter">
+          <br/>
+          <br/>
+
+            <%= form_with(model: order, local: true) do |form| %>
+              <% if order.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+                  <ul>
+                    <% order.errors.full_messages.each do |message| %>
+                      <li><%= message %></li>
+                    <% end %>
+                  </ul>
+                </div>
+              <% end %>
+
+              <div class="field">
+                성명
+                <%= form.text_field :name, :class => 'input' %>
+              </div>
+
+              <div class="field">
+                한국현재 거주주소
+                <%= form.text_field :address, :class => 'input' %>
+              </div>
+
+              <div class="field">
+                신청 어학원과 코스이름 (예, 리피어학원 25주과정 오전코스)
+                <%= form.text_field :school, :class => 'input' %>
+              </div>
+
+              <div class="field">
+                아일랜드 예상도착일 / 홈스테이 입주일 (주말 입주 원칙)<br/>
+                <div class="select">
+                  <%= form.date_select :arrival, min: Date.today %>
+                </div>
+              </div>
+
+              <div class="field">
+                홈스테이 원하는 기간 (원할시 에만 표기)<br/>
+                <div class="select">
+                  <%= form.select :duration_homestay, ['필요없음', '1주', '2주', '3주', '4주'] %>
+                </div>
+              </div>
+
+              <div class="field">
+                공인 영어 시험 (영어 시험에 관련한 내용은 다음 링크에서 확인하세요.)<br/>
+                <div class="radio">
+                  <%= form.radio_button :exitexam, 'ielts' %> 
+                  <%= form.label :exitexam, '아이엘츠 공인시험', :value => 'ielts' %>
+                  <span style="margin:0 30px 0 0;"></span>
+                  <%= form.radio_button :exitexam, 'cambridge' %>
+                  <%= form.label :exitexam, '캠브릿지 공인시험', :value => 'cambridge' %>
+                  <span style="margin:0 30px 0 0;"></span>
+                  <%= form.radio_button :exitexam, 'tie' %>
+                  <%= form.label :exitexam, 'TIE', :value => 'tie' %>
+                  <span style="margin:0 30px 0 0;"></span>
+                </div>
+              </div>
+
+              <div class="field">
+                메디컬 인슈어런스 (원할시 에만 체크, 자세한 사항을 링크에서 확인하세요.)<br/>
+                <div class="checkbox">
+                  <%= form.check_box :medical_insurance %>
+                </div>
+              </div>
+
+              <p> 어학원 방학 (자세한 사항은 링크를 확인하세요.) </p>
+
+              <div class="field">
+                어학원 첫번째 방학 시작일 <br/>
+                <div class="select">
+                  <%= form.date_select :vacation1_start, :min => Date.today %>
+                </div>
+              </div>
+
+              <div class="field">
+                어학원 첫번째 방학 마침일 <br/>  
+                <div class="select">
+                  <%= form.date_select :vacation1_end, :min => Date.today %>
+                </div>
+              </div>
+
+              <div class="field">
+                어학원 두번째 방학 시작일 <br/>
+                <div class="select">
+                  <%= form.date_select :vacation2_start, :min => Date.today %>
+                </div>
+
+              </div>
+               <div class="field">
+                어학원 두번째 방학 마침일 <br/>
+                <div class="select">
+                  <%= form.date_select :vacation2_end, :min => Date.today %>
+                </div>
+              </div>
+
+              <div class="field">
+                참고된 어학원 가격 혹은 기타사항.<br/>
+                <%= form.text_field :refprice, :class => 'input' %>
+              </div>
+
+              <br/>
+
+              <div class="actions">
+                <%= form.submit '신청하기' , :class => 'button is-dark is-fullwidth' %>
+              </div>
+            <% end %>
+          
+          <br/>
+         
+          
+          <br/>
+          <br/>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+

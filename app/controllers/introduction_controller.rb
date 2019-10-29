@@ -7,4 +7,11 @@ class IntroductionController < ApplicationController
 
   def confirmed 
   end
+
+  def test
+  end
+
+  def mypage
+  end
+
 end
