@@ -11,13 +11,14 @@ Rails is opinionated software. It makes the assumption that there is a "best" wa
 
 ## Login controll and User authentication - Devise Frame work. 
 
-[https://github.com/plataformatec/devise | Devise]
+[Devise](https://github.com/plataformatec/devise)
 Devise is a flexible authentication solution for Rails based on Warden. 
 
 ## Postgreql DB used. 
 
+[Postgresql](https://github.com/postgres/postgres)
 Modern Relational Database 
-[https://github.com/postgres/postgres | Postgresql]
+
 
 
 ## Adding Admin User.
