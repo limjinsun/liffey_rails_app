@@ -9,6 +9,17 @@ Rails is a web application development framework written in the Ruby programming
 Rails is opinionated software. It makes the assumption that there is a "best" way to do things, and it's designed to encourage that way - and in some cases to discourage alternatives. If you learn "The Rails Way" you'll probably discover a tremendous increase in productivity. If you persist in bringing old habits from other languages to your Rails development, and trying to use patterns you learned elsewhere, you may have a less happy experience.
 
 
+## Login controll and User authentication - Devise Frame work. 
+
+[https://github.com/plataformatec/devise | Devise]
+Devise is a flexible authentication solution for Rails based on Warden. 
+
+## Postgreql DB used. 
+
+Modern Relational Database 
+[https://github.com/postgres/postgres | Postgresql]
+
+
 ## Adding Admin User.
 
 https://github.com/plataformatec/devise/wiki/How-To:-Add-an-Admin-Role
@@ -23,6 +34,7 @@ https://guides.rubyonrails.org/association_basics.html
 https://dev.to/neshaz/everything-there-is-to-know-about-associations-in-rails-52ii
 
 https://stackoverflow.com/questions/15098586/rails-one-to-one-relationship
+
 
 ## insert data on a table based on another table data (after_create)
 
