@@ -46,21 +46,4 @@ https://stackoverflow.com/questions/32327882/rails-4-postgresql-insert-data-on-a
 https://stackoverflow.com/questions/14113057/how-to-have-a-drop-down-select-field-in-a-rails-form
 
 
-<!-- ![](https://i.imgur.com/nF26Arb.png)
-![](https://i.imgur.com/CLGVmGi.png) -->
-
-<!-- 
-## How to run
-
-### Backend
-```
-Run using Visual Studio
-```
-
-### Frontend
-```
-WheelOfFateAPI/WheelOfFateClient/ClientApp$ npm install
-WheelOfFateAPI/WheelOfFateClient/ClientApp$ ng serve
-``` -->
-
 ## License MIT © JinLim
