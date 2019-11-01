@@ -41,7 +41,7 @@ https://stackoverflow.com/questions/15098586/rails-one-to-one-relationship
 
 https://stackoverflow.com/questions/32327882/rails-4-postgresql-insert-data-on-a-table-based-on-another-table-data-after
 
-## How to have a drop down <select> field in a rails form?
+## How to have a drop down select field in a rails form
 
 https://stackoverflow.com/questions/14113057/how-to-have-a-drop-down-select-field-in-a-rails-form
 
