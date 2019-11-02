@@ -12,7 +12,6 @@ class OrdersController < ApplicationController
     else 
       @orders = Order.all
     end
-
   end
 
   # GET /orders/1
@@ -106,5 +105,5 @@ class OrdersController < ApplicationController
         :refprice
       )
     end
-
+    
 end

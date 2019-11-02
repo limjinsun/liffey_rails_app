@@ -11,7 +11,7 @@ class IntroductionController < ApplicationController
   def test
   end
 
-  def mypage
+  def school
   end
 
 end

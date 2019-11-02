@@ -77,8 +77,6 @@
 
 
 
-
-
 <div class="columns is-desktop is-gapless">
   <div class="column">
 
@@ -148,7 +146,7 @@
 </div>
 
 
-<% if @order %>
+<% if false %>
   <% for attribute in @order.attributes.keys %>
     <p><%= attribute.humanize %> <%= @order.attributes[attribute].to_s %></p>
   <% end %>

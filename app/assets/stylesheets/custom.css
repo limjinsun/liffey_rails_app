@@ -170,7 +170,10 @@ html.has-navbar-fixed-top, body.has-navbar-fixed-top {
   text-align: right;
 }
 
-
 .select select:not([multiple]) {
   display: inline;
+}
+
+.radio:hover {
+  color: inherit !important;
 }
