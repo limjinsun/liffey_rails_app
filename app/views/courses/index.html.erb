@@ -1,0 +1,105 @@
+<main class="app-content">
+  <div class="is-gapless">
+    <div class="">
+      <section class="hero section is-hero is-warnning">
+        <div class="columns is-vcentered">
+          <div class="column is-6 is-5-fullhd is-offset-1-fullhd">
+            <div class="section-header">
+              <h2 class="title is-2 is-spaced">어학원 검색기<span class="spacer is-horizontal is-05"></span></h2>
+              <h2 class="subtitle is-5">아일랜드내 모든 어학원의 정보를 검색해 보실수 있습니다. 유학원의 가격정보와 비교해 보실수 있습니다.</h2>
+              <div class="field is-grouped">
+                <div class="control"> <%= link_to "도착일정 변경하기", new_order_path, :class => 'button is-black'  %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column is-6 is-5-fullhd is-offset-1-fullhd">
+            <div class="field has-addons">
+              <p class="control">
+                <input class="input" type="text" placeholder="Find a post">
+              </p>
+              <p class="control">
+                <button class="button">
+                  Search
+                </button>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="is-gapless">
+    <div class="">
+      <section class="hero section is-hero is-warnning is-marginless is-paddingless">
+        <div class="columns is-vcentered">
+          <div class="column is-12 is-10-fullhd is-offset-1-fullhd">
+            <% @courses.each do |course| %>
+              <div class="card margin-bottom-small">
+                <div class="level custom-padding-1">
+                  <!-- Left side -->
+                  <div class="level-left">
+                    <div class="level-item custom-witdh-1">
+                      <p class="subtitle is-5">
+                        <strong class="font-kakao">📍&nbsp<%= course.school.location %></strong>
+                      </p>
+                    </div>
+                    <p class="level-item font-namsan has-text-black-ter is-size-3"><%= course.school.name %></p>
+                    <p class="level-item font-kakao has-text-black-ter">🏛&nbsp&nbsp<%= course.name %></p>
+                  </div>
+                  <!-- Right side -->
+                  <div class="level-right">
+                    <p class="level-item has-text-black font-kakao"><span>📈&nbsp&nbsp유학원 가격&nbsp ₩ &nbsp</span> <span class="schoolPrice" id="price <%= course.id %>" ><%= convert_euro_to_won(course.price) %></span></p>
+                    <p class="level-item"><a class="button is-success font-kakao">할인하여 등록신청 하기</a></p>
+                    <p class="level-item"><%= link_to "정보 보기", course_path(course.id), :class => 'button is-warning font-kakao'  %> </p>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </di>
+      </section>
+    </div>
+  </div>
+</main>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>School Name</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Specialprice</th>
+      <th>Specialdue</th>
+      <th>Description</th>
+      <th>Admintext</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @courses.each do |course| %>
+      <tr>
+        <td><%= course.school.name %></td>
+        <td><%= course.name %></td>
+        <td><%= course.price %></td>
+        <td><%= course.specialprice %></td>
+        <td><%= course.specialdue %></td>
+        <td><%= course.description %></td>
+        <td><%= course.admintext %></td>
+        <td><%= link_to 'Show', course %></td>
+        <td><%= link_to 'Edit', edit_course_path(course) %></td>
+        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+
+
+<%= link_to 'New Course', new_course_path %>

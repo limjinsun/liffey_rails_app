@@ -62,7 +62,7 @@ class OrdersController < ApplicationController
   def update
     respond_to do |format|
       if @order.update(order_params)
-        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
+        format.html { redirect_to introduction_confirmed_path, notice: 'Order was successfully updated.' }
         format.json { render :show, status: :ok, location: @order }
       else
         format.html { render :edit }
@@ -102,7 +102,8 @@ class OrdersController < ApplicationController
         :vacation1_end,
         :vacation2_start,
         :vacation2_end,
-        :refprice
+        :refprice,
+        :course
       )
     end
     

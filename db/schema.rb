@@ -10,10 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_01_164422) do
+ActiveRecord::Schema.define(version: 2019_11_07_142425) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.string "name"
+    t.decimal "price", precision: 10, scale: 2
+    t.decimal "specialprice", precision: 10, scale: 2
+    t.datetime "specialdue"
+    t.string "description"
+    t.string "admintext"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "school_id", null: false
+    t.index ["school_id"], name: "index_courses_on_school_id"
+  end
 
   create_table "order_confirms", force: :cascade do |t|
     t.string "status"
@@ -39,12 +73,44 @@ ActiveRecord::Schema.define(version: 2019_11_01_164422) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
     t.string "refprice"
+    t.string "course"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "body"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "schools", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.string "size"
+    t.string "type"
+    t.string "classsize"
+    t.string "certificate"
+    t.decimal "admissionfee", precision: 10, scale: 2
+    t.decimal "textbookfee", precision: 10, scale: 2
+    t.decimal "insurancefee", precision: 10, scale: 2
+    t.decimal "examfee", precision: 10, scale: 2
+    t.decimal "hostbookingfee", precision: 10, scale: 2
+    t.decimal "hostfeeperweek", precision: 10, scale: 2
+    t.string "address"
+    t.string "fb"
+    t.string "insta"
+    t.string "youtube"
+    t.string "web"
+    t.string "wiki"
+    t.decimal "longitude", precision: 10, scale: 7
+    t.decimal "latitude", precision: 10, scale: 7
+    t.string "desc"
+    t.string "admintext"
+    t.string "nationalmix"
+    t.string "towndistance"
+    t.string "activity"
+    t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -62,6 +128,8 @@ ActiveRecord::Schema.define(version: 2019_11_01_164422) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "courses", "schools"
   add_foreign_key "order_confirms", "orders"
   add_foreign_key "orders", "users"
 end

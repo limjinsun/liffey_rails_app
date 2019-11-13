@@ -31,7 +31,7 @@
             <%= form_with(model: order, local: true) do |form| %>
               <% if order.errors.any? %>
                 <div id="error_explanation">
-                  <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+                  <h2><%= pluralize(order.errors.count, "개 의") %> 에러가 발생하였습니다. </h2>
                   <ul>
                     <% order.errors.full_messages.each do |message| %>
                       <li><%= message %></li>
@@ -51,8 +51,13 @@
               </div>
 
               <div class="field">
-                신청 어학원과 코스이름 (예, 리피어학원 25주과정 오전코스)
+                신청 어학원 (예, 리피어학원)
                 <%= form.text_field :school, :class => 'input' %>
+              </div>
+
+              <div class="field">
+                코스이름 (예, 25주과정 오전코스)
+                <%= form.text_field :course, :class => 'input' %>
               </div>
 
               <div class="field">
@@ -129,7 +134,7 @@
               <br/>
 
               <div class="actions">
-                <%= form.submit '신청하기' , :class => 'button is-dark is-fullwidth' %>
+                <%= form.submit '확인' , :class => 'button is-dark is-fullwidth' %>
               </div>
             <% end %>
           

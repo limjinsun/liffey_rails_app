@@ -1,0 +1,141 @@
+<p id="notice"><%= notice %></p>
+
+<% if false %>
+<p>
+  <strong>Name:</strong>
+  <%= @school.name %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @school.location %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @school.size %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @school.type %>
+</p>
+
+<p>
+  <strong>Classsize:</strong>
+  <%= @school.classsize %>
+</p>
+
+<p>
+  <strong>Certificate:</strong>
+  <%= @school.certificate %>
+</p>
+
+<p>
+  <strong>Admissionfee:</strong>
+  <%= @school.admissionfee %>
+</p>
+
+<p>
+  <strong>Textbookfee:</strong>
+  <%= @school.textbookfee %>
+</p>
+
+<p>
+  <strong>Insurancefee:</strong>
+  <%= @school.insurancefee %>
+</p>
+
+<p>
+  <strong>Examfee:</strong>
+  <%= @school.examfee %>
+</p>
+
+<p>
+  <strong>Hostbookingfee:</strong>
+  <%= @school.hostbookingfee %>
+</p>
+
+<p>
+  <strong>Hostfeeperweek:</strong>
+  <%= @school.hostfeeperweek %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @school.address %>
+</p>
+
+<p>
+  <strong>Fb:</strong>
+  <%= @school.fb %>
+</p>
+
+<p>
+  <strong>Insta:</strong>
+  <%= @school.insta %>
+</p>
+
+<p>
+  <strong>Youtube:</strong>
+  <%= @school.youtube %>
+</p>
+
+<p>
+  <strong>Web:</strong>
+  <%= @school.web %>
+</p>
+
+<p>
+  <strong>Wiki:</strong>
+  <%= @school.wiki %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @school.longitude %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @school.latitude %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @school.desc %>
+</p>
+
+<p>
+  <strong>Admintext:</strong>
+  <%= @school.admintext %>
+</p>
+
+<p>
+  <strong>Nationalmix:</strong>
+  <%= @school.nationalmix %>
+</p>
+
+<p>
+  <strong>Towndistance:</strong>
+  <%= @school.towndistance %>
+</p>
+
+<p>
+  <strong>Activity:</strong>
+  <%= @school.activity %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @school.status %>
+</p>
+
+<% end %>
+
+<% for attribute in @school.attributes.keys %>
+  <p><%= attribute.humanize %> <%= @school.attributes[attribute].to_s %></p>
+<% end %>
+
+<%= link_to 'Edit', edit_school_path(@school) %> |
+<%= link_to 'Back', schools_path %>

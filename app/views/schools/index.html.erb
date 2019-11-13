@@ -1,0 +1,77 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Schools</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Location</th>
+      <th>Size</th>
+      <th>Type</th>
+      <th>Classsize</th>
+      <th>Certificate</th>
+      <th>Admissionfee</th>
+      <th>Textbookfee</th>
+      <th>Insurancefee</th>
+      <th>Examfee</th>
+      <th>Hostbookingfee</th>
+      <th>Hostfeeperweek</th>
+      <th>Address</th>
+      <th>Fb</th>
+      <th>Insta</th>
+      <th>Youtube</th>
+      <th>Web</th>
+      <th>Wiki</th>
+      <th>Longitude</th>
+      <th>Latitude</th>
+      <th>Desc</th>
+      <th>Admintext</th>
+      <th>Nationalmix</th>
+      <th>Towndistance</th>
+      <th>Activity</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @schools.each do |school| %>
+      <tr>
+        <td><%= school.name %></td>
+        <td><%= school.location %></td>
+        <td><%= school.size %></td>
+        <td><%= school.type %></td>
+        <td><%= school.classsize %></td>
+        <td><%= school.certificate %></td>
+        <td><%= school.admissionfee %></td>
+        <td><%= school.textbookfee %></td>
+        <td><%= school.insurancefee %></td>
+        <td><%= school.examfee %></td>
+        <td><%= school.hostbookingfee %></td>
+        <td><%= school.hostfeeperweek %></td>
+        <td><%= school.address %></td>
+        <td><%= school.fb %></td>
+        <td><%= school.insta %></td>
+        <td><%= school.youtube %></td>
+        <td><%= school.web %></td>
+        <td><%= school.wiki %></td>
+        <td><%= school.longitude %></td>
+        <td><%= school.latitude %></td>
+        <td><%= school.desc %></td>
+        <td><%= school.admintext %></td>
+        <td><%= school.nationalmix %></td>
+        <td><%= school.towndistance %></td>
+        <td><%= school.activity %></td>
+        <td><%= school.status %></td>
+        <td><%= link_to 'Show', school %></td>
+        <td><%= link_to 'Edit', edit_school_path(school) %></td>
+        <td><%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New School', new_school_path %>

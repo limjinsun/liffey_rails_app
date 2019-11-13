@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :courses
+  resources :schools
   resources :orders
   get 'profile/userdetail'
   get 'introduction/join'

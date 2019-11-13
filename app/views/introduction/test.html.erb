@@ -1,73 +1,53 @@
 <main class="app-content">
-<div class="is-gapless">
-
-
-
-  <div class="columns is-desktop is-gapless">
-    <div class="column">
-      <section class="hero section is-hero is-info ">
-          <div class="columns is-vcentered">
-              <div class="column is-12 is-5-fullhd is-offset-1-fullhd">
-                 <div class="section-header">
-                  <h2 class="title is-2 is-spaced">어학원 등록 신청<span class="spacer is-horizontal is-05"></span></h2>
-                  <h2 class="subtitle is-5">리피회원만 사용가능한 메뉴입니다. 가장 저렴한 등록을 도와드립니다.</h2>
-                  <div class="field is-grouped">
-                    <div class="control"> <%= link_to "어학원 등록 신청하기", new_order_path, :class => 'button is-black'  %>
-                    </div>
-                  </div> 
-                 </div>              
-              </div>
-          </div>
-      </section>
-    </div>
-
-
-    <div class="column">
-        <section class="hero section is-hero is-success">
-            <div class="columns is-vcentered">
-                <div class="column is-12 is-5-fullhd is-offset-1-fullhd">
-                  <div class="section-header">
-                    <h2 class="title is-2 is-spaced">사용자 계정 관리<span class="spacer is-horizontal is-05"></span></h2>
-                    <h2 class="subtitle is-5">사용자의 계정정보를 관리하실수 있습니다. 비밀번호를 잊으셨다면, 이메일로 비밀번호를 다시 설정이 가능합니다.</h2>
-                    <div class="field is-grouped">
-                      <div class="control"> <%= link_to '나의 계정관리하기', edit_user_registration_path, :class => 'button is-black' %>
-                      </div>
-                    </div> 
-                  </div>
+    <div class="is-gapless">
+        <div class="">
+            <section class="hero section is-hero is-paddingless is-marginless is-thirdheight">
+                <div class="column is-12">
+                    <div id="map" style="height: 75vh"></div>
                 </div>
-            </div>
-        </section>
-    </div>
-  </div>
+                <div class="column is-12-mobile is-one-quarter">
+                    <div id="desc" class="card has-background-white">
+                        <div class="card-content">
+                            <div class="tile is-vertical is-12">
+                                hello
+                            </div>
+                            <div class="tile is-vertical is-12">
+                                hello
+                            </div>
+                            <div class="tile is-vertical is-12">
+                                hello
+                            </div>
 
-
-
-  <div class="">
-    <section class="hero section is-hero is-warning is-halfheight ">
-        <div class="columns is-vcentered">
-            <div class="column is-6 is-5-fullhd is-offset-1-fullhd">
-               <div class="section-header">
-                  <h2 class="title is-2 is-spaced">나의 아일랜드 어학원<span class="spacer is-horizontal is-05"></span></h2>
-                  <h2 class="subtitle is-5">진행상황을 확인할 수 있으며, 필요시에는 정보를 변경할수 있습니다.</h2>
-                  <div class="field is-grouped">
-                    <div class="control"> <%= link_to "도착일정 변경하기", new_order_path, :class => 'button is-black'  %>
+                        </div>
+                        <footer class="card-footer">
+                            <p class="card-footer-item">
+                                <span>
+                                    <a class="font-kakao">할인하여 등록신청 하기</a>
+                                </span>
+                            </p>
+                        </footer>
                     </div>
-                  </div> 
-               </div>              
-            </div>
-            <div class="column is-6">
-              <div class="section-media"> <!-- <img class="full-width" role="presentation"
-                                          src="./Bedtime Stories - Exciting Tales for Young &amp; Old – Bedtime Stories_files/school-933bc224.svg">
-                <p> <small>Join our Storytelling School for Families.</small> </p> -->
-              </div>
-            </div> 
+                </div>
+                <!-- <div class="column is-4">
+                <div>hello</div>
+            </div> -->
+        </section>
+        <div class="">
+            <section class="hero section is-hero is-paddingless is-marginless is-halfheight is-warning">
+                <!-- something -->
+            </section>
         </div>
-    </section>
-  </div>
+    </div>
 
-
-
-</div>
-
-
+    <script>
+        var map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: -34.397, lng: 150.644},
+                zoom: 14,
+                mapTypeControl: false,
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&callback=initMap" async defer></script>
 </main>

@@ -10,7 +10,9 @@
                   <h2 class="title is-2 is-spaced">나의 아일랜드 어학원<span class="spacer is-horizontal is-05"></span></h2>
                   <h2 class="subtitle is-5">진행상황을 확인할 수 있으며, 필요시에는 정보를 변경할 수 있습니다.</h2>
                   <div class="field is-grouped">
-                    <div class="control"> <%= link_to "도착일정 변경하기", new_order_path, :class => 'button is-black'  %>
+                    
+                    <div class="control"><% if @order %> <%= link_to "나의일정 변경하기", edit_order_path(@order.id), :class => 'button is-black'  %> <% end %>
+                   
                     </div>
                   </div> 
                </div>              

@@ -1,0 +1,120 @@
+<main class="app-content">
+    <div class="is-gapless">
+        <div class="">
+            <section class="hero section is-hero is-paddingless is-marginless is-thirdheight">
+                <div class="column is-12">
+                    <div id="map" style="height: 75vh"></div>
+                </div>
+                <div class="column is-12-mobile is-one-quarter">
+                    <div id="desc" class="card has-background-white">
+                        <div class="card-content" style="padding-bottom: 0rem">
+                            <div class="tile is-vertical is-12">
+                                <strong class="font-kakao">📍&nbsp<%= @course.school.location %></strong>
+                            </div>
+                            <div class="tile is-vertical is-12">
+                                <p class="level-item font-namsan has-text-black-ter is-size-2"><%= @course.school.name %></p>
+                            </div>
+                            <div class="tile is-vertical is-12">
+                                <p class="level-item font-kakao has-text-black-ter">🏛&nbsp&nbsp<%= @course.name %></p>
+                            </div>
+                            <div class="tile is-vertical is-12">
+                                <p class="level-item has-text-black font-kakao"><span>📈&nbsp&nbsp유학원 공식가격&nbsp ₩ &nbsp<span class="schoolPrice" id="price" ><%= convert_euro_to_won(@course.price) %></p>
+                                </div>
+                            </div>
+                            <footer class="card-footer">
+                                <p class="card-footer-item">
+                                    <span>
+                                        <a class="font-kakao">할인하여 등록신청 하기</a>
+                                    </span>
+                                </p>
+                            </footer>
+                        </div>
+                    </div>
+                    <!-- <div class="column is-4">
+                    <div>hello</div>
+                </div> -->
+            </section>
+
+            <section class="hero section is-hero is-halfheight has-background-white">
+                <div class="columns is-vcentered">
+                    <div class="column is-6 is-5-fullhd is-offset-1-fullhd">
+                        <div class="section-header">
+                            <h2 class="title is-2 is-spaced">어학원 검색기<span class="spacer is-horizontal is-05"></span></h2>
+                            <h2 class="subtitle is-5">아일랜드내 모든 어학원의 정보를 검색해 보실수 있습니다. 유학원의 가격정보와 비교해 보실수 있습니다.</h2>
+                            <div class="field is-grouped">
+                                <div class="control"> <%= link_to "도착일정 변경하기", new_order_path, :class => 'button is-black'  %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-6 is-6-fullhd is-fullhd has-text-centered">
+                        <div class="post-container">
+                            <div style="width:500px;" class="fb-post card" data-href=<%= get_facebook_post(@course.school.fb) %> data-width="500"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</main>
+
+
+<script>
+    var map;
+    function initMap() {
+        var myLatlng = new google.maps.LatLng(parseFloat(<%= @course.school.latitude %>),parseFloat(<%= @course.school.longitude %>));
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: myLatlng,
+            zoom: 14,
+            mapTypeControl: false,
+            scrollwheel: false,
+        });
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map
+        });
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&callback=initMap" async defer></script>
+
+
+
+
+<% if false %>
+<%= javascript_pack_tag 'currency_conversion', 'data-turbolinks-track': 'reload' %>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+    <strong>Name:</strong>
+    <%= @course.name %>
+</p>
+
+<p>
+    <strong>Price:</strong>
+    <%= @course.price %>
+</p>
+
+<p>
+    <strong>Specialprice:</strong>
+    <%= @course.specialprice %>
+</p>
+
+<p>
+    <strong>Specialdue:</strong>
+    <%= @course.specialdue %>
+</p>
+
+<p>
+    <strong>Description:</strong>
+    <%= @course.description %>
+</p>
+
+<p>
+    <strong>Admintext:</strong>
+    <%= @course.admintext %>
+</p>
+
+<%= link_to 'Edit', edit_course_path(@course) %> |
+<%= link_to 'Back', courses_path %>
+<% end %>

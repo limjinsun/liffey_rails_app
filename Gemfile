@@ -68,3 +68,12 @@ gem 'devise-i18n'
 gem 'rails-i18n', '~> 6.0.0' # For 6.0.0 or higher
 
 gem 'font-awesome-rails'
+
+### 10/Nov/2019
+gem 'jquery-rails'
+
+### 11/Nov/2019 to make api call
+gem 'rest-client'
+
+### 11/Nov/2019 for web crawling
+gem 'nokogiri', '~> 1.6', '>= 1.6.8'
