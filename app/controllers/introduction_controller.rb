@@ -5,10 +5,13 @@ class IntroductionController < ApplicationController
   def consulting
   end
 
-  def confirmed 
+  def confirmed
   end
 
   def test
+  end
+
+  def mypage
   end
 
   def school

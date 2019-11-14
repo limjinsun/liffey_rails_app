@@ -8,12 +8,13 @@ Rails.application.routes.draw do
   get 'introduction/confirmed'
   get 'introduction/test'
   get 'introduction/school'
-  devise_for :users, :controllers => { 
+  get 'introduction/mypage'
+  devise_for :users, :controllers => {
   	:sessions => 'customdevise/sessions',
   	:passwords => 'customdevise/passwords',
-  	:registrations => 'customdevise/registrations' 
+  	:registrations => 'customdevise/registrations'
     }  # generate all route for devise - with user object. It will use my custom controllers.
-  
+
   get 'home/index' # without this line - http get request -'home/index' won't work.
   resources :posts # generate all route for posts.
 

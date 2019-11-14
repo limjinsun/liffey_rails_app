@@ -1,53 +1,324 @@
 <main class="app-content">
     <div class="is-gapless">
         <div class="">
-            <section class="hero section is-hero is-paddingless is-marginless is-thirdheight">
-                <div class="column is-12">
-                    <div id="map" style="height: 75vh"></div>
-                </div>
-                <div class="column is-12-mobile is-one-quarter">
-                    <div id="desc" class="card has-background-white">
-                        <div class="card-content">
-                            <div class="tile is-vertical is-12">
-                                hello
+            <section class="hero section is-hero is-warnning">
+                <div class="columns is-vcentered">
+                    <div class="column is-6 is-5-fullhd is-offset-1-fullhd">
+                        <div class="section-header">
+                            <h2 class="title is-2 is-spaced">어학원 검색기<span class="spacer is-horizontal is-05"></span></h2>
+                            <h2 class="subtitle is-5">아일랜드내 모든 어학원의 정보를 검색해 보실수 있습니다. 유학원의 가격정보와 비교해 보실수 있습니다.</h2>
+                            <div class="field is-grouped">
+                                <div class="control"> <%= link_to "도착일정 변경하기", new_order_path, :class => 'button is-black'  %>
+                                </div>
+                                <div class="control"> <%= link_to "도착일정 변경하기", new_order_path, :class => 'button is-black'  %>
+                                </div>
+                                <div class="control"> <%= link_to "도착일정 변경하기", new_order_path, :class => 'button is-black'  %>
+                                </div>
                             </div>
-                            <div class="tile is-vertical is-12">
-                                hello
-                            </div>
-                            <div class="tile is-vertical is-12">
-                                hello
-                            </div>
-
                         </div>
-                        <footer class="card-footer">
-                            <p class="card-footer-item">
-                                <span>
-                                    <a class="font-kakao">할인하여 등록신청 하기</a>
-                                </span>
-                            </p>
-                        </footer>
                     </div>
+                    <!-- <div class="column is-6 is-5-fullhd is-offset-1-fullhd">
+                    <div class="field has-addons">
+                    <p class="control">
+                    <input class="input" type="text" placeholder="Find a post">
+                </p>
+                <p class="control">
+                <button class="button">
+                Search
+            </button>
+        </p>
+    </div>
+</div> -->
+</div>
+</section>
+</div>
+</div>
+
+<div class="is-gapless">
+    <div class="">
+        <section class="hero section is-hero is-paddingless is-marginless">
+
+            <div class="columns is-vcentered">
+                <div class="column is-12 is-10-fullhd is-offset-1-fullhd">
+
+                    <div class="table-flip-scroll">
+                        <table class="">
+                            <thead>
+                                <tr>
+                                    <th><abbr title="Position">Pos</abbr></th>
+                                    <th>Team</th>
+                                    <th><abbr title="Played">Pld</abbr></th>
+                                    <th><abbr title="Won">W</abbr></th>
+                                    <th><abbr title="Drawn">D</abbr></th>
+                                    <th><abbr title="Lost">L</abbr></th>
+                                    <th><abbr title="Goals for">GF</abbr></th>
+                                    <th><abbr title="Goals against">GA</abbr></th>
+                                    <th><abbr title="Goal difference">GD</abbr></th>
+                                    <th><abbr title="Points">Pts</abbr></th>
+                                    <th>Qualification or relegation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>1</th>
+                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
+                                    </td>
+                                    <td>38</td>
+                                    <td>23</td>
+                                    <td>12</td>
+                                    <td>3</td>
+                                    <td>68</td>
+                                    <td>36</td>
+                                    <td>+32</td>
+                                    <td>81</td>
+                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
+                                </tr>
+                                <tr>
+                                    <th>2</th>
+                                    <td><a href="https://en.wikipedia.org/wiki/Arsenal_F.C." title="Arsenal F.C.">Arsenal</a></td>
+                                    <td>38</td>
+                                    <td>20</td>
+                                    <td>11</td>
+                                    <td>7</td>
+                                    <td>65</td>
+                                    <td>36</td>
+                                    <td>+29</td>
+                                    <td>71</td>
+                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
+                                </tr>
+                                <tr>
+                                    <th>3</th>
+                                    <td><a href="https://en.wikipedia.org/wiki/Tottenham_Hotspur_F.C." title="Tottenham Hotspur F.C.">Tottenham Hotspur</a></td>
+                                    <td>38</td>
+                                    <td>19</td>
+                                    <td>13</td>
+                                    <td>6</td>
+                                    <td>69</td>
+                                    <td>35</td>
+                                    <td>+34</td>
+                                    <td>70</td>
+                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
+                                </tr>
+                                <tr>
+                                    <th>4</th>
+                                    <td><a href="https://en.wikipedia.org/wiki/Manchester_City_F.C." title="Manchester City F.C.">Manchester City</a></td>
+                                    <td>38</td>
+                                    <td>19</td>
+                                    <td>9</td>
+                                    <td>10</td>
+                                    <td>71</td>
+                                    <td>41</td>
+                                    <td>+30</td>
+                                    <td>66</td>
+                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Play-off_round" title="2016–17 UEFA Champions League">Champions League play-off round</a></td>
+                                </tr>
+                                <tr>
+                                    <th>5</th>
+                                    <td><a href="https://en.wikipedia.org/wiki/Manchester_United_F.C." title="Manchester United F.C.">Manchester United</a></td>
+                                    <td>38</td>
+                                    <td>19</td>
+                                    <td>9</td>
+                                    <td>10</td>
+                                    <td>49</td>
+                                    <td>35</td>
+                                    <td>+14</td>
+                                    <td>66</td>
+                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Europa_League#Group_stage" title="2016–17 UEFA Europa League">Europa League group stage</a></td>
+                                </tr>
+                                <tr>
+                                    <th>6</th>
+                                    <td><a href="https://en.wikipedia.org/wiki/Southampton_F.C." title="Southampton F.C.">Southampton</a></td>
+                                    <td>38</td>
+                                    <td>18</td>
+                                    <td>9</td>
+                                    <td>11</td>
+                                    <td>59</td>
+                                    <td>41</td>
+                                    <td>+18</td>
+                                    <td>63</td>
+                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Europa_League#Group_stage" title="2016–17 UEFA Europa League">Europa League group stage</a></td>
+                                </tr>
+                                <tr>
+                                    <th>7</th>
+                                    <td><a href="https://en.wikipedia.org/wiki/West_Ham_United_F.C." title="West Ham United F.C.">West Ham United</a></td>
+                                    <td>38</td>
+                                    <td>16</td>
+                                    <td>14</td>
+                                    <td>8</td>
+                                    <td>65</td>
+                                    <td>51</td>
+                                    <td>+14</td>
+                                    <td>62</td>
+                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Europa_League#Third_qualifying_round" title="2016–17 UEFA Europa League">Europa League third qualifying round</a></td>
+                                </tr>
+                                <tr>
+                                    <th>8</th>
+                                    <td><a href="https://en.wikipedia.org/wiki/Liverpool_F.C." title="Liverpool F.C.">Liverpool</a></td>
+                                    <td>38</td>
+                                    <td>16</td>
+                                    <td>12</td>
+                                    <td>10</td>
+                                    <td>63</td>
+                                    <td>50</td>
+                                    <td>+13</td>
+                                    <td>60</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>9</th>
+                                    <td><a href="https://en.wikipedia.org/wiki/Stoke_City_F.C." title="Stoke City F.C.">Stoke City</a></td>
+                                    <td>38</td>
+                                    <td>14</td>
+                                    <td>9</td>
+                                    <td>15</td>
+                                    <td>41</td>
+                                    <td>55</td>
+                                    <td>−14</td>
+                                    <td>51</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>10</th>
+                                    <td><a href="https://en.wikipedia.org/wiki/Chelsea_F.C." title="Chelsea F.C.">Chelsea</a></td>
+                                    <td>38</td>
+                                    <td>12</td>
+                                    <td>14</td>
+                                    <td>12</td>
+                                    <td>59</td>
+                                    <td>53</td>
+                                    <td>+6</td>
+                                    <td>50</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>11</th>
+                                    <td><a href="https://en.wikipedia.org/wiki/Everton_F.C." title="Everton F.C.">Everton</a></td>
+                                    <td>38</td>
+                                    <td>11</td>
+                                    <td>14</td>
+                                    <td>13</td>
+                                    <td>59</td>
+                                    <td>55</td>
+                                    <td>+4</td>
+                                    <td>47</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>12</th>
+                                    <td><a href="https://en.wikipedia.org/wiki/Swansea_City_A.F.C." title="Swansea City A.F.C.">Swansea City</a></td>
+                                    <td>38</td>
+                                    <td>12</td>
+                                    <td>11</td>
+                                    <td>15</td>
+                                    <td>42</td>
+                                    <td>52</td>
+                                    <td>−10</td>
+                                    <td>47</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>13</th>
+                                    <td><a href="https://en.wikipedia.org/wiki/Watford_F.C." title="Watford F.C.">Watford</a></td>
+                                    <td>38</td>
+                                    <td>12</td>
+                                    <td>9</td>
+                                    <td>17</td>
+                                    <td>40</td>
+                                    <td>50</td>
+                                    <td>−10</td>
+                                    <td>45</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>14</th>
+                                    <td><a href="https://en.wikipedia.org/wiki/West_Bromwich_Albion_F.C." title="West Bromwich Albion F.C.">West Bromwich Albion</a></td>
+                                    <td>38</td>
+                                    <td>10</td>
+                                    <td>13</td>
+                                    <td>15</td>
+                                    <td>34</td>
+                                    <td>48</td>
+                                    <td>−14</td>
+                                    <td>43</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>15</th>
+                                    <td><a href="https://en.wikipedia.org/wiki/Crystal_Palace_F.C." title="Crystal Palace F.C.">Crystal Palace</a></td>
+                                    <td>38</td>
+                                    <td>11</td>
+                                    <td>9</td>
+                                    <td>18</td>
+                                    <td>39</td>
+                                    <td>51</td>
+                                    <td>−12</td>
+                                    <td>42</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>16</th>
+                                    <td><a href="https://en.wikipedia.org/wiki/A.F.C._Bournemouth" title="A.F.C. Bournemouth">AFC Bournemouth</a></td>
+                                    <td>38</td>
+                                    <td>11</td>
+                                    <td>9</td>
+                                    <td>18</td>
+                                    <td>45</td>
+                                    <td>67</td>
+                                    <td>−22</td>
+                                    <td>42</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>17</th>
+                                    <td><a href="https://en.wikipedia.org/wiki/Sunderland_A.F.C." title="Sunderland A.F.C.">Sunderland</a></td>
+                                    <td>38</td>
+                                    <td>9</td>
+                                    <td>12</td>
+                                    <td>17</td>
+                                    <td>48</td>
+                                    <td>62</td>
+                                    <td>−14</td>
+                                    <td>39</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>18</th>
+                                    <td><a href="https://en.wikipedia.org/wiki/Newcastle_United_F.C." title="Newcastle United F.C.">Newcastle United</a> <strong>(R)</strong>
+                                    </td>
+                                    <td>38</td>
+                                    <td>9</td>
+                                    <td>10</td>
+                                    <td>19</td>
+                                    <td>44</td>
+                                    <td>65</td>
+                                    <td>−21</td>
+                                    <td>37</td>
+                                    <td>Relegation to the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_Football_League_Championship" title="2016–17 Football League Championship">Football League Championship</a></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
                 </div>
-                <!-- <div class="column is-4">
-                <div>hello</div>
-            </div> -->
+            </div>
+
         </section>
-        <div class="">
-            <section class="hero section is-hero is-paddingless is-marginless is-halfheight is-warning">
-                <!-- something -->
-            </section>
-        </div>
     </div>
 
-    <script>
-        var map;
-        function initMap() {
-            map = new google.maps.Map(document.getElementById('map'), {
-                center: {lat: -34.397, lng: 150.644},
-                zoom: 14,
-                mapTypeControl: false,
-            });
-        }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&callback=initMap" async defer></script>
+    <div class="">
+        <section class="hero section is-hero is-paddingless is-marginless is-halfheight is-warning">
+            <!-- something -->
+        </section>
+    </div>
+</div>
 </main>
+
+
+
+
+
+
+
+
+<%= javascript_pack_tag 'table', 'data-turbolinks-track': 'reload' %>
