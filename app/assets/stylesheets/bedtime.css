@@ -378,7 +378,8 @@ pre {
   font-family: monospace;
 }
 body {
-  color: #998da0;
+  /* color: #998da0; */
+  color: #2b2b2b !important;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
