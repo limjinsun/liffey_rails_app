@@ -6,13 +6,14 @@
     border: 1px solid grey;
 }
 
-.button{
-    min-width: 10em;
-    border-radius: 0px !important;
+.button {
+    /* min-width: 10em;*/
+    border-radius: 3px !important;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
 }
 
 @media only screen and (max-width: 960px) {
-    .button{
+    .button {
         min-width: 6em;
         border-radius: 0px !important;
     }
@@ -38,11 +39,13 @@
     display: flex !important;
 }
 
-.input, .textarea, .select select {
+.input,
+.textarea,
+.select select {
     background-color: white;
     border-color: #dbdbdb;
     border-radius: 0px;
-    color:#363636;
+    color: #363636;
 }
 
 #error_explanation {
@@ -137,7 +140,8 @@ min-height: calc(100vh - 52px);
     height: 100% !important;
 }
 
-html.has-navbar-fixed-top, body.has-navbar-fixed-top {
+html.has-navbar-fixed-top,
+body.has-navbar-fixed-top {
     padding-top: 4em;
 }
 
@@ -147,22 +151,23 @@ html.has-navbar-fixed-top, body.has-navbar-fixed-top {
 
 .card {
     /* Add shadows to create the "card" effect */
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
 }
 
 /* On mouse-over, add a deeper shadow */
 .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 .card {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
-    border-radius: 5px; /* 5px rounded corners */
+    border-radius: 5px;
+    /* 5px rounded corners */
 }
 
-.school-info-t{
+.school-info-t {
     width: 100%;
 }
 
@@ -197,13 +202,13 @@ html.has-navbar-fixed-top, body.has-navbar-fixed-top {
 }
 
 @media screen and (max-width: 768px) {
-    .level-left + .level-right {
+    .level-left+.level-right {
         margin-top: 0rem;
     }
 }
 
 .font-namsan {
-    font-family:  "seoul-namsan-jung-m", sans-serif;
+    font-family: "seoul-namsan-jung-m", sans-serif;
 }
 
 .font-barun {
@@ -219,14 +224,22 @@ html.has-navbar-fixed-top, body.has-navbar-fixed-top {
 }
 
 /* google map styling disable */
-a[href^="http://maps.google.com/maps"]{display:none !important}
-a[href^="https://maps.google.com/maps"]{display:none !important}
-
-.gmnoprint a, .gmnoprint span, .gm-style-cc {
-    display:none;
+a[href^="http://maps.google.com/maps"] {
+    display: none !important
 }
+
+a[href^="https://maps.google.com/maps"] {
+    display: none !important
+}
+
+.gmnoprint a,
+.gmnoprint span,
+.gm-style-cc {
+    display: none;
+}
+
 .gmnoprint div {
-    background:none !important;
+    background: none !important;
 }
 
 /* nav bar height fix */
@@ -237,13 +250,14 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 
 /* on mobile view - make it normal */
 @media screen and (max-width: 768px) {
-    #map{
+    #map {
         width: inherit;
         height: inherit;
         position: relative;
         top: 0;
         left: 0;
     }
+
     #desc {
         /* width: 100%;
         height: 100%; */
@@ -251,33 +265,34 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
         top: 0;
         left: 0;
     }
+
     #desc {
         z-index: inherit;
     }
 }
+
 /* fall back to desktop view */
 @media screen and (min-width: 769px) {
-    #map{
+    #map {
         width: 100%;
         height: 100%;
         position: absolute !important;
         top: 0;
         left: 0;
     }
+
     #desc {
         /* width: 100%;
         height: 100%; */
         position: absolute !important;
-        top: 0;
-        left: 0;
+        top: 20px;
+        left: 20px;
     }
+
     #desc {
         z-index: 10;
     }
 }
-
-
-
 
 /* Make table responsive with size, and scrollable righthand side */
 @media screen and (max-width: 800px) {
@@ -288,13 +303,16 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
         border-collapse: collapse;
         border-spacing: 0;
     }
+
     .table-flip-scroll table thead {
         display: block;
         float: left;
     }
+
     .table-flip-scroll table thead tr {
         display: block;
     }
+
     .table-flip-scroll table tbody {
         display: block;
         width: auto;
@@ -302,65 +320,217 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
         overflow-x: auto;
         white-space: nowrap;
     }
+
     .table-flip-scroll table tbody tr {
         display: inline-block;
         vertical-align: top;
     }
-    .table-flip-scroll table th, .table-flip-scroll table td {
+
+    .table-flip-scroll table th,
+    .table-flip-scroll table td {
         margin: 0;
         vertical-align: top;
         display: block;
         text-align: left;
     }
+
     .table-flip-scroll table thead {
-        width: 20%;
+        min-width: 150px;
+        width: 30%;
     }
+
     .table-flip-scroll table tbody tr {
-        width: 40%;
+        width: 100%;
     }
+
     .table-flip-scroll table th {
         border-bottom: 0;
         border-left: 0;
     }
+
     .table-flip-scroll table td {
         border-left: 0;
         border-right: 0;
         border-bottom: 0;
     }
-    .table-flip-scroll table tbody tr {
+
+    /*.table-flip-scroll table tbody tr {
         border-left: 1px solid #ccc;
+    }*/
+
+    .table-flip-scroll table th:last-child,
+    .table-flip-scroll table td:last-child {
+        border-bottom: 1px solid #fbfbfb;
     }
-    .table-flip-scroll table th:last-child, .table-flip-scroll table td:last-child {
-        border-bottom: 1px solid #ccc;
+
+    .table-flip-scroll table td {
+        border-bottom: 1px solid #fbfbfb;
     }
-    .table-flip-scroll table th, td {
-        padding:0px 0px !important;
-        text-align:inherit;
-        border-bottom: 0px !important;
+
+    .table-flip-scroll table th,
+    .table-flip-scroll td {
+        padding: 5px 10px !important;
+        text-align: inherit;
+       /* border-bottom: 1px !important;*/
+        min-height: 35px;
     }
+
     /* .tableFixHead { overflow-y: auto; height: auto !important; } */
     body {
         font-size: 1.15rem;
     }
-    table tbody { display:block; max-height: none !important; overflow:scroll; }
-}
 
+    table tbody {
+        display: block;
+        max-height: none !important;
+        overflow: scroll;
+    }
+
+    table tbody,
+    thead {
+        padding-bottom: 1em;
+    }
+
+}
 
 /* table css */
-.table-flip-scroll table th, td {
+.table-flip-scroll table th,
+td {
     padding: 15px 15px;
     text-align: left;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #f3f3f3;
 }
-.table-flip-scroll table tr:hover {background-color: #f5f5f5;}
-.table-flip-scroll table tr:nth-child(even) {background-color: #f2f2f2;}
+
+/*.table-flip-scroll table tr:hover {
+    background-color: #f5f5f5;
+}*/
+
+.table-flip-scroll table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.tableFixHead table tbody {
+    display: block;
+    max-height: 35vh;
+    overflow: scroll;
+}
+
+table thead,
+table tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.table-flip-scroll table thead tr {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.table-flip-scroll table thead th {
+    text-align: left;
+}
 
 /* 가로로 스크롤 되게 */
 /* table{
     overflow-x:auto;
 } */
 
+/* 첫줄 조금 넓게 */
+/*.table-flip-scroll table tbody th,
+#first_column {
+    min-width: 15vw;
+}
+*/
 /* table th, td {height: 300px;} */
 
-table tbody { display:block; max-height:50vh; overflow:scroll; }
-table thead, table tbody tr { display:table; width:100%; table-layout:fixed; }
+
+/* 모바일에서 버튼 넓이 100% */
+@media screen and (max-width: 768px) {
+    .is-mobile-button {
+        width: 100%;
+    }
+}
+
+
+.reset-table table,
+.reset-table thead,
+.reset-table tbody,
+.reset-table tfoot,
+.reset-table tr,
+.reset-table th,
+.reset-table td {
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-spacing: 0;
+}
+
+
+/* 데스크탑이상에서 버튼 넓이 50% */
+@media screen and (min-width: 768px) {
+    .is-width-half {
+        width: 50%
+    }
+}
+
+
+/* Hide the checkbox/radio. We will simulate it later using label */
+input[type=checkbox], input[type=radio] {
+    opacity: 0;
+    position: absolute;
+}
+
+/* Some basic styling for alignment and more */
+input[type=checkbox], input[type=checkbox] + label, input[type=radio], input[type=radio] + label {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* CSS Pseudo class "before" to show checkbox/radio box. Will be attached to every label adjacent to input checkbox.*/
+input[type=checkbox] + label:before, input[type=radio] + label:before {
+        font-family: 'FontAwesome';
+    background: #f1fff6;
+    display: inline-block;
+    vertical-align: middle;
+    width: 2.4em;
+    margin-right: 10px;
+    text-align: center;
+    font-size: 0.54em;
+    padding: 4px 0;
+    color: #e4efe5;
+    transition: color .4s;
+    border: 1px solid #3faf2d;
+}
+
+/* Tick inside checkbox. I am using Font-awesome's tick, but you can use plain unicode tick */
+/* or any other symbol you want. */
+input[type=checkbox] + label:before {
+    content: '\f00c';
+    border-radius: 2px;
+}
+
+/* Circle inside radio circle. Border-radius to make it a circle. */
+input[type=radio] + label:before {
+    content: '\f111';
+    border-radius: 50%;
+}
+
+/* Styles when checkbox/radio is checked */
+input:checked + label:before {
+    background: #288619;
+    color: #FFF;
+}
+
+/* Styles when checkbox/radio is disabled  */
+input[type=checkbox][disabled] + label:before, input[type=radio][disabled] + label:before {
+    color: #d0d0d0;
+    background: #bfbfbf;
+    border: 1px solid #656b64;
+}
+
+.chechbox-align{
+    --line-height: 3;
+    line-height: calc(((var(--line-height) * var(--capital-height)) - var(--valign)) * 1px);
+}

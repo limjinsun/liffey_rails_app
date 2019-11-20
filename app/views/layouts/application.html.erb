@@ -22,10 +22,6 @@
 </head>
 <body class="<%= controller_name %> <%= action_name %>">
 
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v5.0&appId=467953357409111&autoLogAppEvents=1"></script>
-    
-
     <div class="app-container">
         <header class="app-header">
             <nav class="navbar level is-mobile is-fixed-top">
@@ -43,12 +39,12 @@
                     <% if user_signed_in? %>
                     <div class="buttons">
                         <%= link_to '💁🏻‍♀️ 나의아일랜드', profile_userdetail_path, :class => 'button is-warning' %>
-                        <%= link_to "로그아웃", destroy_user_session_path, method: :delete, :class => 'button is-black'  %>
+                        <%= link_to "🔐", destroy_user_session_path, method: :delete, :class => 'button is-black'  %>
                     </div>
                     <% else %>
                     <div class="buttons">
                         <%= link_to '💁🏻‍♀️ 나의아일랜드', profile_userdetail_path, :class => 'button is-warning' %>
-                        <%= link_to "🔑 로그인하기", new_user_session_path, :class => 'button is-black'  %>
+                        <%= link_to "🔑 ", new_user_session_path, :class => 'button is-black'  %>
                     </div>
                     <% end %>
                 </div>

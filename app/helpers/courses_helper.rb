@@ -21,9 +21,10 @@ module CoursesHelper
         result = doc.xpath('/html/body/div[1]/div[3]/div[1]/div/div/div[2]/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div[2]/div/div/div/div[2]/div[2]/form/input[3]')
         postid = result.attr("value")
         postString = "https://www.facebook.com/" + fbname + "/posts/" + postid
+        puts postString
         postString
     end
-
+    
     # def get_insta_posts
     #     doc = Nokogiri::HTML(open('https://www.instagram.com/liffeydublin/'))
     #     result = doc.xpath('/html/body/script[1]/text()')

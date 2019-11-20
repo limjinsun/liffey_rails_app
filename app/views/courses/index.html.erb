@@ -3,17 +3,66 @@
         <div class="">
             <section class="hero section is-hero is-warnning">
                 <div class="columns is-vcentered">
-                    <div class="column is-6 is-5-fullhd is-offset-1-fullhd">
+                    <div class="column is-12 is-5-fullhd is-offset-1-fullhd">
                         <div class="section-header">
                             <h2 class="title is-2 is-spaced">어학원 검색기<span class="spacer is-horizontal is-05"></span></h2>
-                            <h2 class="subtitle is-5">아일랜드내 모든 어학원의 정보를 검색해 보실수 있습니다. 유학원의 가격정보와 비교해 보실수 있습니다.</h2>
-                            <div class="field is-grouped">
-                                <div class="control"> <%= link_to "도착일정 변경하기", new_order_path, :class => 'button is-black'  %>
-                                </div>
+                            <h2 class="subtitle is-5 has-text-grey-darker">아일랜드내 모든 어학원의 정보를 검색해 보실수 있습니다. 3일마다 한번씩 가격은 새로 업데이트 됩니다. 리피회원의 등록가격은 이것보다 항상 저렴합니다. 유학원의 가격정보와 비교해 보실수 있습니다.</h2>
+                            <div class="column">
+
+<!-- 
+                                <div class='example chechbox-align'>
+                                    <input type='checkbox' id='my-checkbox' >
+                                    <label for='my-checkbox'>더블린</label >
+                                </div> -->
+
+
+                                <%= form_tag courses_path, :method => 'get' do %>
+
+                                    <%= check_box_tag(:location_dublin) %>
+                                    <%= label_tag(:location_dublin, "Dublin") %>
+                                    <%= check_box_tag(:location_cork) %>
+                                    <%= label_tag(:location_cork, "Cork") %>
+                                    <%= check_box_tag(:location_galway) %>
+                                    <%= label_tag(:location_galway, "Galway") %>
+                                    <%= check_box_tag(:location_etc) %>
+                                    <%= label_tag(:location_etc, "그외") %>
+                                    <%= check_box_tag(:time_morning) %>
+                                    <%= label_tag(:time_morning, "morning") %>
+                                    <%= check_box_tag(:time_afternoon) %>
+                                    <%= label_tag(:time_afternoon, "afternoon") %>
+                                   
+                                 
+                                    <%= submit_tag("go") %>
+                                <% end %>
+
+                               
+
+
+                                <div style="padding-top: 1em"></div>
+                                <%= link_to "다시 어학원 찾기", new_order_path, :class => 'button is-black is-mobile-button'  %>
                             </div>
+
+                           <!--  <div class="columns">
+                                <div class="column">
+                                    <div class="control has-text-centered"> <%= link_to "도착일정 변경하기", new_order_path, :class => 'button is-black is-mobile-button'  %>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="control has-text-centered"> <%= link_to "도착일정 변경하기", new_order_path, :class => 'button is-black is-mobile-button'  %>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="control has-text-centered"> <%= link_to "도착일정 변경하기", new_order_path, :class => 'button is-black is-mobile-button'  %>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="control has-text-centered"> <%= link_to "도착일정 변경하기", new_order_path, :class => 'button is-black is-mobile-button'  %>
+                                    </div>
+                                </div>
+                            </div> -->
                         </div>
                     </div>
-                    <div class="column is-6 is-5-fullhd is-offset-1-fullhd">
+                    <!-- <div class="column is-6 is-5-fullhd is-offset-1-fullhd">
                         <div class="field has-addons">
                             <p class="control">
                                 <input class="input" type="text" placeholder="Find a post">
@@ -24,7 +73,7 @@
                                 </button>
                             </p>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </section>
         </div>
@@ -40,40 +89,37 @@
 
                         <div class="table-flip-scroll tableFixHead">
                             <table class="">
-                                <thead>
+                                <thead class="font-sqaure">
                                     <tr>
-                                        <th style="width: 15vw;">School Name</th>
-                                        <th>Name</th>
-                                        <th>Price</th>
-                                        <th>Specialprice</th>
-                                        <th>Specialdue</th>
-                                        <th>Description</th>
-                                        <th>Admintext</th>
-                                        <th>Show</th>
-                                        <th>Edit</th>
-                                        <th>Destroy</th>
+                                        <th id="first_column">위치&nbsp📍</th>
+                                        <th>학교이름&nbsp ⛪️</th>
+                                        <th>코스명&nbsp 🗓 </th>
+                                        <th>유학원 공식가&nbsp 📈 </th>
+                                        <th>할인등록신청&nbsp 📉 </th>
+                                        <th>국적비율&nbsp 🇰🇷</th>
+                                        <th>인증&nbsp🛡</th>
+                                        <th>어학원장점&nbsp👍🏻</th>
+                                        <th>어학원단점&nbsp👎🏻</th>
+                                        <th>자세히보기&nbsp 🔍</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <% for i in 0..5 %>
-                                        <% @courses.each do |course| %>
-                                        <tr>
-                                            <th style="width: 15vw;"><%= course.school.name %></th>
-                                            <td><%= course.name %></td>
-                                            <td><%= course.price %></td>
-                                            <td><%= course.specialprice %></td>
-                                            <td><%= course.specialdue %></td>
-                                            <td><%= course.description %></td>
-                                            <td><%= course.admintext %></td>
-                                            <td><%= link_to 'Show', course %></td>
-                                            <td><%= link_to 'Edit', edit_course_path(course) %></td>
-                                            <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                                        </tr>
-                                        <% end %>
+                                    
+                                    <% @courses.each do |course| %>
+                                    <tr>
+                                        <th><%= course.school.location %></th>
+                                        <td><%= course.school.name %></td>
+                                        <td><%= course.name %></td>
+                                        <td><%= convert_euro_to_won(course.price) %></td>
+                                        <td><%= link_to "할인 등록", course_path(course.id), :class => 'button is-success is-small font-kakao'  %></td>
+                                        <td><%= course.school.nationalmix %></td>
+                                        <td><%= course.school.certificate %></td>
+                                        <td><%= course.school.good %></td>
+                                        <td><%= course.school.bad %></td>
+                                        <td><%= link_to "정보 보기", course_path(course.id), :class => 'button is-warning is-small font-kakao'  %> </td>
+                                    </tr>
                                     <% end %>
-
-
-
+                                    
                                 </tbody>
                             </table>
                         </div>
@@ -84,88 +130,15 @@
             </section>
         </div>
 
-        <div class="">
-            <section class="hero section is-hero is-paddingless is-marginless is-halfheight is-warning">
-                <!-- something -->
-            </section>
-        </div>
+        <div style="padding-top: 2em"></div>
+        <div style="padding-top: 2em"></div>
+
+
+        
     </div>
 
-    <div class="is-gapless">
-        <div class="">
-            <section class="hero section is-hero is-warnning is-marginless is-paddingless">
-                <div class="columns is-vcentered">
-                    <div class="column is-12 is-10-fullhd is-offset-1-fullhd">
-                        <% @courses.each do |course| %>
-                        <div class="card margin-bottom-small">
-                            <div class="level custom-padding-1">
-                                <!-- Left side -->
-                                <div class="level-left">
-                                    <div class="level-item custom-witdh-1">
-                                        <p class="subtitle is-5">
-                                            <strong class="font-kakao">📍&nbsp<%= course.school.location %></strong>
-                                        </p>
-                                    </div>
-                                    <p class="level-item font-namsan has-text-black-ter is-size-3"><%= course.school.name %></p>
-                                    <p class="level-item font-kakao has-text-black-ter">🏛&nbsp&nbsp<%= course.name %></p>
-                                </div>
-                                <!-- Right side -->
-                                <div class="level-right">
-                                    <p class="level-item has-text-black font-kakao"><span>📈&nbsp&nbsp유학원 가격&nbsp ₩ &nbsp</span> <span class="schoolPrice" id="price <%= course.id %>" ><%= convert_euro_to_won(course.price) %></span></p>
-                                    <p class="level-item"><a class="button is-success font-kakao">할인하여 등록신청 하기</a></p>
-                                    <p class="level-item"><%= link_to "정보 보기", course_path(course.id), :class => 'button is-warning font-kakao'  %> </p>
-                                </div>
-                            </div>
-                        </div>
-                        <% end %>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </div>
 </main>
 
 
 
 
-
-
-<table>
-    <thead>
-        <tr>
-            <th>School Name</th>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Specialprice</th>
-            <th>Specialdue</th>
-            <th>Description</th>
-            <th>Admintext</th>
-            <th>Show</th>
-            <th>Edit</th>
-            <th>Destroy</th>
-
-        </tr>
-    </thead>
-
-    <tbody>
-        <% @courses.each do |course| %>
-        <tr>
-            <td><%= course.school.name %></td>
-            <td><%= course.name %></td>
-            <td><%= course.price %></td>
-            <td><%= course.specialprice %></td>
-            <td><%= course.specialdue %></td>
-            <td><%= course.description %></td>
-            <td><%= course.admintext %></td>
-            <td><%= link_to 'Show', course %></td>
-            <td><%= link_to 'Edit', edit_course_path(course) %></td>
-            <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-        <% end %>
-    </tbody>
-</table>
-
-<br>
-
-
-<%= link_to 'New Course', new_course_path %>

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :courses
+  # get 'courses/with_param'
   resources :schools
   resources :orders
   get 'profile/userdetail'

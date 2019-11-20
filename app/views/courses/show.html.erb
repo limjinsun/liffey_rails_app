@@ -9,47 +9,144 @@
                     <div id="desc" class="card has-background-white">
                         <div class="card-content" style="padding-bottom: 0rem">
                             <div class="tile is-vertical is-12">
-                                <strong class="font-kakao">📍&nbsp<%= @course.school.location %></strong>
+                                <strong class="font-sqaure">📍&nbsp
+                                    <%= @course.school.location %></strong>
                             </div>
                             <div class="tile is-vertical is-12">
-                                <p class="level-item font-namsan has-text-black-ter is-size-2"><%= @course.school.name %></p>
+                                <p class="level-item font-namsan has-text-black-ter is-size-2">
+                                    <%= @course.school.name %>
+                                </p>
                             </div>
                             <div class="tile is-vertical is-12">
-                                <p class="level-item font-kakao has-text-black-ter">🏛&nbsp&nbsp<%= @course.name %></p>
+                                <p class="level-item has-text-black-ter font-sqaure">🏛&nbsp&nbsp
+                                    <%= @course.name %>
+                                </p>
                             </div>
                             <div class="tile is-vertical is-12">
-                                <p class="level-item has-text-black font-kakao"><span>📈&nbsp&nbsp유학원 공식가격&nbsp ₩ &nbsp<span class="schoolPrice" id="price" ><%= convert_euro_to_won(@course.price) %></p>
+                                <p class="level-item has-text-black font-sqaure"><span>📈&nbsp&nbsp유학원 공식가격&nbsp ₩ &nbsp<span class="schoolPrice" id="price">
+                                    <%= convert_euro_to_won(@course.price) %>
+                                </p>
+                            </div>
+
+                            <div class="tile is-vertical is-12">
+                                <div style="padding-top: 1em"></div>
+                                <div class="level-item has-text-black-ter">
+                                    <label><b> 공지 </b></label>
+                                </div>
+                                <div class="level-item has-text-black-ter">
+                                     <p>리피회원가는 상기가격보다 항시저렴.(회원가 비공개)</p>
                                 </div>
                             </div>
-                            <footer class="card-footer">
-                                <p class="card-footer-item">
-                                    <span>
-                                        <a class="font-kakao">할인하여 등록신청 하기</a>
-                                    </span>
-                                </p>
-                            </footer>
                         </div>
+                        <footer class="card-footer">
+                            <p class="card-footer-item">
+                                <span>
+                                    <a class="font-sqaure">할인하여 등록신청 하기</a>
+                                </span>
+                            </p>
+                        </footer>
                     </div>
-                    <!-- <div class="column is-4">
+                </div>
+                <!-- <div class="column is-4">
                     <div>hello</div>
                 </div> -->
             </section>
-
             <section class="hero section is-hero is-halfheight has-background-white">
-                <div class="columns is-vcentered">
+                <div class="columns ">
                     <div class="column is-6 is-5-fullhd is-offset-1-fullhd">
                         <div class="section-header">
-                            <h2 class="title is-2 is-spaced">어학원 검색기<span class="spacer is-horizontal is-05"></span></h2>
-                            <h2 class="subtitle is-5">아일랜드내 모든 어학원의 정보를 검색해 보실수 있습니다. 유학원의 가격정보와 비교해 보실수 있습니다.</h2>
+                            <h2 class="title is-2 is-spaced has-text-grey-darker">어학원 정보<span class="spacer is-horizontal is-05"></span></h2>
+                        </div>
+                        <div style="padding-top: 2em"></div>
+                        <div>
+                             <p>아틀라스 어학원 - 더블린 남쪽 시티에 위치한, 중규모 어학원 입니다. 최근 말타에 까지 분점을 내고 운영중인 어학원입니다. 다채롭게 구성되는 액티비티가 장점 인곳.</p>
+                        </div>
+                        <div style="padding-top: 2em"></div>
+                        <div>
+                            <p>더블린 시티</p>
+                            <p>중소규모</p>
+                            <p>한반 15명 내외</p>
+                            <p>인증 캠브릿지/ACELS/MEI</p>
+                            <p>학원주소 : 3 Abbey Street Lower, North City, Dublin 1</p>
+                        </div>
+
+                        <div style="padding-top: 2em"></div>
+                        <div class="section-header">
                             <div class="field is-grouped">
-                                <div class="control"> <%= link_to "도착일정 변경하기", new_order_path, :class => 'button is-black'  %>
+                                <div class="column is-paddingless"> <%= link_to "학교홈페이지 방문하기", new_order_path, :class => 'button is-primary is-mobile-button is-width-half'  %>
                                 </div>
                             </div>
+                            <div class="field is-grouped">
+                                <div class="column is-paddingless"> <%= link_to "어학원 페이스북 구경하기", new_order_path, :class => 'button is-primary is-mobile-button is-width-half'  %>
+                                </div>
+                            </div>
+                            <div class="field is-grouped">
+                                <div class="column is-paddingless"> <%= link_to "어학원 인스타그람 구경하기", new_order_path, :class => 'button is-primary is-mobile-button is-width-half'  %>
+                                </div>
+                            </div>
+                            <div class="field is-grouped">
+                                <div class="column is-paddingless"> <%= link_to "동영상채널 확인 해보기", new_order_path, :class => 'button is-primary is-mobile-button is-width-half'  %>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
-                    <div class="column is-6 is-6-fullhd is-fullhd has-text-centered">
-                        <div class="post-container">
-                            <div style="width:500px;" class="fb-post card" data-href=<%= get_facebook_post(@course.school.fb) %> data-width="500"></div>
+                    <div class="column is-6 is-5-fullhd is-fullhd">
+
+
+                       <div style="padding-top: 2em"></div>
+                        <div>
+                             <p>어학원의 광고들은 유학원 및 다른곳에서도 충분히 보실수 있습니다. 부풀려져 있는 정보들에 환상을 가지기 보다, 직접 홈페이지및 소셜미디어를 확인해 보고, 어차피 가게 되는 같은 어학원을, 가장 저렴한 방법으로 등록할수 있는 방법에 대해 고민하세요. 문법위주/회화위주/무료수업 이런말들에 너무 큰기대를 갖지 마세요.</p>
+                        </div>
+                        <div style="padding-top: 2em"></div>
+
+                      
+
+                        <div>
+                            <label><b> 별도비용 </b></label>
+                        </div>
+                        <div style="padding-top: 1em"></div>
+                        <div class="table-flip-scroll tableFixHead">
+                            <table class="font-sqaure">
+                                <thead>
+                                    <tr>
+                                        <th>입학비</th>
+                                        <th>교재비</th>
+                                        <th>건강보험비</th>
+                                        <th>공인인증시험비</th>
+                                        <th>홈스테이신청비</th>
+                                        <th>홈스테이비용 (1주당)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>테트</td>
+                                        <td>한글입니다</td>
+                                        <td>한글입니다</td>
+                                        <td>한글입니다</td>
+                                        <td>한글입니다</td>
+                                        <td>한글입니다</td>
+                                    </tr>
+                                   
+                                </tbody>
+                            </table>
+                        </div>
+                        <div style="padding-top: 1em"></div>
+                        <div>
+                            <label><b> 공지 </b></label>
+                        </div>
+                        <div style="padding-top: 1em"></div>
+                        <div>
+                             <p>워킹홀리데이 비자 소지자는 건강보험비와 공인인증시험비가 들지 않습니다. 홈스테이 또한 원하시는 분에 한해서만 연계가 됩니다. 어학원에 따라서 별도비용이 면제처리 되는 곳들도 있습니다. 리피회원분들께는 각 어학원의 상황에 맞춰가장 저렴하게 진행해 드립니다.</p>
+                        </div>
+                        <div style="padding-top: 2em"></div>
+                        <div class="field is-grouped">
+                            <div class="column is-paddingless"> <%= link_to "상담신청하기", new_order_path, :class => 'button is-warning is-mobile-button is-width-half'  %>
+                            </div>
+                        </div>
+
+                        <div class="section-header">
+                           
                         </div>
                     </div>
                 </div>
@@ -59,62 +156,56 @@
 </main>
 
 
+
+
 <script>
-    var map;
-    function initMap() {
-        var myLatlng = new google.maps.LatLng(parseFloat(<%= @course.school.latitude %>),parseFloat(<%= @course.school.longitude %>));
-        map = new google.maps.Map(document.getElementById('map'), {
-            center: myLatlng,
-            zoom: 14,
-            mapTypeControl: false,
-            scrollwheel: false,
-        });
-        var marker = new google.maps.Marker({
-            position: myLatlng,
-            map: map
-        });
-    }
+var map;
+
+function initMap() {
+    var myLatlng = new google.maps.LatLng(parseFloat(<%= @course.school.latitude %>), parseFloat(<%= @course.school.longitude %>));
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: myLatlng,
+        zoom: 14,
+        mapTypeControl: false,
+        scrollwheel: false,
+        styles: [{ featureType: "poi", elementType: "labels", stylers: [{ visibility: "off" }] }]
+    });
+    var marker = new google.maps.Marker({
+        position: myLatlng,
+        map: map
+    });
+}
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&callback=initMap" async defer></script>
-
-
-
-
 <% if false %>
 <%= javascript_pack_tag 'currency_conversion', 'data-turbolinks-track': 'reload' %>
-
-<p id="notice"><%= notice %></p>
-
+<p id="notice">
+    <%= notice %>
+</p>
 <p>
     <strong>Name:</strong>
     <%= @course.name %>
 </p>
-
 <p>
     <strong>Price:</strong>
     <%= @course.price %>
 </p>
-
 <p>
     <strong>Specialprice:</strong>
     <%= @course.specialprice %>
 </p>
-
 <p>
     <strong>Specialdue:</strong>
     <%= @course.specialdue %>
 </p>
-
 <p>
     <strong>Description:</strong>
     <%= @course.description %>
 </p>
-
 <p>
     <strong>Admintext:</strong>
     <%= @course.admintext %>
 </p>
-
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>
 <% end %>

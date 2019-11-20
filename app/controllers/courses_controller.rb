@@ -1,10 +1,35 @@
 class CoursesController < ApplicationController
-    before_action :set_course, only: [:show, :edit, :update, :destroy]
+    before_action :set_course , only: [:show, :edit, :update, :destroy]
 
     # GET /courses
     # GET /courses.json
     def index
-        @courses = Course.all
+        params_hash = params.to_enum.to_h
+        params_hash = params_hash.select{ |k,v| v == '1' }
+        if params_hash.empty?
+            @courses = Course.all
+        else
+            location_hash = params_hash.select{ |k,v| k.include? "location"}
+            time_hash = params_hash.select{ |k,v| k.include? "time"}
+
+            location_array = []
+            location_hash = location_hash.map{|k,v| location_array.push(k) }
+            location_array = location_array.map { |e| e.to_s[9..-1] }.map { |e| e.prepend('%') }.map { |e| e << '%' }
+
+            time_array = []
+            time_hash = time_hash.map{|k,v| time_array.push(k) }
+            time_array = time_array.map { |e| e.to_s[5..-1] }.map { |e| e.prepend('%') }.map { |e| e << '%' }
+
+            if location_array.length() > 0
+                if time_array.length() > 0
+                    @courses = Course.joins(:school).where('LOWER(schooltag) LIKE ANY (array[?])', location_array).where('LOWER(coursetag) LIKE ANY (array[?])', time_array)
+                else
+                    @courses = Course.joins(:school).where('LOWER(schooltag) LIKE ANY (array[?])', location_array)
+                end
+            else
+                @courses = Course.joins(:school).where('LOWER(coursetag) LIKE ANY (array[?])', time_array)
+            end
+        end
     end
 
     # GET /courses/1

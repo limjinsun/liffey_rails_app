@@ -7,9 +7,9 @@
             <h1 class="title is-spaced">아일랜드 어학원 <span class="is-hidden-touch"><br>
               </span>
               등록신청</h1>
-           
+
               <h2 class="subtitle is-6">
-                 <p><em>리피의 아일랜드 화원만 신청이 가능합니다. 아일랜드내의 모든 어학연수 기관의 신청이 가능합니다.</em> <br/> 
+                 <p><em>리피의 아일랜드 화원만 신청이 가능합니다. 아일랜드내의 모든 어학연수 기관의 신청이 가능합니다.</em> <br/>
                   <em>유학원 상담 혹은 공개된 공식 가격을 참고하셨다면, 이미 알고 계신 등록비용을 같이 기입하실 수 있습니다. </em>
                   <br/>
                 </p>
@@ -77,7 +77,7 @@
               <div class="field">
                 공인 영어 시험 (영어 시험에 관련한 내용은 다음 링크에서 확인하세요.)<br/>
                 <div class="radio">
-                  <%= form.radio_button :exitexam, 'ielts' %> 
+                  <%= form.radio_button :exitexam, 'ielts' %>
                   <%= form.label :exitexam, '아이엘츠 공인시험', :value => 'ielts' %>
                   <span style="margin:0 30px 0 0;"></span>
                   <%= form.radio_button :exitexam, 'cambridge' %>
@@ -106,7 +106,7 @@
               </div>
 
               <div class="field">
-                어학원 첫번째 방학 마침일 <br/>  
+                어학원 첫번째 방학 마침일 <br/>
                 <div class="select">
                   <%= form.date_select :vacation1_end, :min => Date.today %>
                 </div>
@@ -128,7 +128,8 @@
 
               <div class="field">
                 참고된 어학원 가격 혹은 기타사항.<br/>
-                <%= form.text_field :refprice, :class => 'input' %>
+                <%= form.text_area(:refprice, size: '50x10', :class => 'input') %>
+
               </div>
 
               <br/>
@@ -137,10 +138,10 @@
                 <%= form.submit '확인' , :class => 'button is-dark is-fullwidth' %>
               </div>
             <% end %>
-          
+
           <br/>
-         
-          
+
+
           <br/>
           <br/>
         </div>
@@ -148,5 +149,3 @@
     </div>
   </section>
 </div>
-
-
