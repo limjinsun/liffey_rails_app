@@ -93,6 +93,7 @@
                 메디컬 인슈어런스 (원할시 에만 체크, 자세한 사항을 링크에서 확인하세요.)<br/>
                 <div class="checkbox">
                   <%= form.check_box :medical_insurance %>
+                  <%= form.label :medical_insurance, '필요' %>
                 </div>
               </div>
 
@@ -128,7 +129,7 @@
 
               <div class="field">
                 참고된 어학원 가격 혹은 기타사항.<br/>
-                <%= form.text_area(:refprice, size: '50x10', :class => 'input') %>
+                <%= form.text_area(:refprice, size: '50x10', :class => 'input', :style => 'height: 250px;') %>
 
               </div>
 

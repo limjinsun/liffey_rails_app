@@ -6,15 +6,14 @@ module CoursesHelper
 
     include ActionView::Helpers::NumberHelper
 
-    def convert_euro_to_won(euroPrice)
-        response = RestClient::Request.execute(
-            method: :get,
-            url: 'https://api.exchangeratesapi.io/latest?symbols=KRW'
-        )
-        won = JSON.parse(response)["rates"]["KRW"]
-        wonPrice = won * euroPrice
-        number_to_currency(wonPrice.round(-4))
+    def convert_euro_to_won(euro_price)
+        daily_currency = Rails.cache.fetch('daily_currency', expires_in: 12.hours) do
+            CurrencyConverter.get_value
+        end
+        won_price = daily_currency * euro_price
+        number_to_currency(won_price.round(-3))
     end
+
 
     def get_facebook_post(fbname)
         doc = Nokogiri::HTML(open('https://www.facebook.com/pg/' + fbname + '/posts/'))

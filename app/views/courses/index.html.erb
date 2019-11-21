@@ -6,74 +6,68 @@
                     <div class="column is-12 is-5-fullhd is-offset-1-fullhd">
                         <div class="section-header">
                             <h2 class="title is-2 is-spaced">어학원 검색기<span class="spacer is-horizontal is-05"></span></h2>
-                            <h2 class="subtitle is-5 has-text-grey-darker">아일랜드내 모든 어학원의 정보를 검색해 보실수 있습니다. 3일마다 한번씩 가격은 새로 업데이트 됩니다. 리피회원의 등록가격은 이것보다 항상 저렴합니다. 유학원의 가격정보와 비교해 보실수 있습니다.</h2>
+                            <p>아일랜드내 모든 어학원의 정보를 검색해 보실수 있습니다. 3일마다 한번씩 가격은 새로 업데이트 됩니다. 리피회원의 등록가격은 이것보다 항상 저렴합니다. 유학원의 가격정보와 비교해 보실수 있습니다.</p>
                             <div class="column">
-
-<!-- 
-                                <div class='example chechbox-align'>
-                                    <input type='checkbox' id='my-checkbox' >
-                                    <label for='my-checkbox'>더블린</label >
-                                </div> -->
-
-
-                                <%= form_tag courses_path, :method => 'get' do %>
-
-                                    <%= check_box_tag(:location_dublin) %>
-                                    <%= label_tag(:location_dublin, "Dublin") %>
-                                    <%= check_box_tag(:location_cork) %>
-                                    <%= label_tag(:location_cork, "Cork") %>
-                                    <%= check_box_tag(:location_galway) %>
-                                    <%= label_tag(:location_galway, "Galway") %>
-                                    <%= check_box_tag(:location_etc) %>
-                                    <%= label_tag(:location_etc, "그외") %>
-                                    <%= check_box_tag(:time_morning) %>
-                                    <%= label_tag(:time_morning, "morning") %>
-                                    <%= check_box_tag(:time_afternoon) %>
-                                    <%= label_tag(:time_afternoon, "afternoon") %>
-                                   
-                                 
-                                    <%= submit_tag("go") %>
-                                <% end %>
-
-                               
-
-
-                                <div style="padding-top: 1em"></div>
-                                <%= link_to "다시 어학원 찾기", new_order_path, :class => 'button is-black is-mobile-button'  %>
+                                <div>
+                                    <%= form_tag courses_path, :method => 'get' do %>
+                                    <table class="course-menu-table">
+                                        <tbody>
+                                            <tr>
+                                                <td> 
+                                                    <%= check_box_tag(:location_dublin) %>
+                                                    <%= label_tag(:location_dublin, "더블린",:class => "font-sm font-sqaure") %> 
+                                                </td>
+                                                <td>
+                                                    <%= check_box_tag(:location_cork) %>
+                                                    <%= label_tag(:location_cork, "코크",:class => "font-sm font-sqaure") %> 
+                                                </td>
+                                                <td>
+                                                    <%= check_box_tag(:location_galway) %>
+                                                    <%= label_tag(:location_galway, "골웨이",:class => "font-sm font-sqaure") %> 
+                                                </td>
+                                                <td>
+                                                    <%= check_box_tag(:location_etc) %>
+                                                    <%= label_tag(:location_etc, "외각", :class => "font-sm font-sqaure") %> 
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <%= check_box_tag(:time_morning) %>
+                                                    <%= label_tag(:time_morning, "아침", :class => "font-sm font-sqaure") %> 
+                                                <td>
+                                                    <%= check_box_tag(:time_afternoon) %>
+                                                    <%= label_tag(:time_afternoon, "오후", :class => "font-sm font-sqaure") %>
+                                                </td>
+                                                <td>
+                                                    <%= check_box_tag(:duration_6month) %>
+                                                    <%= label_tag(:duration_6month, "6개월", :class => "font-sm font-sqaure") %> 
+                                                <td>
+                                                    <%= check_box_tag(:duration_3month) %>
+                                                    <%= label_tag(:duration_3month, "3개월", :class => "font-sm font-sqaure") %>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <%= radio_button_tag :sort, "min" %>
+                                                    <%= label_tag("sort_min", "최저가순", :class => "font-sm font-sqaure") %>
+                                                <td>
+                                                    <%= radio_button_tag :sort, "max" %>
+                                                    <%= label_tag("sort_max", "최고가순", :class => "font-sm font-sqaure") %>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <%= submit_tag("다시 어학원 찾기", name: nil, :class => 'button is-black is-mobile-button') %>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>           
+                                    <% end %>
+                                </div>
                             </div>
-
-                           <!--  <div class="columns">
-                                <div class="column">
-                                    <div class="control has-text-centered"> <%= link_to "도착일정 변경하기", new_order_path, :class => 'button is-black is-mobile-button'  %>
-                                    </div>
-                                </div>
-                                <div class="column">
-                                    <div class="control has-text-centered"> <%= link_to "도착일정 변경하기", new_order_path, :class => 'button is-black is-mobile-button'  %>
-                                    </div>
-                                </div>
-                                <div class="column">
-                                    <div class="control has-text-centered"> <%= link_to "도착일정 변경하기", new_order_path, :class => 'button is-black is-mobile-button'  %>
-                                    </div>
-                                </div>
-                                <div class="column">
-                                    <div class="control has-text-centered"> <%= link_to "도착일정 변경하기", new_order_path, :class => 'button is-black is-mobile-button'  %>
-                                    </div>
-                                </div>
-                            </div> -->
+                                            
                         </div>
                     </div>
-                    <!-- <div class="column is-6 is-5-fullhd is-offset-1-fullhd">
-                        <div class="field has-addons">
-                            <p class="control">
-                                <input class="input" type="text" placeholder="Find a post">
-                            </p>
-                            <p class="control">
-                                <button class="button">
-                                    Search
-                                </button>
-                            </p>
-                        </div>
-                    </div> -->
                 </div>
             </section>
         </div>
@@ -85,7 +79,7 @@
             <section class="hero section is-hero is-paddingless is-marginless">
 
                 <div class="columns is-vcentered">
-                    <div class="column is-12 is-10-fullhd is-offset-1-fullhd">
+                    <div class="column is-12 is-10-fullhd is-offset-1-fullhd is-paddingless">
 
                         <div class="table-flip-scroll tableFixHead">
                             <table class="">
@@ -94,7 +88,7 @@
                                         <th id="first_column">위치&nbsp📍</th>
                                         <th>학교이름&nbsp ⛪️</th>
                                         <th>코스명&nbsp 🗓 </th>
-                                        <th>유학원 공식가&nbsp 📈 </th>
+                                        <th>유학원공식가&nbsp 📈 </th>
                                         <th>할인등록신청&nbsp 📉 </th>
                                         <th>국적비율&nbsp 🇰🇷</th>
                                         <th>인증&nbsp🛡</th>
@@ -104,21 +98,22 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    
-                                    <% @courses.each do |course| %>
-                                    <tr>
-                                        <th><%= course.school.location %></th>
-                                        <td><%= course.school.name %></td>
-                                        <td><%= course.name %></td>
-                                        <td><%= convert_euro_to_won(course.price) %></td>
-                                        <td><%= link_to "할인 등록", course_path(course.id), :class => 'button is-success is-small font-kakao'  %></td>
-                                        <td><%= course.school.nationalmix %></td>
-                                        <td><%= course.school.certificate %></td>
-                                        <td><%= course.school.good %></td>
-                                        <td><%= course.school.bad %></td>
-                                        <td><%= link_to "정보 보기", course_path(course.id), :class => 'button is-warning is-small font-kakao'  %> </td>
-                                    </tr>
-                                    <% end %>
+                                    <% for i in 0..15 do %> 
+                                        <% @courses.each do |course| %>
+                                        <tr>
+                                            <th><%= course.school.location %></th>
+                                            <td><%= course.school.name %></td>
+                                            <td><%= course.name %></td>
+                                            <td><%= convert_euro_to_won(course.price) %></td>
+                                            <td><%= link_to "할인 등록", course_path(course.id), :class => 'button is-success is-small font-kakao'  %></td>
+                                            <td><%= course.school.nationalmix %></td>
+                                            <td><%= course.school.certificate %></td>
+                                            <td><%= course.school.good %></td>
+                                            <td><%= course.school.bad %></td>
+                                            <td><%= link_to "정보 보기", course_path(course.id), :class => 'button is-warning is-small font-kakao'  %> </td>
+                                        </tr>
+                                        <% end %>
+                                    <% end %> 
                                     
                                 </tbody>
                             </table>
@@ -133,8 +128,6 @@
         <div style="padding-top: 2em"></div>
         <div style="padding-top: 2em"></div>
 
-
-        
     </div>
 
 </main>

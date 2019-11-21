@@ -1,31 +1,95 @@
 <!DOCTYPE html>
 <html class="has-navbar-fixed-top">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Liffeyapp</title>
+    <title>리피의 아일랜드 [혼자서 어학연수]</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag "https://use.fontawesome.com/releases/v5.3.1/js/all.js" %>
-
-
     <script>
-        <% if flash[:alert] %>
-        alert(" <%= flash[:alert] %> ");
-        <% flash[:alert] = nil %>
-        <% flash.clear %>
-        <% end %>
+    <% if flash[:alert] %>
+    alert(" <%= flash[:alert] %> ");
+    <% flash[:alert] = nil %>
+    <% flash.clear %>
+    <% end %>
     </script>
+    <%= favicon_link_tag asset_path('favicon.ico') %>
 </head>
-<body class="<%= controller_name %> <%= action_name %>">
 
+<body class="<%= controller_name %> <%= action_name %>">
     <div class="app-container">
         <header class="app-header">
             <nav class="navbar level is-mobile is-fixed-top">
-                <div class="level-left">
+                <table>
+                    <tbody class="is-paddingless font-sqaure">
+                        <tr>
+                            <td class="has-text-centered padding-sm ">
+                                <div>
+                                    <p class="">홈</p>
+                                    <p class="title">
+                                        <%= link_to root_path, :class => "nav-icon" do %>
+                                            <i class="fa fa-undo"></i>
+                                        <% end %>
+                                    </p>
+                                </div>
+                            </td>
+                            <td class="has-text-centered padding-sm">
+                                <div>
+                                    <p class="">조언</p>
+                                    <p class="title">
+                                        <%= link_to profile_userdetail_path, :class => "nav-icon" do %>
+                                            <i class="fa fa-stack-exchange"></i>
+                                        <% end %>
+                                    </p>
+                                </div>
+                            </td>
+                            <td class="has-text-centered padding-sm">
+                                <div>
+                                    <p class="">어학원</p>
+                                    <p class="title">
+                                        <%= link_to courses_path, :class => "nav-icon" do %>
+                                            <i class="fa fa-graduation-cap"></i>
+                                        <% end %>
+                                    </p>
+                                </div>
+                            </td>
+                            <td class="has-text-centered padding-sm">
+                                <div>
+                                    <p class="">내공간</p>
+                                    <p class="title">
+                                        <%= link_to profile_userdetail_path, :class => "nav-icon" do %>
+                                            <i class="fa fa-street-view"></i>
+                                        <% end %>
+                                    </p>
+                                </div>
+                            </td>
+                            <td class="has-text-centered padding-sm">
+                                <div>
+                                    <% if user_signed_in? %>
+                                        <p class="">로그아웃</p>
+                                        <p class="title">
+                                            <%= link_to destroy_user_session_path, method: :delete, :class => "nav-icon" do %>
+                                                <i class="fa fa-gears"></i>
+                                            <% end %>
+                                        </p>
+                                    <% else %>
+                                        <p class="">로그인</p>
+                                        <p class="title">
+                                            <%= link_to new_user_session_path, :class => "nav-icon" do %>
+                                                <i class="fa fa-gears"></i>
+                                            <% end %>
+                                        </p>
+                                    <% end %>
+                                    
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- <div class="level-left">
                     <div class="navbar-item">
                         <a class="brand" href="/">
                             <div class="brand-content">
@@ -47,16 +111,13 @@
                         <%= link_to "🔑 ", new_user_session_path, :class => 'button is-black'  %>
                     </div>
                     <% end %>
-                </div>
+                </div> -->
             </nav>
         </header>
-
         <%= yield %>
-
         <footer id="footer" class="section has-background-black">
             <div class="container is-fullhd">
                 <div class="container">
-
                     <!--  <div class="">
                     <div class="column is-narrow has-text-light" style="width: 300px;">
                     <img alt="FTW logo" src="./FTW - blockchain lottery platform on NEO_files/ftw_mark.png" style="max-height: 1.75rem;"><br>
@@ -65,65 +126,57 @@
                     <a class="has-text-light" href="mailto:info@ftwcoin.io">Info@ftwcoin.io</a></div>
                 </div>
             </div> -->
-
-            <div class="column">
-                <div class="columns">
                     <div class="column">
-                        <div class="centerme">
-                            <h6 class="title is-6 has-text-light">About us</h6>
-                            <ul>
-                                <li><a class="has-text-light" href="https://next.ftwcoin.io/#how-it-works">How it works</a></li>
-                                <li><a class="has-text-light" href="https://next.ftwcoin.io/#features">Features</a></li>
-                                <li><a class="has-text-light" href="https://next.ftwcoin.io/#ecosystem">Ecosystem</a></li>
-                                <li><a class="has-text-light" href="https://next.ftwcoin.io/#currencies">Partners</a></li>
-                                <li><a class="has-text-light" href="mailto:info@ftwcoin.io">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="centerme">
-                            <h6 class="title is-6 has-text-light">Solutions</h6>
-                            <ul>
-                                <li><a class="has-text-light" href="https://next.ftwcoin.io/solutions/lottery">Create lottery</a></li>
-                                <li><a class="has-text-light" href="https://next.ftwcoin.io/solutions/raffle">Create raffle</a></li>
-                                <li><a class="has-text-light" href="https://next.ftwcoin.io/ecosystem">Ecosystem</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="centerme">
-                            <h6 class="title is-6 has-text-light">Information</h6>
-                            <ul>
-                                <li><a class="has-text-light" href="https://next.ftwcoin.io/terms">Terms</a></li>
-                                <li><a class="has-text-light" href="https://next.ftwcoin.io/privacy-policy">Privacy</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="column">
-                        <div class="centerme">
-                            <h6 class="title is-6 has-text-light">Community</h6>
-                            <ul>
-                                <li><a rel="noopener noreferrer" target="_blank" class="has-text-light"
-                                    href="https://medium.com/ftw-blog">Medium</a></li>
-                                    <li><a rel="noopener noreferrer" target="_blank" class="has-text-light"
-                                        href="https://www.reddit.com/r/ftwcoin">Reddit</a></li>
-                                        <li><a rel="noopener noreferrer" target="_blank" class="has-text-light"
-                                            href="https://t.me/ftwcoin">Telegram</a></li>
-                                            <li><a rel="noopener noreferrer" target="_blank" class="has-text-light"
-                                                href="https://github.com/ForTheWinn">Github</a></li>
-                                                <li><a rel="noopener noreferrer" target="_blank" class="has-text-light"
-                                                    href="https://twitter.com/forthewincoin">Twitter</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
+                        <div class="columns">
+                            <div class="column">
+                                <div class="centerme">
+                                    <h6 class="title is-6 has-text-light">About us</h6>
+                                    <ul>
+                                        <li><a class="has-text-light" href="https://next.ftwcoin.io/#how-it-works">How it works</a></li>
+                                        <li><a class="has-text-light" href="https://next.ftwcoin.io/#features">Features</a></li>
+                                        <li><a class="has-text-light" href="https://next.ftwcoin.io/#ecosystem">Ecosystem</a></li>
+                                        <li><a class="has-text-light" href="https://next.ftwcoin.io/#currencies">Partners</a></li>
+                                        <li><a class="has-text-light" href="mailto:info@ftwcoin.io">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="centerme">
+                                    <h6 class="title is-6 has-text-light">Solutions</h6>
+                                    <ul>
+                                        <li><a class="has-text-light" href="https://next.ftwcoin.io/solutions/lottery">Create lottery</a></li>
+                                        <li><a class="has-text-light" href="https://next.ftwcoin.io/solutions/raffle">Create raffle</a></li>
+                                        <li><a class="has-text-light" href="https://next.ftwcoin.io/ecosystem">Ecosystem</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="centerme">
+                                    <h6 class="title is-6 has-text-light">Information</h6>
+                                    <ul>
+                                        <li><a class="has-text-light" href="https://next.ftwcoin.io/terms">Terms</a></li>
+                                        <li><a class="has-text-light" href="https://next.ftwcoin.io/privacy-policy">Privacy</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <div class="centerme">
+                                    <h6 class="title is-6 has-text-light">Community</h6>
+                                    <ul>
+                                        <li><a rel="noopener noreferrer" target="_blank" class="has-text-light" href="https://medium.com/ftw-blog">Medium</a></li>
+                                        <li><a rel="noopener noreferrer" target="_blank" class="has-text-light" href="https://www.reddit.com/r/ftwcoin">Reddit</a></li>
+                                        <li><a rel="noopener noreferrer" target="_blank" class="has-text-light" href="https://t.me/ftwcoin">Telegram</a></li>
+                                        <li><a rel="noopener noreferrer" target="_blank" class="has-text-light" href="https://github.com/ForTheWinn">Github</a></li>
+                                        <li><a rel="noopener noreferrer" target="_blank" class="has-text-light" href="https://twitter.com/forthewincoin">Twitter</a></li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-                    </footer>
+                    </div>
+                </div>
+            </div>
+        </footer>
+</body>
 
-
-
-                </body>
-                </html>
+</html>

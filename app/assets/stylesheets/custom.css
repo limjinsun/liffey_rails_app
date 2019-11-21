@@ -1,3 +1,6 @@
+/*@import "font-awesome";
+@import "font-awesome.css";*/
+
 .level.is-mobile {
     padding: 0em 0.5em;
 }
@@ -324,6 +327,7 @@ a[href^="https://maps.google.com/maps"] {
     .table-flip-scroll table tbody tr {
         display: inline-block;
         vertical-align: top;
+        min-width: 300px; /* 작은 화면에서 글자 덮히지 않게 넓게 해줌 */
     }
 
     .table-flip-scroll table th,
@@ -340,7 +344,11 @@ a[href^="https://maps.google.com/maps"] {
     }
 
     .table-flip-scroll table tbody tr {
-        width: 100%;
+        width: 80% !important;
+    }
+
+    .table-flip-scroll table tbody td {
+        width: 80% !important;
     }
 
     .table-flip-scroll table th {
@@ -411,7 +419,7 @@ td {
 
 .tableFixHead table tbody {
     display: block;
-    max-height: 35vh;
+    max-height: 65vh; /* 전체화면에서 테이블 크기 */ 
     overflow: scroll;
 }
 
@@ -474,6 +482,8 @@ table tbody tr {
 }
 
 
+/* 체크박스 스타일 */
+
 /* Hide the checkbox/radio. We will simulate it later using label */
 input[type=checkbox], input[type=radio] {
     opacity: 0;
@@ -490,18 +500,17 @@ input[type=checkbox], input[type=checkbox] + label, input[type=radio], input[typ
 
 /* CSS Pseudo class "before" to show checkbox/radio box. Will be attached to every label adjacent to input checkbox.*/
 input[type=checkbox] + label:before, input[type=radio] + label:before {
-        font-family: 'FontAwesome';
-    background: #f1fff6;
+    font-family: 'FontAwesome';
+    background: #fbf1ff;
     display: inline-block;
-    vertical-align: middle;
-    width: 2.4em;
+    vertical-align: text-top;
     margin-right: 10px;
     text-align: center;
-    font-size: 0.54em;
-    padding: 4px 0;
-    color: #e4efe5;
+    font-size: 0.42em;
+    padding: 0.615em 1.12em 0.62em 0.90em;
+    color: #efe4ea;
     transition: color .4s;
-    border: 1px solid #3faf2d;
+    /*border: 2px solid #b462d2;*/
 }
 
 /* Tick inside checkbox. I am using Font-awesome's tick, but you can use plain unicode tick */
@@ -519,7 +528,7 @@ input[type=radio] + label:before {
 
 /* Styles when checkbox/radio is checked */
 input:checked + label:before {
-    background: #288619;
+    background: #641986;
     color: #FFF;
 }
 
@@ -530,7 +539,24 @@ input[type=checkbox][disabled] + label:before, input[type=radio][disabled] + lab
     border: 1px solid #656b64;
 }
 
-.chechbox-align{
-    --line-height: 3;
-    line-height: calc(((var(--line-height) * var(--capital-height)) - var(--valign)) * 1px);
+/* 체크박스 스타일 끝 */
+
+.padding-sm{
+    padding: 4px;
+}
+
+.font-sm{
+    font-size: 0.9em;
+}
+
+.course-menu-table td{
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.columns.is-vcentered {
+    margin-left: 0em;
+    margin-right: 0em;
 }
