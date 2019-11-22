@@ -1,4 +1,5 @@
 <%= form_with(model: school, local: true) do |form| %>
+
   <% if school.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(school.errors.count, "error") %> prohibited this school from being saved:</h2>
@@ -11,137 +12,18 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :location %>
-    <%= form.text_field :location %>
-  </div>
-
-  <div class="field">
-    <%= form.label :size %>
-    <%= form.text_field :size %>
-  </div>
-
-  <div class="field">
-    <%= form.label :type %>
-    <%= form.text_field :type %>
-  </div>
-
-  <div class="field">
-    <%= form.label :classsize %>
-    <%= form.text_field :classsize %>
-  </div>
-
-  <div class="field">
-    <%= form.label :certificate %>
-    <%= form.text_field :certificate %>
-  </div>
-
-  <div class="field">
-    <%= form.label :admissionfee %>
-    <%= form.text_field :admissionfee %>
-  </div>
-
-  <div class="field">
-    <%= form.label :textbookfee %>
-    <%= form.text_field :textbookfee %>
-  </div>
-
-  <div class="field">
-    <%= form.label :insurancefee %>
-    <%= form.text_field :insurancefee %>
-  </div>
-
-  <div class="field">
-    <%= form.label :examfee %>
-    <%= form.text_field :examfee %>
-  </div>
-
-  <div class="field">
-    <%= form.label :hostbookingfee %>
-    <%= form.text_field :hostbookingfee %>
-  </div>
-
-  <div class="field">
-    <%= form.label :hostfeeperweek %>
-    <%= form.text_field :hostfeeperweek %>
-  </div>
-
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
-  </div>
-
-  <div class="field">
-    <%= form.label :fb %>
-    <%= form.text_field :fb %>
-  </div>
-
-  <div class="field">
-    <%= form.label :insta %>
-    <%= form.text_field :insta %>
-  </div>
-
-  <div class="field">
-    <%= form.label :youtube %>
-    <%= form.text_field :youtube %>
-  </div>
-
-  <div class="field">
-    <%= form.label :web %>
-    <%= form.text_field :web %>
-  </div>
-
-  <div class="field">
-    <%= form.label :wiki %>
-    <%= form.text_field :wiki %>
-  </div>
-
-  <div class="field">
-    <%= form.label :longitude %>
-    <%= form.text_field :longitude %>
-  </div>
-
-  <div class="field">
-    <%= form.label :latitude %>
-    <%= form.text_field :latitude %>
-  </div>
-
-  <div class="field">
-    <%= form.label :desc %>
-    <%= form.text_field :desc %>
-  </div>
-
-  <div class="field">
-    <%= form.label :admintext %>
-    <%= form.text_field :admintext %>
-  </div>
-
-  <div class="field">
-    <%= form.label :nationalmix %>
-    <%= form.text_field :nationalmix %>
-  </div>
-
-  <div class="field">
-    <%= form.label :towndistance %>
-    <%= form.text_field :towndistance %>
-  </div>
-
-  <div class="field">
-    <%= form.label :activity %>
-    <%= form.text_field :activity %>
-  </div>
-
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.text_field :status %>
-  </div>
+      <% for attribute in school.attributes.keys %>
+          <div class="field">
+            <%= form.label attribute.humanize.downcase %>
+            <%= form.text_field attribute.humanize.downcase, :value => school.attributes[attribute].to_s %>
+          </div>
+      <% end %>
 
   <div class="actions">
     <%= form.submit %>
   </div>
 <% end %>
+
+
+
+

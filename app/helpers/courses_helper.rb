@@ -11,9 +11,8 @@ module CoursesHelper
             CurrencyConverter.get_value
         end
         won_price = daily_currency * euro_price
-        number_to_currency(won_price.round(-3))
+        number_to_currency(won_price.round(-2))
     end
-
 
     def get_facebook_post(fbname)
         doc = Nokogiri::HTML(open('https://www.facebook.com/pg/' + fbname + '/posts/'))
@@ -23,13 +22,5 @@ module CoursesHelper
         puts postString
         postString
     end
-    
-    # def get_insta_posts
-    #     doc = Nokogiri::HTML(open('https://www.instagram.com/liffeydublin/'))
-    #     result = doc.xpath('/html/body/script[1]/text()')
-    #     string = result.to_s
-    #     string = string.delete_prefix("window._sharedData = ")
-    #     puts doc
-    # end
 
 end

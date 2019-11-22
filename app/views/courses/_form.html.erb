@@ -1,3 +1,48 @@
+
+
+
+
+<%= form_with(model: course, local: true) do |form| %>
+
+ <% if course.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(course.errors.count, "error") %> prohibited this course from being saved:</h2>
+
+      <ul>
+        <% course.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+      <% for attribute in course.attributes.keys %>
+          <div class="field">
+            <%= form.label attribute.humanize.downcase %>
+            <%= form.text_field attribute.humanize.downcase, :value => course.attributes[attribute].to_s %>
+          </div>
+      <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<% if false %>
+
 <%= form_with(model: course, local: true) do |form| %>
   <% if course.errors.any? %>
     <div id="error_explanation">
@@ -49,4 +94,7 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+<% end %>
+
+
 <% end %>

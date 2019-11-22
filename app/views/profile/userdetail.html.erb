@@ -1,100 +1,192 @@
 <main class="app-content">
-
-<div class="is-gapless">
-
-  <div class="">
-    <section class="hero section is-hero">
-        <div class="columns is-vcentered">
-            <div class="column is-6 is-5-fullhd is-offset-1-fullhd">
-               <div class="section-header">
-                  <h2 class="title is-2 is-spaced">나의 아일랜드 어학원<span class="spacer is-horizontal is-05"></span></h2>
-                  <h2 class="subtitle is-5">진행상황을 확인할 수 있으며, 필요시에는 정보를 변경할 수 있습니다.</h2>
-                  <div class="field is-grouped">
-                    
-                    <div class="control"><% if @order %> <%= link_to "나의일정 변경하기", edit_order_path(@order.id), :class => 'button is-black'  %> <% end %>
-                   
+    <div class="is-gapless">
+        <section class="hero section is-hero is-halfheight has-background-white">
+            <div class="columns ">
+                <div class="column is-6 is-5-fullhd is-offset-1-fullhd">
+                    <div class="section-header">
+                        <h2 class="title is-2 is-spaced has-text-grey-darker">나의연수 진행사항<span class="spacer is-horizontal is-05"></span></h2>
                     </div>
-                  </div> 
-               </div>              
-            </div>
-            <div class="column is-6 is-5-fullhd is-offset-0-fullhd">
-             <!--  <div class="section-media">  -->
 
-                <div class="card">
-                  <div class="card-image">
-                    <figure class="image is-4by3">
-                      <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
-                    </figure>
-                  </div>
-                  <div class="card-content">
-                    <div class="media">
-                      <!-- <div class="media-left">
-                        <figure class="image is-48x48">
-                          <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-                        </figure>
-                      </div> -->
-                      <div class="media-content">
-                        <p class="title is-4">
-                          <% if @order %>
-                              <%= @order.school.to_s %>
-                          <% else %>
-                              어학원 미선택
-                          <% end %>
-                        <div class="is-5">
-                          <table class="reset-table school-info-t" >
-                            <!-- <tr>
-                              <th>Firstname</th>
-                              <th>Lastname</th>
-                            </tr>  -->
-                            <tr class="">
-                              <td class=""><p>🛫 나의 아일랜드 도착일정 : </p></td>
-                              <td class="text-right"><% if @order %>
-                                                        <%= @order.arrival.strftime("%F %H:%M").to_s %>
-                                                    <% else %>
-                                                        미정
-                                                    <% end %></td>
-                                                    
-                            </tr>
-                           <!--  <tr>
-                              <td class=""><p>📈 유학원 정상가격 : </p></td>
-                              <td class="text-right ">3,800,400 ₩</td>
-                            </tr>
-                            <tr>
-                              <td class=""><p>📉 리피회원가격 :</p></td>
-                              <td class="text-right "> 항상 상기가격보다 저렴하게 진행됩니다.</td>
-                            </tr> -->
-                          </table>
-                        </div>
-                      </div>
+                    <div style="padding-top: 2em"></div>
+                    <div>
+                        <p>유학원과 비교해서 가장 좋은 조건으로, 연수진행을 도와드립니다. 진행상황을 확인하실수 있으며, 연수시작부터 끝까지 일어나는 문제에 대한 해결책들을 안내해 드립니다.</p>
                     </div>
-                  </div>
+                    <div style="padding-top: 2em"></div>
+
+                    <% if @order %>
+
+                            <% if @order.course_id %>
+                            
+                                    <% @course = Course.find(@order.course_id) %>
+                                        <div>
+                                            <label><b>내 등록 어학원 정보 - <%= @course.get_name %></b></label>
+                                        </div>
+                                        <div>진행사항 : <%= @order_confirm.status %></div>
+                                        <div style="padding-top: 1em"></div>
+                                    
+                                        <% @school = School.find(@course.school_id) %>
+                                            <div>
+                                                <p>
+                                                    <%= @school.location %>
+                                                </p>
+                                                <p>
+                                                    <%= @school.size %>
+                                                </p>
+                                                <p>한반 평균인원수 :
+                                                    <%= @school.classsize %>
+                                                </p>
+                                                <p>인증 :
+                                                    <%= @school.certificate %>
+                                                </p>
+                                                <p>학원주소 :
+                                                    <%= @school.address %>
+                                                </p>
+                                            </div>
+
+                                            <div style="padding-top: 2em"></div>
+
+                                            <div class="section-header">
+                                                <div class="field is-grouped">
+                                                    <div class="column is-paddingless">
+                                                        <%= link_to "학교페이스북 방문하기", @school.fb , :target => "_blank", :class => 'button is-primary is-mobile-button is-width-half'%>
+                                                    </div>
+                                                </div>
+                                                <div class="field is-grouped">
+                                                    <div class="column is-paddingless">
+                                                        <%= link_to "인스타그람 방문하기", @school.insta , :target => "_blank", :class => 'button is-primary is-mobile-button is-width-half'%>
+                                                    </div>
+                                                </div>
+                                                <div class="field is-grouped">
+                                                    <div class="column is-paddingless">
+                                                        <%= link_to "학교홈페이지 방문하기", @school.web , :target => "_blank", :class => 'button is-primary is-mobile-button is-width-half'%>
+                                                    </div>
+                                                </div>
+                                                <div class="field is-grouped">
+                                                    <div class="column is-paddingless">
+                                                        <%= link_to "동영상정보 확인하기", @school.youtube , :target => "_blank", :class => 'button is-primary is-mobile-button is-width-half'%>
+                                                    </div>
+                                                </div>
+                                                <div class="field is-grouped">
+                                                    <div class="column is-paddingless">
+                                                        <%= link_to "등록신청 전체변경", edit_order_path(@order.id), :class => 'button is-black is-mobile-button is-width-half'%>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                            <% else %>
+
+                                        <p class="title">
+                                        <%= @order.extracoursename %>
+                                        </p>
+                                        <div>진행사항 : <%= @order_confirm.status %></div>
+                                        <div style="padding-top: 1em"></div>
+                                        <div> 
+                                            <div class="field is-grouped">
+                                                <div class="column is-paddingless">
+                                                    <%= link_to "등록신청 전체변경", edit_order_path(@order.id), :class => 'button is-black is-mobile-button is-width-half'%>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                            <% end %>
+                            
+
+                    <% else %>
+                                    <div>
+                                        <label><b>아직 선택하신 어학원이 없습니다.</b></label>
+                                        <div style="padding-top: 1em"></div>
+                                        <p>어학원 탭에서, 자신한테 맞는 어학원을 찾아보세요. 심층상담이 필요하시다면 메인페이지로 가서 심층상담 신청서를 작성해주세요. 유학원 상담받아보시고 연락주셔도 됩니다. -리피 </p>
+
+                                    </div>
+                                    <div style="padding-top: 1em"></div>
+
+                    <% end %>
+
                 </div>
 
-             <!--  </div> -->
-            </div> 
-        </div>
-    </section>
-  </div>
-</div>
 
 
+                <% if @order %>
+                <div class="column is-6 is-5-fullhd is-fullhd">
+                    <!--   <div style="padding-top: 2em"></div>
+                        <div>
+                            <p>어학원의 광고들은 유학원 및 다른곳에서도 충분히 보실수 있습니다. 부풀려져 있는 정보들에 환상을 가지기 보다, 직접 홈페이지및 소셜미디어를 확인해 보고, 어차피 가게 되는 같은 어학원을, 가장 저렴한 방법으로 등록할수 있는 방법에 대해 고민하세요. 문법위주/회화위주/무료수업 이런말들에 너무 큰기대를 갖지 마세요.</p>
+                        </div> -->
+                    <div style="padding-top: 2em"></div>
+                    <div>
+                        <label><b> 입국계획 </b></label>
+                    </div>
+                    <div style="padding-top: 1em"></div>
+                    <div class="table-flip-scroll tableFixHead">
+                        <table class="font-sqaure">
+                            <thead>
+                                <tr>
+                                    <th>입국일정</th>
+                                    <th>입국항공편</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        <%= @order.arrival.to_formatted_s(:db) =%>
+                                    </th>
+                                    <th>
+                                        <%= @order.flightinfo =%>
+                                    </th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div style="padding-top: 1em"></div>
+                    <div>
+                        <label><b>입국계획 다시 입력하기</b></label>
+                    </div>
+                    <div style="padding-top: 1em"></div>
+                    <p>변경하신 후에는 저에게(리피) 반드시 공지해주세요.</p>
+                    <div style="padding-top: 1em"></div>
+                    <div>
+                        <%= form_with(model: @order, local: true) do |form| %>
+                        <div class="field">
+                            아일랜드 예상도착일과 시각 / 홈스테이 입주일 (주말 입주 원칙)<br />
+                            비행기가 정해지지 않았다면 예상일로 남겨주세요.
+                            <div class="select">
+                                <%= form.datetime_select :arrival, :ampm => true, :minute_step => 10, :min => Date.today %>
+                            </div>
+                        </div>
+                        <div class="field">
+                            아일랜드 도착비행기 편 / 미정이라면 빈칸으로 남겨두세요. (예, BA2100 )<br />
+                            <%= form.text_field :flightinfo, :class => 'input' %>
+                        </div>
+                        <div class="actions">
+                            <%= form.submit '입국정보입력' , :class => 'button is-dark is-fullwidth' %>
+                        </div>
+                        <% end %>
+                    </div>
+                    <div style="padding-top: 2em"></div>
+                </div>
+                <% else %>
 
-<div class="columns is-desktop is-gapless">
-  <div class="column">
 
-    <section class="hero section is-hero is-info height-100">
-        <div class="columns is-vcentered">
-            <div class="column is-12 is-5-fullhd is-offset-1-fullhd">
-               <div class="section-header">
-                <h2 class="title is-2 is-spaced">어학원 등록 신청<span class="spacer is-horizontal is-05"></span></h2>
-                <h2 class="subtitle is-5">리피회원만 사용가능한 메뉴입니다. 가장 저렴한 등록을 도와드립니다.</h2>
-                <div class="field is-grouped">
-                  <div class="control"> <%= link_to "어학원 등록 신청하기", new_order_path, :class => 'button is-black'  %>
-                  </div>
-                </div> 
-               </div>              
+                <% end %>
             </div>
-          <!-- <div class="column is-12 is-5-fullhd is-offset-1-fullhd">
+        </section>
+    </div>
+    <div class="columns is-desktop is-gapless">
+        <div class="column">
+            <section class="hero section is-hero is-info height-100">
+                <div class="columns is-vcentered">
+                    <div class="column is-12 is-5-fullhd is-offset-1-fullhd">
+                        <div class="section-header">
+                            <h2 class="title is-2 is-spaced">어학원 등록 신청<span class="spacer is-horizontal is-05"></span></h2>
+                            <h2 class="subtitle is-5">리피회원만 사용가능한 메뉴입니다. 가장 저렴한 등록을 도와드립니다.</h2>
+                            <div class="field is-grouped">
+                                <div class="control">
+                                    <%= link_to "어학원 등록 신청하기", new_order_path, :class => 'button is-black'  %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="column is-12 is-5-fullhd is-offset-1-fullhd">
             <div class="section-header">
               <h2 class="title is-2 is-spaced">어학원 등록 신청하기<span
                                             class="spacer is-horizontal is-05"></span>
@@ -107,27 +199,25 @@
               </div> 
             </div>
           </div>
- -->
-        </div>
-    </section>
-
-    
-  </div>
-  <div class="column">
-      <section class="hero section is-hero is-success height-100">
-          <div class="columns is-vcentered">
-              <div class="column is-12 is-5-fullhd is-offset-1-fullhd">
-                <div class="section-header">
-                  <h2 class="title is-2 is-spaced">사용자 계정 관리<span class="spacer is-horizontal is-05"></span></h2>
-                  <h2 class="subtitle is-5">사용자의 계정정보를 관리하실수 있습니다. 비밀번호를 잊으셨다면, 이메일로 비밀번호를 다시 설정이 가능합니다.</h2>
-                  <div class="field is-grouped">
-                    <div class="control"> <%= link_to '나의 계정관리하기', edit_user_registration_path, :class => 'button is-black' %>
-                    </div>
-                  </div> 
+        -->
                 </div>
-              </div>
- 
-            <!-- <div class="column is-6 is-5-fullhd is-offset-1-fullhd">
+            </section>
+        </div>
+        <div class="column">
+            <section class="hero section is-hero is-success height-100">
+                <div class="columns is-vcentered">
+                    <div class="column is-12 is-5-fullhd is-offset-1-fullhd">
+                        <div class="section-header">
+                            <h2 class="title is-2 is-spaced">사용자 계정 관리<span class="spacer is-horizontal is-05"></span></h2>
+                            <h2 class="subtitle is-5">사용자의 계정정보를 관리하실수 있습니다. 비밀번호를 잊으셨다면, 이메일로 비밀번호를 다시 설정이 가능합니다.</h2>
+                            <div class="field is-grouped">
+                                <div class="control">
+                                    <%= link_to '나의 계정관리하기', edit_user_registration_path, :class => 'button is-black' %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="column is-6 is-5-fullhd is-offset-1-fullhd">
               <div class="section-header">
                 <h2 class="title is-2 is-spaced">사용자 계정 관리<span
                                               class="spacer is-horizontal is-05"></span>
@@ -140,25 +230,22 @@
                 </div> 
               </div>
             </div> -->
-           
-          </div>
-      </section>
-
-  </div>
-</div>
-
-
-<% if false %>
-  <% for attribute in @order.attributes.keys %>
-    <p><%= attribute.humanize %> <%= @order.attributes[attribute].to_s %></p>
-  <% end %>
-
-
-  <%= link_to 'Edit', edit_order_path(@order) %> |
-  <%= link_to 'Back', orders_path %>
-  <td><%= link_to 'Destroy', @order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-
-<% end %>
-
-
+                </div>
+            </section>
+        </div>
+    </div>
+    <% if false %>
+    <% for attribute in @order.attributes.keys %>
+    <p>
+        <%= attribute.humanize %>
+        <%= @order.attributes[attribute].to_s %>
+    </p>
+    <% end %>
+    <%= link_to 'Edit', edit_order_path(@order) %> |
+    <%= link_to 'Back', orders_path %>
+    <td>
+        <%= link_to 'Destroy', @order, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </td>
+    <% end %>
 </main>
+

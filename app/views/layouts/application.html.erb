@@ -115,67 +115,82 @@
             </nav>
         </header>
         <%= yield %>
+
+        
+        <div id="a1"></div>
         <footer id="footer" class="section has-background-black">
+            <div style="padding-top: 2em"></div>
+
             <div class="container is-fullhd">
                 <div class="container">
-                    <!--  <div class="">
-                    <div class="column is-narrow has-text-light" style="width: 300px;">
-                    <img alt="FTW logo" src="./FTW - blockchain lottery platform on NEO_files/ftw_mark.png" style="max-height: 1.75rem;"><br>
-                    <div class="content is-small">The future of lottery<br>
-                    FTW Corp LLC, Costa Rica<br>
-                    <a class="has-text-light" href="mailto:info@ftwcoin.io">Info@ftwcoin.io</a></div>
-                </div>
-            </div> -->
+                    <div class="">
+                            <!-- <div class="column is-narrow has-text-light" style="width: 300px;">
+                            <img alt="FTW logo" src="./FTW - blockchain lottery platform on NEO_files/ftw_mark.png" style="max-height: 1.75rem;"><br> -->
+                            
+                            <!-- <a class="has-text-light" href="mailto:info@ftwcoin.io">Info@ftwcoin.io</a></div> -->
+                       <!--  </div> -->
+                    </div>
                     <div class="column">
-                        <div class="columns">
+                        <div class="columns ">
                             <div class="column">
                                 <div class="centerme">
-                                    <h6 class="title is-6 has-text-light">About us</h6>
+                                    <%= image_tag("cubegreen.png", height: '48', width: '48') %>
+                                    <h6 class="font-weight-400 title is-5 font-kakao has-text-white" id="demo">
+                                    <script type="text/javascript">
+                                        var date = new Date();
+                                        document.getElementById("demo").innerHTML = "2015 ~ " + date.getFullYear() + " ©  리피"
+                                    </script></h6>
                                     <ul>
-                                        <li><a class="has-text-light" href="https://next.ftwcoin.io/#how-it-works">How it works</a></li>
-                                        <li><a class="has-text-light" href="https://next.ftwcoin.io/#features">Features</a></li>
-                                        <li><a class="has-text-light" href="https://next.ftwcoin.io/#ecosystem">Ecosystem</a></li>
-                                        <li><a class="has-text-light" href="https://next.ftwcoin.io/#currencies">Partners</a></li>
-                                        <li><a class="has-text-light" href="mailto:info@ftwcoin.io">Contact</a></li>
+                                    <div class="has-text-light content font-namsan">356 South Circular Rd, Dublin 8 Ireland<br>+353 87 2119 531<br>liffeydublin@naver.com</div>
+                                        <!-- <li><a class="font-weight-400 has-text-light" target="_blank" href="mailto:info@ftwcoin.io">Contact</a></li> -->
                                     </ul>
                                 </div>
                             </div>
                             <div class="column">
                                 <div class="centerme">
-                                    <h6 class="title is-6 has-text-light">Solutions</h6>
-                                    <ul>
-                                        <li><a class="has-text-light" href="https://next.ftwcoin.io/solutions/lottery">Create lottery</a></li>
-                                        <li><a class="has-text-light" href="https://next.ftwcoin.io/solutions/raffle">Create raffle</a></li>
-                                        <li><a class="has-text-light" href="https://next.ftwcoin.io/ecosystem">Ecosystem</a></li>
+<!--                                     <h6 class="font-weight-400 title is-4 has-text-light">&nbsp</h6>
+ -->                                    <ul>
+                                        <li><a class="font-namsan font-weight-400 has-text-light" target="_blank" href="https://blog.naver.com/b1uedays_">리피의 블로그</a></li>
+                                        <li><a class="font-namsan font-weight-400 has-text-light" target="_blank" href="https://www.instagram.com/liffeydublin/">리피의 인스타그람</a></li>
+                                        <li><a class="font-namsan font-weight-400 has-text-light" target="_blank" href="https://wiki.liffeyireland.com/wiki/Liffeywiki:%EC%86%8C%EA%B0%9C">리피의 아일랜드 소개</a></li>
+                                        
+                                        <!-- <li><a class="font-weight-400 has-text-light" target="_blank" href="https://next.ftwcoin.io/solutions/raffle">Create raffle</a></li>
+                                        <li><a class="font-weight-400 has-text-light" target="_blank" href="https://next.ftwcoin.io/ecosystem">Ecosystem</a></li> -->
                                     </ul>
                                 </div>
                             </div>
+                          
                             <div class="column">
                                 <div class="centerme">
-                                    <h6 class="title is-6 has-text-light">Information</h6>
+                                    <!-- <h6 class="font-weight-400 title is-6 has-text-light">Information</h6> -->
                                     <ul>
-                                        <li><a class="has-text-light" href="https://next.ftwcoin.io/terms">Terms</a></li>
-                                        <li><a class="has-text-light" href="https://next.ftwcoin.io/privacy-policy">Privacy</a>
+                                        <li><a class="font-namsan font-weight-400 has-text-light" target="_blank" href="https://wiki.liffeyireland.com/wiki/%EC%95%84%EC%9D%BC%EB%9E%9C%EB%93%9C_%EC%96%B4%ED%95%99%EC%97%B0%EC%88%98%EB%A5%BC_%EC%9C%84%ED%95%B4_%ED%95%84%EC%9A%94%ED%95%9C_%EA%B2%83%EB%93%A4">어학연수 준비물</a></li>
+                                        <li><a class="font-namsan font-weight-400 has-text-light" target="_blank" href="https://wiki.liffeyireland.com/wiki/%EC%BD%94%ED%81%AC%EC%97%B0%EC%88%98%EA%B0%80%EC%9D%B4%EB%93%9C">코크연수 가이드</a></li>
+                                        <li><a class="font-namsan font-weight-400 has-text-light" target="_blank" href="https://wiki.liffeyireland.com/wiki/%EC%96%B4%ED%95%99%EC%97%B0%EC%88%98%EC%97%90_%EB%93%9C%EB%8A%94_%EB%B9%84%EC%9A%A9">어학연수에 드는비용</a></li>
+                                        <li><a class="font-namsan font-weight-400 has-text-light" target="_blank" href="https://wiki.liffeyireland.com/wiki/Liffeywiki:%EB%A6%AC%ED%94%BC%EC%9D%98_%EC%95%84%EC%9D%BC%EB%9E%9C%EB%93%9C#.EC.95.84.EC.9D.BC.EB.9E.9C.EB.93.9C_.ED.95.99.EC.83.9D.EB.B9.84.EC.9E.90">아일랜드 학생비자</a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="column">
+                           <div class="column">
                                 <div class="centerme">
-                                    <h6 class="title is-6 has-text-light">Community</h6>
+                                    <!-- <h6 class="font-weight-400 title is-6 has-text-light">Community</h6> -->
                                     <ul>
-                                        <li><a rel="noopener noreferrer" target="_blank" class="has-text-light" href="https://medium.com/ftw-blog">Medium</a></li>
-                                        <li><a rel="noopener noreferrer" target="_blank" class="has-text-light" href="https://www.reddit.com/r/ftwcoin">Reddit</a></li>
-                                        <li><a rel="noopener noreferrer" target="_blank" class="has-text-light" href="https://t.me/ftwcoin">Telegram</a></li>
-                                        <li><a rel="noopener noreferrer" target="_blank" class="has-text-light" href="https://github.com/ForTheWinn">Github</a></li>
-                                        <li><a rel="noopener noreferrer" target="_blank" class="has-text-light" href="https://twitter.com/forthewincoin">Twitter</a></li>
+                                        <li><a rel="noopener noreferrer" target="_blank" class="font-namsan font-weight-400 has-text-light" href="https://wiki.liffeyireland.com/wiki/%EC%96%B4%ED%95%99%EC%9B%90%EB%B0%A9%ED%95%99">어학원 방학 ?</a></li>
+                                        <li><a rel="noopener noreferrer" target="_blank" class="font-namsan font-weight-400 has-text-light" href="https://wiki.liffeyireland.com/wiki/%EC%9C%A0%ED%95%99%EC%83%9D%EB%B3%B4%ED%97%98">건강보험이란 ?</a></li>
+                                        <li><a rel="noopener noreferrer" target="_blank" class="font-namsan font-weight-400 has-text-light" href="https://wiki.liffeyireland.com/wiki/%EA%B3%B5%EC%9D%B8%EC%9D%B8%EC%A6%9D%EC%8B%9C%ED%97%98_-_End_of_course_Exam">공인인증시험 ?</a></li>
+                                        <!-- <li><a rel="noopener noreferrer" target="_blank" class="font-weight-400 has-text-light" href="https://github.com/ForTheWinn">Github</a></li>
+                                        <li><a rel="noopener noreferrer" target="_blank" class="font-weight-400 has-text-light" href="https://twitter.com/forthewincoin">Twitter</a></li> -->
                                     </ul>
                                 </div>
-                            </div>
+                            </div> 
                         </div>
                     </div>
                 </div>
             </div>
+            <div style="padding-top: 2em"></div>
+            <div style="padding-top: 2em"></div>
+            <div style="padding-top: 1em"></div>
         </footer>
 </body>
 

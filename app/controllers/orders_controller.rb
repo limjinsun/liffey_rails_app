@@ -27,7 +27,13 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
-    @order = Order.new
+    params_hash = params.to_enum.to_h
+    if params_hash.length() < 3
+      @order = Order.new
+    else
+      @order = Order.new
+      @order.course_id = params_hash["course_id"]
+    end
   end
 
   # GET /orders/1/edit
@@ -93,7 +99,6 @@ class OrdersController < ApplicationController
       params.require(:order).permit(
         :name,
         :address,
-        :school,
         :arrival,
         :duration_homestay,
         :exitexam,
@@ -103,7 +108,9 @@ class OrdersController < ApplicationController
         :vacation2_start,
         :vacation2_end,
         :refprice,
-        :course
+        :course_id,
+        :extracoursename,
+        :flightinfo
       )
     end
     

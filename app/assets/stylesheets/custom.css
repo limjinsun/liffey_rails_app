@@ -507,7 +507,7 @@ input[type=checkbox] + label:before, input[type=radio] + label:before {
     margin-right: 10px;
     text-align: center;
     font-size: 0.42em;
-    padding: 0.615em 1.12em 0.62em 0.90em;
+    padding: 0.615em 1.12em 0.58em 0.90em; /*0.615em 1.12em 0.58em 0.90em;*/
     color: #efe4ea;
     transition: color .4s;
     /*border: 2px solid #b462d2;*/
@@ -559,4 +559,47 @@ input[type=checkbox][disabled] + label:before, input[type=radio][disabled] + lab
 .columns.is-vcentered {
     margin-left: 0em;
     margin-right: 0em;
+}
+
+
+.button, .input, .textarea, .select select, .file-cta, .file-name, .pagination-previous, .pagination-next, .pagination-link, .pagination-ellipsis {
+    margin-bottom: 0.5em !important;
+    margin-right: 0.5em !important;
+}
+
+.select {
+    display: inline-table !important;
+}
+
+
+@media screen and (max-width: 800px) {
+    .hero.section.is-hero.is-warnning.mobile-padding-less {
+        padding: 1.5em 2em 0em 2em;
+    }
+    .section {
+        padding: 1.5rem 1rem 1rem 1rem;
+    }
+    .mobile-only {
+        padding-left: 2em;
+    }
+}
+
+.section {
+    padding: 2.2rem 1rem 1rem 1rem;
+}
+
+
+@media screen and (min-width: 800px) {
+    .mobile-only {
+        display: none;
+    }
+}
+
+/* 버튼 밑에 패딩줄임 */
+.field:not(:last-child) {
+    margin-bottom: 0.1rem;
+}
+
+.font-weight-400 {
+    font-weight: 400 !important;
 }

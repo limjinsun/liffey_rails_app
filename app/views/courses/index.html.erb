@@ -80,7 +80,8 @@
 
                 <div class="columns is-vcentered">
                     <div class="column is-12 is-10-fullhd is-offset-1-fullhd is-paddingless">
-
+                        <div class="mobile-only"><p><i class="fa fa-arrow-circle-right">&nbsp&nbsp</i><b>모바일 뷰에서는 테이블이 옆으로 스크롤 됩니다.</b></p></div>
+                        <div style="padding-top: 1em"></div>
                         <div class="table-flip-scroll tableFixHead">
                             <table class="">
                                 <thead class="font-sqaure">
@@ -105,7 +106,7 @@
                                             <td><%= course.school.name %></td>
                                             <td><%= course.name %></td>
                                             <td><%= convert_euro_to_won(course.price) %></td>
-                                            <td><%= link_to "할인 등록", course_path(course.id), :class => 'button is-success is-small font-kakao'  %></td>
+                                            <td><%= link_to "할인 등록", new_order_path(:course_id => course.id), :class => 'button is-success is-small font-kakao'  %></td>
                                             <td><%= course.school.nationalmix %></td>
                                             <td><%= course.school.certificate %></td>
                                             <td><%= course.school.good %></td>
@@ -131,7 +132,3 @@
     </div>
 
 </main>
-
-
-
-

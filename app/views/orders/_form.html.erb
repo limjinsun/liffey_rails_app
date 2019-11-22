@@ -40,8 +40,92 @@
                 </div>
               <% end %>
 
+              <% if @order.course_id %>
+                    <% @course = Course.find(@order.course_id) %>
+                    <% @school = School.find(@course.school_id) %>
+                    <%= form.hidden_field :course_id, value: @course.id %>
+     
+
+                            <div class="card-content" style="padding-bottom: 0rem">
+                                <div class="tile is-vertical is-12">
+                                    <strong class="font-sqaure">📍&nbsp
+                                        <%= @school.location %></strong>
+                                </div>
+                                <div class="tile is-vertical is-12">
+                                    <p class="level-item font-namsan has-text-black-ter is-size-2">
+                                        <%= @school.name %>
+                                    </p>
+                                </div>
+                                <div class="tile is-vertical is-12">
+                                    <p class="level-item has-text-black-ter font-sqaure">🏛&nbsp&nbsp
+                                        <%= @course.name %>
+                                    </p>
+                                </div>
+                                <div class="tile is-vertical is-12">
+                                    <p class="level-item has-text-black font-sqaure"><span>📈&nbsp&nbsp유학원 공식가격&nbsp ₩ &nbsp<span class="schoolPrice" id="price">
+                                        <%= convert_euro_to_won(@course.price) %>
+                                    </p>
+                                </div>
+
+                                <div class="tile is-vertical is-12">
+                                    <div class="level-item has-text-black-ter">
+                                         <p>리피회원가는 상기가격보다 항시저렴합니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label><b> 별도비용 </b></label>
+                            </div>
+                            <div style="padding-top: 1em"></div>
+                            <div class="table-flip-scroll tableFixHead">
+                                <table class="font-sqaure">
+                                    <thead>
+                                        <tr>
+                                            <th>입학비</th>
+                                            <th>교재비</th>
+                                            <th>건강보험비</th>
+                                            <th>인증시험비</th>
+                                            <th>홈스테이 부킹피</th>
+                                            <th>홈스테이비(1주당)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><%= convert_euro_to_won(@school.admissionfee) %></td>
+                                            <td><%= convert_euro_to_won(@school.textbookfee) %></td>
+                                            <td><%= convert_euro_to_won(@school.insurancefee) %></td>
+                                            <td><%= convert_euro_to_won(@school.examfee) %></td>
+                                            <td><%= convert_euro_to_won(@school.hostbookingfee) %></td>
+                                            <td><%= convert_euro_to_won(@school.hostfeeperweek) %></td>
+                                        </tr>
+                                       
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div style="padding-top: 1em"></div>
+                            <div>
+                                <label><b> 공지 </b></label>
+                            </div>
+                            <div style="padding-top: 1em"></div>
+                            <div>
+                                 <p>워킹홀리데이 비자 소지자는 건강보험비와 공인인증시험비가 들지 않습니다. 홈스테이 또한 원하시는 분에 한해서만 연계가 됩니다. 홈스테이가 고민이 된다면 일단 제외하시고 신청이 가능합니다. 어학원에 따라서 별도비용이 면제처리 되는 곳들도 있습니다. 리피회원분들께는 각 어학원의 상황에 맞춰가장 저렴하게 진행해 드립니다.</p>
+                            </div>
+                            <div style="padding-top: 2em"></div>
+
+
+              <% else %>
+
+                    <div class="field">
+                      신청 어학원과 코스이름 직접적어주세요.(예, 리피어학원 25주과정 오전코스)
+                      <%= form.text_field :extracoursename, :class => 'input' %>
+                    </div>
+                        
+              <% end %>
+
+
               <div class="field">
-                성명
+                이름
                 <%= form.text_field :name, :class => 'input' %>
               </div>
 
@@ -51,31 +135,27 @@
               </div>
 
               <div class="field">
-                신청 어학원 (예, 리피어학원)
-                <%= form.text_field :school, :class => 'input' %>
-              </div>
-
-              <div class="field">
-                코스이름 (예, 25주과정 오전코스)
-                <%= form.text_field :course, :class => 'input' %>
-              </div>
-
-              <div class="field">
-                아일랜드 예상도착일 / 홈스테이 입주일 (주말 입주 원칙)<br/>
+                아일랜드 예상도착일과 시각 / 홈스테이 입주일 (주말 입주 원칙)<br/>
+                비행기가 정해지지 않았다면 예상일로 남겨주세요.
                 <div class="select">
-                  <%= form.date_select :arrival, min: Date.today %>
+                  <%= form.datetime_select :arrival, :ampm => true, :minute_step => 10, :min => Date.today %>
                 </div>
               </div>
 
               <div class="field">
                 홈스테이 원하는 기간 (원할시 에만 표기)<br/>
                 <div class="select">
-                  <%= form.select :duration_homestay, ['필요없음', '1주', '2주', '3주', '4주'] %>
+                  <%= form.select :duration_homestay, ['필요없음', '1주', '2주', '3주', '4주'], {:class => 'input'} %>
                 </div>
               </div>
 
               <div class="field">
-                공인 영어 시험 (영어 시험에 관련한 내용은 다음 링크에서 확인하세요.)<br/>
+                아일랜드 도착비행기 편 / 미정이라면 빈칸으로 남겨두세요. (예, BA2100 )<br/>
+                <%= form.text_field :flightinfo, :class => 'input' %>
+              </div>
+
+              <div class="field">
+                공인 영어 시험 (영어시험에 관련한 내용은 다음 <a href="https://wiki.liffeyireland.com/wiki/%EA%B3%B5%EC%9D%B8%EC%9D%B8%EC%A6%9D%EC%8B%9C%ED%97%98_-_End_of_course_Exam" target="_blank"> <b>링크</b></a>에서 확인하세요.)<br/>
                 <div class="radio">
                   <%= form.radio_button :exitexam, 'ielts' %>
                   <%= form.label :exitexam, '아이엘츠 공인시험', :value => 'ielts' %>
@@ -88,17 +168,19 @@
                   <span style="margin:0 30px 0 0;"></span>
                 </div>
               </div>
-
+              
+              <div style="padding-top: 1em"></div>
               <div class="field">
-                메디컬 인슈어런스 (원할시 에만 체크, 자세한 사항을 링크에서 확인하세요.)<br/>
+                메디컬 인슈어런스 (원할시에만 체크, 관련한 내용은 다음<a href="https://wiki.liffeyireland.com/wiki/%EC%9C%A0%ED%95%99%EC%83%9D%EB%B3%B4%ED%97%98" target="_blank"> <b>링크</b></a> 에서 확인하세요. )<br/>
                 <div class="checkbox">
                   <%= form.check_box :medical_insurance %>
                   <%= form.label :medical_insurance, '필요' %>
                 </div>
               </div>
-
-              <p> 어학원 방학 (자세한 사항은 링크를 확인하세요.) </p>
-
+              <br/>
+              <p> 어학원 방학 (자세한 사항은 <a href="https://wiki.liffeyireland.com/wiki/%EC%96%B4%ED%95%99%EC%9B%90%EB%B0%A9%ED%95%99" target="_blank"> <b>링크</b></a>를 확인하세요.) </p>
+              <br/>
+              <p> 방학 계획은, 추후에 변경하실수 있습니다 </p>
               <div class="field">
                 어학원 첫번째 방학 시작일 <br/>
                 <div class="select">
@@ -128,7 +210,7 @@
               </div>
 
               <div class="field">
-                참고된 어학원 가격 혹은 기타사항.<br/>
+                기타사항이 있다면 적어주세요.<br/>
                 <%= form.text_area(:refprice, size: '50x10', :class => 'input', :style => 'height: 250px;') %>
 
               </div>
@@ -141,12 +223,26 @@
             <% end %>
 
           <br/>
-
-
           <br/>
           <br/>
+
+
+
         </div>
       </div>
     </div>
   </section>
 </div>
+
+
+<% if false %>
+
+              <!-- <div class="field">
+                어학원의 코스를 골라주세요. 보기에 없을시에는 '선택하세요' 로 남겨주신후, 다음 칸에 적어주세요.
+                <%= form.collection_select :course_id, Course.all, :id, :get_name, {prompt: true}, {:class => 'input'} %>
+              </div> -->
+
+
+          
+
+<% end %>

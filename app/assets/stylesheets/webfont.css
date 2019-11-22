@@ -35,7 +35,7 @@
 /* 
  * Namsan font 
  */
-/*@font-face {
+@font-face {
     font-family: 'seoul-namsan-jung-m';
     src: url('seoulnamsanjungm.eot');
     src: url('seoulnamsanjungm.eot?#iefix') format('embedded-opentype'),
@@ -45,11 +45,11 @@
          url('seoulnamsanjungm.svg#seoul-namsan-jung-m') format('svg');
     font-weight: normal;
     font-style: normal;
-}*/
+}
 /*
  * Kakao
  */
-/*@font-face {
+@font-face {
     font-family: 'Kakao';
     font-style: normal;
     font-weight: 400;
@@ -77,5 +77,5 @@
     url(KakaoOTF-cBd.eot) format('eot'),
     url(KakaoOTF-cBd.woff2) format('woff2'),
     url(KakaoOTF-cBd.woff) format('woff'),
-    url(KakaoOTF-cBd.otf) format('opentype');*/
+    url(KakaoOTF-cBd.otf) format('opentype');
 }

@@ -1,0 +1,6 @@
+class RemoveCourseFromOrders < ActiveRecord::Migration[6.0]
+  def change
+
+    remove_column :orders, :course, :string
+  end
+end

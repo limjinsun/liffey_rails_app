@@ -1,16 +1,16 @@
 class ProfileController < ApplicationController
   before_action :check_user_logged_in
-  before_action :get_users_order, only: [:userdetail]
+  before_action :get_users_order_and_orderconfirm, only: [:userdetail]
 
   def userdetail
-    # puts 'id : ' + current_user.id.to_s
-    # puts @orders.size
   end
 
   private
-    def get_users_order
+    def get_users_order_and_orderconfirm
       @order = Order.where("user_id = ?", current_user.id.to_s).first
-      # @order = Order.where("user_id = ?", current_user.id.to_s)
+      if @order
+        @order_confirm = OrderConfirm.where("order_id = ?", @order.id.to_s).first
+      end
     end
 
     def check_user_logged_in 

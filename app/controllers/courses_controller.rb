@@ -25,6 +25,7 @@ class CoursesController < ApplicationController
             duration_hash.map{|k,v| duration_array.push(k) }
             duration_array = duration_array.map { |e| e.to_s[9..-1] }.map { |e| e.prepend('%') }.map { |e| e << '%' }
 
+            # SQL query logic
             if location_array.length() == 0
                 if time_array.length() == 0 
                     if duration_array.length() == 0

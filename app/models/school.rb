@@ -4,4 +4,5 @@ class School < ApplicationRecord
     def name_with_location
         "#{name}. #{location}"
     end
+
 end

@@ -41,7 +41,7 @@
                         <footer class="card-footer">
                             <p class="card-footer-item">
                                 <span>
-                                    <a class="font-sqaure">할인하여 등록신청 하기</a>
+                                    <%= link_to "할인하여 등록신청 하기", new_order_path(:course_id => @course.id), :class => 'font-sqaure'  %>
                                 </span>
                             </p>
                         </footer>
@@ -63,29 +63,33 @@
                         </div>
                         <div style="padding-top: 2em"></div>
                         <div>
-                            <p>더블린 시티</p>
-                            <p>중소규모</p>
-                            <p>한반 15명 내외</p>
-                            <p>인증 캠브릿지/ACELS/MEI</p>
-                            <p>학원주소 : 3 Abbey Street Lower, North City, Dublin 1</p>
+                            <p><%= @course.school.location %></p>
+                            <p><%= @course.school.size %></p>
+                            <p>한반 평균인원수 : <%= @course.school.classsize %></p>
+                            <p>인증 : <%= @course.school.certificate %></p>
+                            <p>학원주소 : <%= @course.school.address %></p>
                         </div>
 
                         <div style="padding-top: 2em"></div>
                         <div class="section-header">
                             <div class="field is-grouped">
-                                <div class="column is-paddingless"> <%= link_to "학교홈페이지 방문하기", new_order_path, :class => 'button is-primary is-mobile-button is-width-half'  %>
+                                <div class="column is-paddingless"> 
+                                    <%= link_to "학교페이스북 방문하기", @course.school.fb , :target => "_blank", :class => 'button is-primary is-mobile-button is-width-half'%>
                                 </div>
                             </div>
                             <div class="field is-grouped">
-                                <div class="column is-paddingless"> <%= link_to "어학원 페이스북 구경하기", new_order_path, :class => 'button is-primary is-mobile-button is-width-half'  %>
+                                <div class="column is-paddingless"> 
+                                    <%= link_to "인스타그람 방문하기", @course.school.insta , :target => "_blank", :class => 'button is-primary is-mobile-button is-width-half'%>
                                 </div>
                             </div>
                             <div class="field is-grouped">
-                                <div class="column is-paddingless"> <%= link_to "어학원 인스타그람 구경하기", new_order_path, :class => 'button is-primary is-mobile-button is-width-half'  %>
+                                <div class="column is-paddingless"> 
+                                    <%= link_to "학교홈페이지 방문하기", @course.school.web , :target => "_blank", :class => 'button is-primary is-mobile-button is-width-half'%>
                                 </div>
                             </div>
                             <div class="field is-grouped">
-                                <div class="column is-paddingless"> <%= link_to "동영상채널 확인 해보기", new_order_path, :class => 'button is-primary is-mobile-button is-width-half'  %>
+                                <div class="column is-paddingless"> 
+                                    <%= link_to "동영상정보 확인하기", @course.school.youtube , :target => "_blank", :class => 'button is-primary is-mobile-button is-width-half'%>
                                 </div>
                             </div>
 
@@ -120,12 +124,12 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>테트</td>
-                                        <td>한글입니다</td>
-                                        <td>한글입니다</td>
-                                        <td>한글입니다</td>
-                                        <td>한글입니다</td>
-                                        <td>한글입니다</td>
+                                        <td><%= convert_euro_to_won(@course.school.admissionfee) %></td>
+                                        <td><%= convert_euro_to_won(@course.school.textbookfee) %></td>
+                                        <td><%= convert_euro_to_won(@course.school.insurancefee) %></td>
+                                        <td><%= convert_euro_to_won(@course.school.examfee) %></td>
+                                        <td><%= convert_euro_to_won(@course.school.hostbookingfee) %></td>
+                                        <td><%= convert_euro_to_won(@course.school.hostfeeperweek) %></td>
                                     </tr>
                                    
                                 </tbody>
@@ -141,7 +145,9 @@
                         </div>
                         <div style="padding-top: 2em"></div>
                         <div class="field is-grouped">
-                            <div class="column is-paddingless"> <%= link_to "상담신청하기", new_order_path, :class => 'button is-warning is-mobile-button is-width-half'  %>
+                            <div class="column "> <%= link_to "할인등록신청하기", new_order_path(:course_id => @course.id), :class => 'button is-warning is-mobile-button is-fullwidth'  %>
+                            </div>
+                            <div class="column "> <%= link_to "상담신청하기", introduction_consulting_path, :class => 'button is-info is-mobile-button is-fullwidth'  %>
                             </div>
                         </div>
 
@@ -154,7 +160,6 @@
         </div>
     </div>
 </main>
-
 
 
 
