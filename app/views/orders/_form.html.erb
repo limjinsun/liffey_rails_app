@@ -4,6 +4,7 @@
       <div class="columns is-vcentered">
         <div class="column is-12 is-11-fullhd is-offset-1-fullhd">
           <div class="section-header">
+            <div style="padding-top: 1em"></div>
             <h1 class="title is-spaced">아일랜드 어학원 <span class="is-hidden-touch"><br>
               </span>
               등록신청</h1>
@@ -14,6 +15,7 @@
                   <br/>
                 </p>
               </h2>
+              <div style="padding-top: 1em"></div>
           </div>
         </div>
       </div>
@@ -117,7 +119,7 @@
               <% else %>
 
                     <div class="field">
-                      신청 어학원과 코스이름 직접적어주세요.(예, 리피어학원 25주과정 오전코스)
+                      신청 어학원과 코스이름 직접 작성해주세요. 가장 저렴한 진행을 도와드립니다.(예, 리피어학원 25주과정 오전코스)
                       <%= form.text_field :extracoursename, :class => 'input' %>
                     </div>
                         
@@ -136,7 +138,7 @@
 
               <div class="field">
                 아일랜드 예상도착일과 시각 / 홈스테이 입주일 (주말 입주 원칙)<br/>
-                비행기가 정해지지 않았다면 예상일로 남겨주세요.
+                비행기가 정해지지 않았다면 예상일로 작성해 주세요.
                 <div class="select">
                   <%= form.datetime_select :arrival, :ampm => true, :minute_step => 10, :min => Date.today %>
                 </div>
@@ -150,7 +152,7 @@
               </div>
 
               <div class="field">
-                아일랜드 도착비행기 편 / 미정이라면 빈칸으로 남겨두세요. (예, BA2100 )<br/>
+                아일랜드 도착비행기 편 (예, BA2124) / 미정이라면 빈칸으로 비워두세요. <br/>
                 <%= form.text_field :flightinfo, :class => 'input' %>
               </div>
 

@@ -53,7 +53,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-
+### 
 
 ### 27/SEP/2019 adding 'devise' for authentication.
 gem 'devise'
@@ -77,3 +77,10 @@ gem 'rest-client'
 
 ### 11/Nov/2019 for web crawling
 gem 'nokogiri', '~> 1.6', '>= 1.6.8'
+
+### 22/Nov/2019 for active admin 
+gem 'activeadmin'
+
+
+
+
