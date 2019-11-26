@@ -1,14 +1,162 @@
-<p id="notice"><%= notice %></p>
+<main class="app-content">
+    <div class="is-gapless">
+        <div class="">
+            <section class="hero section is-hero is-warning">
+                <div class="columns is-vcentered">
+                    <div class="column is-12 is-5-fullhd is-offset-1-fullhd">
+                        <div class="section-header">
+                            <p class="has-text-black">📌<b> 연수/워홀 성공을 위한 조언들을 보실수 있습니다. 궁금한점을 공개 상담하실수 있습니다.</b></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="is-gapless">
+        <div class="container">
+            <div style="padding-top: 1em"></div>
+            <section class="hero">
+                <div class="hero-body">
+                    <div class="columns is-desktop">
+                        <div class="column is-half is-offset-one-quarter">
+                            <div class="reset-table">
+                                <table class="post-detail-table">
+                                    <thead>
+                                        <tr>
+                                            <th class="has-text-centered" callspan="2">
+                                                <%= @post.title %>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="padding-bottom: 1em !important;">
+                                            <td>
+                                                <%= hide_email_detail(@post.user.email) %>
+                                            </td>
+                                            <td class="has-text-right">
+                                                <%= @post.created_at.to_date.to_formatted_s(:rfc822) %>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <%= @post.body.html_safe %>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="has-text-left">
+                                                <%= link_to "뒤로가기", :back %>
+                                            </td>
+                                            <% if @post.user == current_user %>
+                                            <td class="has-text-right">
+                                                <%= link_to '수정', edit_post_path(@post)  %> |
+                                                <%= link_to '삭제', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+                                            </td>
+                                            <% else %> 
+                                            <td></td>
+                                            <% end %>
+                                        </tr>
+                                        <% if @comments_belongs_to_post %>
+                                                <% @comments_belongs_to_post.each_with_index do |comment, index| %>
+                                                        <% if index%2 != 0 %>
+                                                                <tr class="comment_tr">
+                                                        <% else %>
+                                                                <tr class="comment_tr" style="background-color: #F8F8F8">   
+                                                        <% end %>
+                                                                    <td class="comment_tr">
+                                                                        <%= hide_email_detail(User.find(comment.user_id).email) %>
+                                                                    </td>
+                                                                    <td class="comment_tr has-text-right">
+                                                                        <%= comment.created_at.to_date.to_formatted_s(:rfc822) %>
+                                                                    </td>
+                                                                </tr>
+                                                        <% if index%2 != 0 %>
+                                                                <tr class="comment_tr">
+                                                        <% else %>
+                                                                <tr class="comment_tr" style="background-color: #F8F8F8">   
+                                                        <% end %>
+                                                                    <td class="comment_tr" colspan="2">
+                                                                        <div>
+                                                                            <%= comment.content.html_safe %>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                        <% if comment.user == current_user %>
+                                                                <% if index%2 != 0 %>
+                                                                        <tr class="comment_tr">
+                                                                <% else %>
+                                                                        <tr class="comment_tr" style="background-color: #F8F8F8">   
+                                                                <% end %>
+                                                                            <td class="comment_tr has-text-left">
+                                                                            </td>
+                                                                            <td class="comment_tr has-text-right is-size-7">
+                                                                                <%= link_to '수정', post_path(@post, :comment_id => comment.id.to_s) %> |
+                                                                                <%= link_to '삭제', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+                                                                            </td>
+                                                                        </tr>
+                                                        <% end %>
+                                                <% end %>
+                                        <% end %>
+                                        <tr>
+                                            <td colspan="2">
+                                                <% if @comment.user %>
+                                                    <% if @comment.user == current_user %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+                                                            <%= form_with(model: @comment) do |form| %>
+                                                            <div>
+                                                                <%= form.cktext_area :content, ckeditor: {:toolbarStartupExpanded => false, :toolbarCanCollapse => false, :toolbar => 'nomenu', :language => 'ko', contentsCss: asset_path("ckeditor/content-style.css"), height: '180px'} %>
+                                                                
+                                                                <%= hidden_field_tag 'post_id', @post.id.to_s %>
+                                                                <div style="padding-top: 1em"></div>
+                                                                <%= form.submit  '댓글달기' , :class => 'button is-dark is-fullwidth' %>
+                                                            </div>
+                                                            <% end %>
 
-<p>
-  <strong>Body:</strong>
-  <%= @post.body %>
-</p>
+                                                    <% end %>
+                                                <% else %>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+                                                            <%= form_with(model: @comment, url: comments_path, local: true) do |form| %> 
+                                                            <div>
+                                                                <%= form.cktext_area :content, ckeditor: {:toolbarStartupExpanded => false, :toolbarCanCollapse => false, :toolbar => 'nomenu', :language => 'ko', contentsCss: asset_path("ckeditor/content-style.css"), height: '180px'} %>
+                                                                
+                                                                <%= hidden_field_tag 'post_id', @post.id.to_s %>
+                                                                <div style="padding-top: 1em"></div>
+                                                                <%= form.submit  '댓글달기' , :class => 'button is-dark is-fullwidth' %>
+                                                            </div>
+                                                            <% end %>
+
+                                                <% end %>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div id="your_div"></div>
+</main>
+
+
+<script type="text/javascript">
+    var field = 'comment_id';
+    var url = window.location.href;
+    if(url.indexOf('?' + field + '=') != -1) {
+        console.log("id-found")
+       $('html, body').animate({
+                scrollTop: $(your_div).offset().top
+        }, 1700, function(){});
+
+    }
+    else if(url.indexOf('&' + field + '=') != -1) {
+        console.log("id-found")
+        $('html, body').animate({
+                scrollTop: $(your_div).offset().top
+        }, 1700, function(){});
+
+    }
+</script>
+
+

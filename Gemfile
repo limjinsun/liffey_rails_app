@@ -78,9 +78,21 @@ gem 'rest-client'
 ### 11/Nov/2019 for web crawling
 gem 'nokogiri', '~> 1.6', '>= 1.6.8'
 
-### 22/Nov/2019 for active admin 
-gem 'activeadmin'
+# Rails_Admin install 23/Nov/2019
+gem 'remotipart', github: 'mshibuya/remotipart'
+gem 'rails_admin', github: 'sferik/rails_admin'
+gem 'rails_admin_rollincode', '~> 1.0'
+gem "devise"
 
 
+# add text editor
+gem 'ckeditor', github: 'galetahub/ckeditor'
+# gem 'slim-rails', github: 'slim-template/slim-rails'
+
+# for file upload
+gem 'carrierwave', '~> 2.0.2'
+
+# pagination
+gem 'kaminari'
 
 

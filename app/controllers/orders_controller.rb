@@ -14,7 +14,7 @@ class OrdersController < ApplicationController
     end
   end
 
-  # GET /orders/1
+  # GET /orders/0
   # GET /orders/1.json
   def show
     if @order.user_id.to_s == current_user.id.to_s || current_user.admin? #접근할려는 게시물의 해당 유저이거나, 관리자인 경우에만 show 를 렌더.

@@ -5,14 +5,14 @@
       <div class="columns is-vcentered">
         <div class="column is-6 is-5-fullhd is-offset-1-fullhd">
           <div class="section-header">
-            <div style="padding-top: 2em"></div>
+            <div style="padding-top: 1em"></div>
             <div style="padding-top: 2em"></div>
              <h2 class="title is-2 is-spaced">로그인<span
                                         class="spacer is-horizontal is-05"></span>
               </h2>
               <h2 class="subtitle is-6">리피의 아일랜드 회원 로그인</h2>
               <div style="padding-top: 2em"></div>
-              <div style="padding-top: 2em"></div>
+              <div style="padding-top: 1em"></div>
           </div>
         </div>
       </div>
@@ -23,7 +23,7 @@
     <div class="hero-body">
       <div class="container">
         <div class="column is-half is-offset-one-quarter">
-          <div style="padding-top: 2em"></div>
+          <div style="padding-top: 1em"></div>
           <h2 class="title"><%= t('.sign_in') %></h2>
           <% if notice %>
             <p class="alert alert-success"><%= notice %></p>
@@ -47,12 +47,14 @@
                 <%= f.label :remember_me %>
               </div>
             <% end %>
+            <div style="padding-top: 1em"></div>
             <div class="actions">
               <%= f.submit t('.sign_in'), :class => 'button is-black' %>
             </div>
           <% end %>
-          <div style="padding-top: 2em"></div>
+          <div style="padding-top: 1em"></div>
           <%= render "customdevise/shared/links" %>
+          <div style="padding-top: 2em"></div>
         </div>
       </div>
     </div>

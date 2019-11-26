@@ -1,675 +1,130 @@
 <main class="app-content">
     <div class="is-gapless">
         <div class="">
-            <section class="hero section is-hero is-warnning">
+            <section class="hero section is-hero is-warning">
                 <div class="columns is-vcentered">
-                    <div class="column is-6 is-5-fullhd is-offset-1-fullhd">
+                    <div class="column is-12 is-5-fullhd is-offset-1-fullhd">
                         <div class="section-header">
-                            <h2 class="title is-2 is-spaced">어학원 검색기<span class="spacer is-horizontal is-05"></span></h2>
-                            <h2 class="subtitle is-5">아일랜드내 모든 어학원의 정보를 검색해 보실수 있습니다. 유학원의 가격정보와 비교해 보실수 있습니다.</h2>
-                            <div class="field is-grouped">
-                                <div class="control"> <%= link_to "도착일정 변경하기", new_order_path, :class => 'button is-black'  %>
-                                </div>
-                                <div class="control"> <%= link_to "도착일정 변경하기", new_order_path, :class => 'button is-black'  %>
-                                </div>
-                                <div class="control"> <%= link_to "도착일정 변경하기", new_order_path, :class => 'button is-black'  %>
-                                </div>
-                            </div>
+                            <p class="has-text-black">📌<b> 연수/워홀 성공을 위한 조언들을 보실수 있습니다. 궁금한점을 공개 상담하실수 있습니다.</b></p>
                         </div>
                     </div>
-                    <!-- <div class="column is-6 is-5-fullhd is-offset-1-fullhd">
-                    <div class="field has-addons">
-                    <p class="control">
-                    <input class="input" type="text" placeholder="Find a post">
-                </p>
-                <p class="control">
-                <button class="button">
-                Search
-            </button>
-        </p>
-    </div>
-</div> -->
-</div>
-</section>
-</div>
-</div>
-
-<div class="is-gapless">
-    <div class="">
-        <section class="hero section is-hero is-paddingless is-marginless">
-
-            <div class="columns is-vcentered">
-                <div class="column is-12 is-10-fullhd is-offset-1-fullhd">
-
-                    <div class="table-flip-scroll">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th><abbr title="Position">Pos</abbr></th>
-                                    <th>Team</th>
-                                    <th><abbr title="Played">Pld</abbr></th>
-                                    <th><abbr title="Won">W</abbr></th>
-                                    <th><abbr title="Drawn">D</abbr></th>
-                                    <th><abbr title="Lost">L</abbr></th>
-                                    <th><abbr title="Goals for">GF</abbr></th>
-                                    <th><abbr title="Goals against">GA</abbr></th>
-                                    <th><abbr title="Goal difference">GD</abbr></th>
-                                    <th><abbr title="Points">Pts</abbr></th>
-                                    <th>Qualification or relegation</th>
-                                    <th>Team</th>
-                                    <th><abbr title="Played">Pld</abbr></th>
-                                    <th><abbr title="Won">W</abbr></th>
-                                    <th><abbr title="Drawn">D</abbr></th>
-                                    <th><abbr title="Lost">L</abbr></th>
-                                    <th><abbr title="Goals for">GF</abbr></th>
-                                    <th><abbr title="Goals against">GA</abbr></th>
-                                    <th><abbr title="Goal difference">GD</abbr></th>
-                                    <th><abbr title="Points">Pts</abbr></th>
-                                    <th>Qualification or relegation</th>
-                                    <th>Team</th>
-                                    <th><abbr title="Played">Pld</abbr></th>
-                                    <th><abbr title="Won">W</abbr></th>
-                                    <th><abbr title="Drawn">D</abbr></th>
-                                    <th><abbr title="Lost">L</abbr></th>
-                                    <th><abbr title="Goals for">GF</abbr></th>
-                                    <th><abbr title="Goals against">GA</abbr></th>
-                                    <th><abbr title="Goal difference">GD</abbr></th>
-                                    <th><abbr title="Points">Pts</abbr></th>
-                                    <th>Qualification or relegation</th>
-                                    <th>Team</th>
-                                    <th><abbr title="Played">Pld</abbr></th>
-                                    <th><abbr title="Won">W</abbr></th>
-                                    <th><abbr title="Drawn">D</abbr></th>
-                                    <th><abbr title="Lost">L</abbr></th>
-                                    <th><abbr title="Goals for">GF</abbr></th>
-                                    <th><abbr title="Goals against">GA</abbr></th>
-                                    <th><abbr title="Goal difference">GD</abbr></th>
-                                    <th><abbr title="Points">Pts</abbr></th>
-                                    <th>Qualification or relegation</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th>1</th>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                </tr>
-                                <tr>
-                                    <th>1</th>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                </tr>
-                                <tr>
-                                    <th>1</th>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                </tr>
-                                <tr>
-                                    <th>1</th>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                </tr>
-                                <tr>
-                                    <th>1</th>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                </tr>
-                                <tr>
-                                    <th>1</th>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                </tr>
-                                <tr>
-                                    <th>1</th>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                </tr>
-                                <tr>
-                                    <th>1</th>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                </tr>
-                                <tr>
-                                    <th>1</th>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                </tr>
-                                <tr>
-                                    <th>1</th>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                </tr>
-                                <tr>
-                                    <th>1</th>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                </tr>
-                                <tr>
-                                    <th>1</th>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                    <td><a href="https://en.wikipedia.org/wiki/Leicester_City_F.C." title="Leicester City F.C.">Leicester City</a> <strong>(C)</strong>
-                                    </td>
-                                    <td>38</td>
-                                    <td>23</td>
-                                    <td>12</td>
-                                    <td>3</td>
-                                    <td>68</td>
-                                    <td>36</td>
-                                    <td>+32</td>
-                                    <td>81</td>
-                                    <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Champions_League#Group_stage" title="2016–17 UEFA Champions League">Champions League group stage</a></td>
-                                </tr>
-
-
-
-                            </tbody>
-                        </table>
-                    </div>
-
                 </div>
-            </div>
-
-        </section>
+            </section>
+        </div>
     </div>
+    <div class="is-gapless">
+        <div class="container">
+            <div style="padding-top: 2em"></div>
+            <section class="hero">
+                <div class="hero-body">
+                    <div class="columns is-desktop border">
+                        <div class="column is-half is-offset-one-quarter border">
+                            <div class="reset-table">
+                                <table class="post-table">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>📍</td>
+                                            <td>아일랜드 어학연수에서 당신이 실패하는 이유</td>
+                                            <td>😀 2</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>아일랜드 어학연수에서 당신이 성공하는 이유</td>
+                                            <td>23</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>아일랜드 어학연수에서 잘 사는 법</td>
+                                            <td>23</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>아일랜드 어학연수에서 집구하는 법</td>
+                                            <td>23</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>38</td>
+                                            <td>23</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>38</td>
+                                            <td>23</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>38</td>
+                                            <td>23</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>38</td>
+                                            <td>23</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>38</td>
+                                            <td>23</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>38</td>
+                                            <td>23</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>38</td>
+                                            <td>23</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>38</td>
+                                            <td>23</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>38</td>
+                                            <td>23</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>38</td>
+                                            <td>23</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>38</td>
+                                            <td>23</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>38</td>
+                                            <td>23</td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-    <div class="">
-        <section class="hero section is-hero is-paddingless is-marginless is-halfheight is-warning">
-            <!-- something -->
-        </section>
+
+        </div>
+        <div class="">
+            <section class="hero section is-hero is-paddingless is-marginless is-halfheight is-warning">
+                <!-- something -->
+            </section>
+        </div>
     </div>
-</div>
 </main>

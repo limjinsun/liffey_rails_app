@@ -1,0 +1,62 @@
+<main class="app-content">
+
+<section class="hero section is-hero is-warning">
+  <div class="container">
+    <div class="columns is-vcentered">
+      <div class="column is-6 is-5-fullhd is-offset-1-fullhd">
+        <div class="section-header">
+          <div style="padding-top: 2em"></div>
+          <h2 class="title is-2 is-spaced">관리자 페이지.<span
+                                        class="spacer is-horizontal is-05"></span>
+          </h2>
+          <h2 class="subtitle is-5"></h2>
+           <div style="padding-top: 2em"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero section is-hero">
+  <div class="container">
+    <div class="columns is-vcentered">
+      <div class="column is-12 is-10-fullhd is-offset-1-fullhd">
+        <div class="is-size-5">
+            <section class="wrapper style5">
+                <div class="">
+                    <br>
+                    <div class="hello"> </div>
+                    <div class="is-size-6" style="line-height: 1.4">
+                      <br/>
+                      <p style="line-height: 1.4">
+                      </p>
+
+                      <% if admin_signed_in? %>
+                       
+                          <%= link_to('로그아웃', destroy_admin_session_path, method: :delete, :class => "button is-warning is-width-half" ) %>
+                       
+                      <% else %>
+                        
+                          <%= link_to('로그인', "/admin", :class => "button is-warning is-width-half" ) %>
+                        
+                      <% end %>
+                      <br>
+                      <%= link_to '🇨🇮 홈으로 돌아가기', root_path, :class => "button is-primary is-width-half" %>
+                    </div>
+                </div>
+            </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+</main>
+
+
+
+

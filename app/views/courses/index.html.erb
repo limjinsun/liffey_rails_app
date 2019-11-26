@@ -99,23 +99,28 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                  <% if @courses.length() < 1 %>
+                                      <tr>
+                                        <td colspan="10" class="has-text-centered"> 🙅 조건에 맞는 어학원을 찾지 못했습니다. </td>
+                                      </tr>
+                                  <% else %>
                                     <% for i in 0..15 do %> 
-                                        <% @courses.each do |course| %>
+                                      <% @courses.each do |course| %>
                                         <tr>
-                                            <th><%= course.school.location %></th>
-                                            <td><%= course.school.name %></td>
-                                            <td><%= course.name %></td>
-                                            <td><%= convert_euro_to_won(course.price) %></td>
-                                            <td><%= link_to "할인 등록", new_order_path(:course_id => course.id), :class => 'button is-success is-small font-kakao'  %></td>
-                                            <td><%= course.school.nationalmix %></td>
-                                            <td><%= course.school.certificate %></td>
-                                            <td><%= course.school.good %></td>
-                                            <td><%= course.school.bad %></td>
-                                            <td><%= link_to "정보 보기", course_path(course.id), :class => 'button is-warning is-small font-kakao'  %> </td>
+                                          <th><%= course.school.location %></th>
+                                          <td><%= course.school.name %></td>
+                                          <td><%= course.name %></td>
+                                          <td><%= convert_euro_to_won(course.price) %></td>
+                                          <td><%= link_to "할인 등록", new_order_path(:course_id => course.id), :class => 'button is-success is-small font-kakao'  %></td>
+                                          <td><%= course.school.nationalmix %></td>
+                                          <td><%= course.school.certificate %></td>
+                                          <td><%= course.school.good %></td>
+                                          <td><%= course.school.bad %></td>
+                                          <td><%= link_to "정보 보기", course_path(course.id), :class => 'button is-warning is-small font-kakao'  %> </td>
                                         </tr>
-                                        <% end %>
+                                      <% end %>
                                     <% end %> 
-                                    
+                                  <% end %>
                                 </tbody>
                             </table>
                         </div>

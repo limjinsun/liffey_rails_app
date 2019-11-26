@@ -9,6 +9,7 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag Ckeditor.cdn_url %>   
     <script>
     <% if flash[:alert] %>
     alert(" <%= flash[:alert] %> ");
@@ -40,7 +41,7 @@
                                 <div>
                                     <p class="">조언</p>
                                     <p class="title">
-                                        <%= link_to profile_userdetail_path, :class => "nav-icon" do %>
+                                        <%= link_to posts_path, :class => "nav-icon" do %>
                                             <i class="fa fa-stack-exchange"></i>
                                         <% end %>
                                     </p>
@@ -119,7 +120,7 @@
         
         <div id="a1"></div>
         <footer id="footer" class="section has-background-black">
-            <div style="padding-top: 2em"></div>
+          
 
             <div class="container is-fullhd">
                 <div class="container">
@@ -135,13 +136,13 @@
                             <div class="column">
                                 <div class="centerme">
                                     <%= image_tag("cubegreen.png", height: '48', width: '48') %>
-                                    <h6 class="font-weight-400 title is-5 font-kakao has-text-white" id="demo">
+                                    <h6 class="font-weight-400 title is-5 font-namsan has-text-white" id="demo">
                                     <script type="text/javascript">
                                         var date = new Date();
                                         document.getElementById("demo").innerHTML = "2015 ~ " + date.getFullYear() + " ©  리피"
                                     </script></h6>
                                     <ul>
-                                    <div class="has-text-light content font-namsan">356 South Circular Rd, Dublin 8 Ireland<br>+353 87 2119 531<br>liffeydublin@naver.com</div>
+                                    <div class="has-text-light content font-namsan">356 South Circular Rd, D8 Ireland<br>+353 87 2119 531<br>liffeydublin@naver.com</div>
                                         <!-- <li><a class="font-weight-400 has-text-light" target="_blank" href="mailto:info@ftwcoin.io">Contact</a></li> -->
                                     </ul>
                                 </div>
@@ -188,10 +189,9 @@
                     </div>
                 </div>
             </div>
-            <div style="padding-top: 2em"></div>
-            <div style="padding-top: 2em"></div>
             <div style="padding-top: 1em"></div>
         </footer>
+
 </body>
 
 </html>

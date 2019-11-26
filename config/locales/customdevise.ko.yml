@@ -1,33 +1,32 @@
-ko:
+en:
   activerecord:
     attributes:
       user:
-        confirmation_sent_at: 확인 메일 전송 시간
-        confirmation_token: 확인 토큰
-        confirmed_at: 확인된 시간
-        created_at: 생성된 시간
-        current_password: 현재 비밀번호
-        current_sign_in_at: 현재 접속 시간
-        current_sign_in_ip: 현재 접속 IP주소
-        email: 이메일
-        encrypted_password: 암호화된 비밀번호
-        failed_attempts: 접속시도 실패
-        last_sign_in_at: 마지막 접속 시간
-        last_sign_in_ip: 마지막 접속 IP주소
-        locked_at: 접근 잠김 시간
-        password: 비밀번호
-        password_confirmation: 비밀번호 확인
-        remember_created_at: 로그인 기록된 시간
+    #     confirmation_sent_at: 확인 메일 전송 시간
+    #     confirmation_token: 확인 토큰
+    #     confirmed_at: 확인된 시간
+    #     created_at: 생성된 시간
+    #     current_password: 현재 비밀번호
+    #     current_sign_in_at: 현재 접속 시간
+    #     current_sign_in_ip: 현재 접속 IP주소
+    #     email: 이메일
+    #     encrypted_password: 암호화된 비밀번호
+    #     failed_attempts: 접속시도 실패
+    #     last_sign_in_at: 마지막 접속 시간
+    #     last_sign_in_ip: 마지막 접속 IP주소
+    #     locked_at: 접근 잠김 시간
+    #     password: 비밀번호
+    #     password_confirmation: 비밀번호 확인
+    #     remember_created_at: 로그인 기록된 시간
         remember_me: 로그인 정보 기억하기
-        reset_password_sent_at: 재설정된 암호 발송
-        reset_password_token: 재설정된 암호 토큰
-        sign_in_count: 로그인 수
-        unconfirmed_email: 확인되지 않은 이메일 주소
-        unlock_token: 잠금해제 토큰
-        updated_at: 업데이트된 시간
-    models:
-      user: 사용자
-  devise:
+    #     reset_password_sent_at: 재설정된 암호 발송
+    #     reset_password_token: 재설정된 암호 토큰
+    #     sign_in_count: 로그인 수
+    #     unconfirmed_email: 확인되지 않은 이메일 주소
+    #     unlock_token: 잠금해제 토큰
+    #     updated_at: 업데이트된 시간
+    # models:
+  customdevise:
     confirmations:
       confirmed: 이메일 주소가 성공적으로 인증되었습니다.
       new:
@@ -138,3 +137,49 @@ ko:
       not_found: 찾을 수 없습니다.
       not_locked: 은(는) 잠기지 않았습니다.
       not_saved: "%{count}개의 오류로 인해 %{resource}이(가) 저장되지 못했습니다."
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%n%u"
+        precision: 0
+        separator: "."
+        significant: false
+        strip_insignificant_zeros: false
+        unit: 원
+    format:
+      delimiter: ","
+      precision: 3
+      separator: "."
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: "%n%u"
+        units:
+          billion: 십억
+          million: 백만
+          quadrillion: 경
+          thousand: 천
+          trillion: 조
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n%u"
+        units:
+          byte: 바이트
+          gb: 기가바이트
+          kb: 킬로바이트
+          mb: 메가바이트
+          tb: 테라바이트
+    percentage:
+      format:
+        delimiter: ''
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ''

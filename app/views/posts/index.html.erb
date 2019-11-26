@@ -1,29 +1,57 @@
-<p id="notice"><%= notice %></p>
+<main class="app-content">
+    <div class="is-gapless">
+        <div class="">
+            <section class="hero section is-hero is-warning">
+                <div class="columns is-vcentered">
+                    <div class="column is-12 is-5-fullhd is-offset-1-fullhd">
+                        <div class="section-header">
+                            <p class="has-text-black">📌<b> 연수/워홀 성공을 위한 조언들을 보실수 있습니다. 궁금한점을 공개 상담하실수 있습니다.</b></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="is-gapless">
+        <div class="container">
+            <div style="padding-top: 1em"></div>
+            <section class="hero">
+                <div class="hero-body">
+                    <div class="columns is-desktop">
+                        <div class="column is-half is-offset-one-quarter">
+                            <div class="reset-table">
+                                <table class="post-table">
+                                    <thead>
+                                        <tr>
+                                            <th colspan="3" class="has-text-centered"><%= link_to '글쓰기', new_post_path %></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% @posts.each do |post| %>
+                                        <tr>
+                                            <td></td>
+                                            <td class="post-title">
+                                                <%= link_to post.title.html_safe, post %>
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                        <% end %>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div style="padding-top: 1em"></div>
+                            <div class="has-text-centered"><B> <%= paginate @posts %> </b></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!--  <div class="">
+            <section class="hero section is-hero is-paddingless is-marginless is-halfheight is-warning">
+               
+            </section>
+        </div> -->
+        <div style="padding-top: 2em"></div>
+    </div>
+</main>
 
-<h1>Posts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.body %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Post', new_post_path %>

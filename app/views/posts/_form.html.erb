@@ -1,27 +1,65 @@
-<%= form_with(model: post, local: true) do |form| %>
-  <% if post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
-        <% post.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+<main class="app-content">
+    <div class="is-gapless">
+        <div class="">
+            <section class="hero section is-hero is-info">
+                <div class="columns is-vcentered">
+                    <div class="column is-12 is-10-fullhd is-offset-1-fullhd">
+                        <div class="section-header">
+                            <p class="has-text-black">📌<b> &nbsp&nbsp글작성하기. - 아일랜드로 연수를 오는 분들을 위한 조언을 적어주세요. 어학원 홍보 같은것은 바라지 않습니다. 연수에서 느끼는 실제의 현실에 대해서 적어 주세요. </b></p>
+                            <p> <b>한국에서 준비중인 분이시라면 아일랜드 생활에 대한 질문을 적어주시면 받으실수 있습니다. </b></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
     </div>
-  <% end %>
+    <div class="is-gapless">
+        <div class="container">
+            <div style="padding-top: 2em"></div>
+            <section class="hero">
+                <div class="hero-body">
+                    <div class="columns is-desktop">
+                        <div class="column is-half is-offset-one-quarter">
+                            <div class="reset-table post-new">
+                                <%= form_with(model: post, local: true) do |form| %>
+                                     <% if post.errors.any? %>
+                                        <div id="error_explanation">
+                                          <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+                                          <ul>
+                                            <% post.errors.full_messages.each do |message| %>
+                                              <li><%= message %></li>
+                                            <% end %>
+                                          </ul>
+                                        </div>
+                                      <% end %>
+                                        <table class="post-new-table">
+                                            <thead>
+                                                <tr>
+                                                    <th class="has-text-left">제목</th>
+                                                    <th class="has-text-centered"><%= form.text_field :title, class: "input" %></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td colspan="2"><%= form.cktext_area :body, ckeditor: {:toolbar => 'mini', :language => 'ko', contentsCss: asset_path("ckeditor/content-style.css"), height: '400px'} %></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="has-text-left"></td>
+                                                    <td class="has-text-right"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    <div class="actions">
+                                        <%= form.submit '작성' , :class => 'button is-dark is-fullwidth' %>
+                                      </div>
+                                    <% end %>
+                                    <div style="padding-top: 1em"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</main>

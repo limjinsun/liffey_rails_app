@@ -1,26 +1,67 @@
-<h2><%= t('.sign_in') %></h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+<div class="">
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+   <section class="hero section is-hero is-warning " style="min-height: 17vh;">
+    <div class="container">
+      <div class="columns is-vcentered">
+        <div class="column is-6 is-5-fullhd is-offset-1-fullhd">
+          <div class="section-header">
+            <div style="padding-top: 2em"></div>
+            <div style="padding-top: 2em"></div>
+             <h2 class="title is-2 is-spaced">관리자 로그인<span
+                                        class="spacer is-horizontal is-05"></span>
+              </h2>
+              <h2 class="subtitle is-6"></h2>
+              <div style="padding-top: 2em"></div>
+              <div style="padding-top: 2em"></div>
+          </div>
+        </div>
+      </div>
     </div>
-  <% end %>
+  </section>
 
-  <div class="actions">
-    <%= f.submit t('.sign_in') %>
-  </div>
-<% end %>
+  <section class="hero is-halfheight">
+    <div class="hero-body">
+      <div class="container">
+        <div class="column is-half is-offset-one-quarter">
+          <div style="padding-top: 2em"></div>
+          <h2 class="title"><%= t('.sign_in') %></h2>
+          <% if notice %>
+            <p class="alert alert-success"><%= notice %></p>
+          <% end %>
+          <% if alert %>
+            <p class="alert alert-danger"><%= alert %></p>
+          <% end %>
+          <br>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="field">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => 'input', :placeholder => '이메일' %>
+            </div>
+            <div class="field">
+              <%= f.label :password %><br />
+              <%= f.password_field :password, autocomplete: "current-password", :class => 'input', :placeholder => '비밀번호' %>
+            </div>
+            <% if devise_mapping.rememberable? %>
+              <div class="field">
+                <%= f.check_box :remember_me %>
+                <%= f.label :remember_me %>
+              </div>
+            <% end %>
+            <div class="actions">
+              <%= f.submit t('.sign_in'), :class => 'button is-black' %>
+            </div>
+          <% end %>
+          <div style="padding-top: 2em"></div>
+          <% if false %>
+            <%= render "devise/shared/links" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
 
-<%= render "devise/shared/links" %>
+
+
+

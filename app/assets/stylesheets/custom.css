@@ -327,7 +327,8 @@ a[href^="https://maps.google.com/maps"] {
     .table-flip-scroll table tbody tr {
         display: inline-block;
         vertical-align: top;
-        min-width: 300px; /* 작은 화면에서 글자 덮히지 않게 넓게 해줌 */
+        min-width: 300px;
+        /* 작은 화면에서 글자 덮히지 않게 넓게 해줌 */
     }
 
     .table-flip-scroll table th,
@@ -379,7 +380,7 @@ a[href^="https://maps.google.com/maps"] {
     .table-flip-scroll td {
         padding: 5px 10px !important;
         text-align: inherit;
-       /* border-bottom: 1px !important;*/
+        /* border-bottom: 1px !important;*/
         min-height: 35px;
     }
 
@@ -419,7 +420,8 @@ td {
 
 .tableFixHead table tbody {
     display: block;
-    max-height: 65vh; /* 전체화면에서 테이블 크기 */ 
+    max-height: 65vh;
+    /* 전체화면에서 테이블 크기 */
     overflow: scroll;
 }
 
@@ -459,7 +461,6 @@ table tbody tr {
     }
 }
 
-
 .reset-table table,
 .reset-table thead,
 .reset-table tbody,
@@ -473,7 +474,6 @@ table tbody tr {
     border-spacing: 0;
 }
 
-
 /* 데스크탑이상에서 버튼 넓이 50% */
 @media screen and (min-width: 768px) {
     .is-width-half {
@@ -481,17 +481,20 @@ table tbody tr {
     }
 }
 
-
 /* 체크박스 스타일 */
 
 /* Hide the checkbox/radio. We will simulate it later using label */
-input[type=checkbox], input[type=radio] {
+input[type=checkbox],
+input[type=radio] {
     opacity: 0;
     position: absolute;
 }
 
 /* Some basic styling for alignment and more */
-input[type=checkbox], input[type=checkbox] + label, input[type=radio], input[type=radio] + label {
+input[type=checkbox],
+input[type=checkbox]+label,
+input[type=radio],
+input[type=radio]+label {
     display: inline-block;
     vertical-align: middle;
     cursor: pointer;
@@ -499,7 +502,8 @@ input[type=checkbox], input[type=checkbox] + label, input[type=radio], input[typ
 }
 
 /* CSS Pseudo class "before" to show checkbox/radio box. Will be attached to every label adjacent to input checkbox.*/
-input[type=checkbox] + label:before, input[type=radio] + label:before {
+input[type=checkbox]+label:before,
+input[type=radio]+label:before {
     font-family: 'FontAwesome';
     background: #fbf1ff;
     display: inline-block;
@@ -507,7 +511,8 @@ input[type=checkbox] + label:before, input[type=radio] + label:before {
     margin-right: 10px;
     text-align: center;
     font-size: 0.42em;
-    padding: 0.615em 1.12em 0.58em 0.90em; /*0.615em 1.12em 0.58em 0.90em;*/
+    padding: 0.615em 1.12em 0.58em 0.90em;
+    /*0.615em 1.12em 0.58em 0.90em;*/
     color: #efe4ea;
     transition: color .4s;
     /*border: 2px solid #b462d2;*/
@@ -515,25 +520,26 @@ input[type=checkbox] + label:before, input[type=radio] + label:before {
 
 /* Tick inside checkbox. I am using Font-awesome's tick, but you can use plain unicode tick */
 /* or any other symbol you want. */
-input[type=checkbox] + label:before {
+input[type=checkbox]+label:before {
     content: '\f00c';
     border-radius: 2px;
 }
 
 /* Circle inside radio circle. Border-radius to make it a circle. */
-input[type=radio] + label:before {
+input[type=radio]+label:before {
     content: '\f111';
     border-radius: 50%;
 }
 
 /* Styles when checkbox/radio is checked */
-input:checked + label:before {
+input:checked+label:before {
     background: #641986;
     color: #FFF;
 }
 
 /* Styles when checkbox/radio is disabled  */
-input[type=checkbox][disabled] + label:before, input[type=radio][disabled] + label:before {
+input[type=checkbox][disabled]+label:before,
+input[type=radio][disabled]+label:before {
     color: #d0d0d0;
     background: #bfbfbf;
     border: 1px solid #656b64;
@@ -541,15 +547,15 @@ input[type=checkbox][disabled] + label:before, input[type=radio][disabled] + lab
 
 /* 체크박스 스타일 끝 */
 
-.padding-sm{
+.padding-sm {
     padding: 4px;
 }
 
-.font-sm{
+.font-sm {
     font-size: 0.9em;
 }
 
-.course-menu-table td{
+.course-menu-table td {
     padding-left: 0;
     padding-right: 0;
     padding-top: 8px;
@@ -562,7 +568,21 @@ input[type=checkbox][disabled] + label:before, input[type=radio][disabled] + lab
 }
 
 
-.button, .input, .textarea, .select select, .file-cta, .file-name, .pagination-previous, .pagination-next, .pagination-link, .pagination-ellipsis {
+.button,
+.input,
+.textarea,
+.select select,
+.file-cta,
+.file-name,
+.pagination-previous,
+.pagination-next,
+.pagination-link,
+.pagination-ellipsis {
+    margin-bottom: 0.5em !important;
+    /* margin-right: 0.5em !important; */
+}
+
+.select select {
     margin-bottom: 0.5em !important;
     margin-right: 0.5em !important;
 }
@@ -571,28 +591,23 @@ input[type=checkbox][disabled] + label:before, input[type=radio][disabled] + lab
     display: inline-table !important;
 }
 
-
+/* desktop-view padding setting */
 @media screen and (max-width: 800px) {
     .hero.section.is-hero.is-warnning.mobile-padding-less {
         padding: 1.5em 2em 0em 2em;
     }
+
     .section {
         padding: 1.5rem 1rem 1rem 1rem;
     }
+
     .mobile-only {
         padding-left: 2em;
     }
 }
 
 .section {
-    padding: 2.2rem 1rem 1rem 1rem;
-}
-
-
-@media screen and (min-width: 800px) {
-    .mobile-only {
-        display: none;
-    }
+    padding: 1.5rem 1rem 1rem 1rem;
 }
 
 /* 버튼 밑에 패딩줄임 */
@@ -603,3 +618,173 @@ input[type=checkbox][disabled] + label:before, input[type=radio][disabled] + lab
 .font-weight-400 {
     font-weight: 400 !important;
 }
+
+/* 데스크탑 뷰에서 모바일 뷰 지움  */
+@media screen and (min-width: 800px) {
+    .mobile-only {
+        display: none;
+    }
+}
+
+/* 모바일 뷰에서 데스트 탑 뷰 지움 */
+@media screen and (max-width: 800px) {
+    .desktop-only {
+        display: none
+    }
+}
+
+.post-table {
+    table-layout: fixed;
+}
+
+.post-table thead th:nth-child(1) {
+    width: 8% !important;
+}
+
+.post-table thead th:nth-child(2) {
+    width: 80% !important;
+}
+
+.post-table thead th:nth-child(3) {
+    width: 12% !important;
+}
+
+.post-table tbody td:nth-child(1) {
+    width: 5% !important;
+}
+
+.post-table tbody td:nth-child(2) {
+    width: 86% !important;
+}
+
+.post-table tbody td:nth-child(3) {
+    width: 12% !important;
+}
+
+.post-table td {
+    padding: 0.25em 0.5em 0.25em 0.5em;
+}
+
+
+/* 포스트 디테일 */
+
+.post-detail-table {
+    table-layout: fixed;
+}
+
+.post-detail-table td {
+    padding: 1em 0.5em 1em 0.5em;
+}
+
+.post-detail-table thead th {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 0.5em 0.5em 0.5em 0.5em;
+
+}
+
+.post-detail-table tbody td:nth-child(1) {
+    width: 50% !important;
+}
+
+.post-detail-table tbody td:nth-child(2) {
+    width: 50% !important;
+}
+
+/*
+.post-detail-table tbody td:nth-child(3) {
+    width: 12% !important;
+}*/
+/*
+@media screen and (max-width: 800px) {
+    .pagination a {
+        padding-right: 2em !important;
+    }
+}*/
+
+ui.menu {
+ border-radius: 0 !important;
+}
+
+/* unvisited link */
+.post-title a:link {
+  color: #121212;
+}
+
+/* visited link */
+.post-title a:visited {
+  color: #121212;
+}
+
+/* mouse over link */
+.post-title a:hover {
+  color: #7a7a7a;
+}
+
+/* selected link */
+.post-title a:active {
+  color: #121212;
+}
+
+
+/* 새로 글쓰기 */
+
+.post-new-table {
+    table-layout: fixed;
+}
+
+.post-new-table td {
+    padding: 0.5em 0em 0.5em 0em;
+}
+
+.post-new-table thead th {
+   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 1em 0.5em 1em 0.5em;*/
+}
+
+.post-new-table thead th:nth-child(1) {
+    width: 10%;
+    vertical-align: middle;
+}
+
+.post-new-table thead th:nth-child(2) {
+    width: 90%;
+}
+
+.post-new-table tbody td:nth-child(1) {
+    width: 90% !important;
+}
+
+.post-new-table tbody td:nth-child(2) {
+    width: 20% !important;
+}
+
+#post_title {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* 모바일 뷰에서 데스트 탑 뷰 지움 */
+@media screen and (max-width: 800px) {
+    .reset-table.post-new {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+}
+
+strong {
+    color: #db1986 !important;
+    font-weight: 800 !important;
+}
+
+.cke_dialog {
+    visibility: inherit;
+    width: 55vW !important;
+    max-width: 800px !important;
+}
+
+.cke_top {
+    border-bottom: 0px solid #d1d1d1 !important;
+}
+
+
+

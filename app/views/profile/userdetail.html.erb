@@ -4,6 +4,7 @@
             <div class="columns ">
                 <div class="column is-6 is-5-fullhd is-offset-1-fullhd">
                     <div class="section-header">
+                    <div style="padding-top: 1em"></div>
                         <h2 class="title is-2 is-spaced has-text-grey-darker">나의연수 진행사항<span class="spacer is-horizontal is-05"></span></h2>
                     </div>
 
@@ -21,7 +22,7 @@
                                         <div>
                                             <label><b>내 등록 어학원 정보 - <%= @course.get_name %></b></label>
                                         </div>
-                                        <div>진행사항 : <%= @order_confirm.status %></div>
+                                        <div class="has-text-primary"><b>진행사항 : <%= @order_confirm.status %></b></div>
                                         <div style="padding-top: 1em"></div>
                                     
                                         <% @school = School.find(@course.school_id) %>
@@ -106,7 +107,7 @@
 
 
 
-                <% if @order %>
+                
                 <div class="column is-6 is-5-fullhd is-fullhd">
                    
                     <div style="padding-top: 2em"></div>
@@ -124,16 +125,36 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <th>
-                                        <%= @order.arrival.to_formatted_s(:db) =%>
-                                    </th>
-                                    <th>
-                                        <%= @order.flightinfo =%>
-                                    </th>
+                                    <% if @order %>
+                                        <th>
+                                            <% if @order.arrival %>
+                                                <%= @order.arrival.to_formatted_s(:db) =%>
+                                            <% else %>
+                                                입국일정이 결정되지 않았습니다.
+                                            <% end %>
+                                        </th>
+                                        <th>
+                                            <% if @order.flightinfo.to_s.length() > 0 %>
+                                                <%= @order.flightinfo =%>
+                                            <% else %>
+                                                항공정보가 입력되지 않았습니다.
+                                            <% end %>
+                                        </th>
+                                    <% else %>
+                                        <th>
+                                            입국일정이 결정되지 않았습니다.
+                                        </th>
+                                        <th>
+                                            항공정보가 입력되지 않았습니다.
+                                        </th>
+                                    <% end %>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
+
+
+                    <% if @order %>
                     <div style="padding-top: 1em"></div>
                     <div>
                         <label><b>입국계획 다시 입력하기</b></label>
@@ -164,6 +185,9 @@
                 <% else %>
 
 
+
+
+
                 <% end %>
             </div>
         </section>
@@ -174,6 +198,7 @@
                 <div class="columns is-vcentered">
                     <div class="column is-12 is-5-fullhd is-offset-1-fullhd">
                         <div class="section-header">
+                            <div style="padding-top: 1em"></div>
                             <h2 class="title is-2 is-spaced">어학원 등록 신청<span class="spacer is-horizontal is-05"></span></h2>
                             <h2 class="subtitle is-5">리피회원만 사용가능한 메뉴입니다. 가장 저렴한 등록을 도와드립니다.</h2>
                             <div class="field is-grouped">
@@ -181,6 +206,7 @@
                                     <%= link_to "어학원 등록 신청하기", new_order_path, :class => 'button is-black'  %>
                                 </div>
                             </div>
+                            <div style="padding-top: 1em"></div>
                         </div>
                     </div>
                    
@@ -192,6 +218,7 @@
                 <div class="columns is-vcentered">
                     <div class="column is-12 is-5-fullhd is-offset-1-fullhd">
                         <div class="section-header">
+                            <div style="padding-top: 1em"></div>
                             <h2 class="title is-2 is-spaced">사용자 계정 관리<span class="spacer is-horizontal is-05"></span></h2>
                             <h2 class="subtitle is-5">사용자의 계정정보를 관리하실수 있습니다. 비밀번호를 잊으셨다면, 이메일로 비밀번호를 다시 설정이 가능합니다.</h2>
                             <div class="field is-grouped">
@@ -199,6 +226,7 @@
                                     <%= link_to '나의 계정관리하기', edit_user_registration_path, :class => 'button is-black' %>
                                 </div>
                             </div>
+                            <div style="padding-top: 1em"></div>
                         </div>
                     </div>
                     
