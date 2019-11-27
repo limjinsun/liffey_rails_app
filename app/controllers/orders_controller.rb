@@ -54,6 +54,11 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
+        @order_mail_content = OrderMailContent.new
+        @order_mail_content.user = User.new
+        @order_mail_content.user.email = current_user.email
+        @order_mail_content.body = @order.extracoursename.to_s + Course.find(@order.course_id).get_name
+        NotificationMailer.with(mail_content: @order_mail_content).notification_mail.deliver_now
         format.html { redirect_to introduction_confirmed_path, notice: 'Order was successfully created.' }
         format.json { render :show, status: :created, location: @order }
       else

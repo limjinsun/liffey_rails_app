@@ -48,7 +48,7 @@ class PostsController < ApplicationController
     
     respond_to do |format|
       if @post.save
-        NotificationMailer.with(post: @post).notification_mail.deliver_now
+        NotificationMailer.with(mail_content: @post).notification_mail.deliver_now
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else
