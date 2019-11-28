@@ -34,4 +34,5 @@ yarn-debug.log*
 .env
 
 /config/credentials/production.key
-
+/config/secrets.yml 
+config/secrets.yml
