@@ -123,4 +123,6 @@ Rails.application.configure do
   # doesn't have to be Heroku, but you get the idea.
   config.action_mailer.default_url_options = { :host => 'liffeyireland.com' }
 
+
+  config.secret_key_base = ENV["SECRET_KEY_BASE"]
 end
