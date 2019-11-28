@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: liffeyapp_production
-  username: liffeyapp
-  password: <%= ENV['LIFFEYAPP_DATABASE_PASSWORD'] %>
+  database: myapp
+  username: deploy
+  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
