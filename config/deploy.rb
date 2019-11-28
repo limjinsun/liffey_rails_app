@@ -38,7 +38,7 @@ lock "~> 3.11.2"
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
 # set :ssh_options, { forward_agent: true, user: "deploy", auth_methods: ['publickey'], keys: %w(~/.ssh/id_rsa) }
-# set :ssh_options, { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa) }
+set :ssh_options, { forward_agent: true, user: "deploy", keys: %w(~/.ssh/id_rsa) }
 
 
 # 아래부분 추가
@@ -47,7 +47,7 @@ set :application, "myapp"
 set :repo_url, "git@github.com:limjinsun/liffey_rails_app.git"
 
 # Deploy to the user's home directory
-set :deploy_to, "/home/deploy/#{fetch :application}"
+set :deploy_to, "~/#{fetch :application}"
 
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
 

@@ -82,7 +82,6 @@ gem 'nokogiri', '~> 1.6', '>= 1.6.8'
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', github: 'sferik/rails_admin'
 gem 'rails_admin_rollincode', '~> 1.0'
-gem "devise"
 
 
 # add text editor
