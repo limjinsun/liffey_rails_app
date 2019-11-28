@@ -50,6 +50,7 @@ set :repo_url, "git@github.com:limjinsun/liffey_rails_app.git"
 set :deploy_to, "~/#{fetch :application}"
 
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
+append :linked_files, %w{config/secrets.yml}
 
 # Only keep the last 5 releases to save disk space
 set :keep_releases, 5
