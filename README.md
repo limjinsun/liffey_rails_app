@@ -1,6 +1,6 @@
-# liffey web app for student
+# Ruby on Rails Web application with Postgresql
 
-Ruby on Rails web application for oversea language studying student.
+Ruby on Rails web application with Postgresql database. Demonstration of displaying data after filterd using multiple Join and Order in SQL database.  
 
 ## Ruby on Rails application. 
 
@@ -20,22 +20,17 @@ Devise is a flexible authentication solution for Rails based on Warden.
 Modern Relational Database 
 
 
-
 ## Adding Admin User.
 
 https://github.com/plataformatec/devise/wiki/How-To:-Add-an-Admin-Role
-
 https://stackoverflow.com/questions/40794650/devise-add-admin-role
 
 
 ## Make relation between User and Order
 
 https://guides.rubyonrails.org/association_basics.html
-
 https://dev.to/neshaz/everything-there-is-to-know-about-associations-in-rails-52ii
-
 https://stackoverflow.com/questions/15098586/rails-one-to-one-relationship
-
 
 ## insert data on a table based on another table data (after_create)
 
@@ -45,6 +40,5 @@ https://stackoverflow.com/questions/32327882/rails-4-postgresql-insert-data-on-a
 
 https://stackoverflow.com/questions/14113057/how-to-have-a-drop-down-select-field-in-a-rails-form
 
-++
 
 ## License MIT © JinLim
