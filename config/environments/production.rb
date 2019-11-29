@@ -127,4 +127,6 @@ Rails.application.configure do
 
   config.assets.digest = true
 
+  config.serve_static_assets = true
+
 end
