@@ -9,11 +9,10 @@
     --ck-todo-list-checkmark-size: 16px;
 }
 
-
 .cke_editable
 {
-    font-size: 16px !important;
-    line-height: 1.6;
+    font-size: 0.95em !important;
+    line-height: 1.2;
     /* Fix for missing scrollbars with RTL texts. (#10488) */
     word-wrap: break-word;
 }

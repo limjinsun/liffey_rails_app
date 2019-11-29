@@ -14,3 +14,63 @@
  *= require_self
  *= require font-awesome
  */
+
+
+ @font-face {
+     font-family: 'seoul-namsan-jung-m';
+     src: asset-url('seoulnamsanjungm.eot');
+     src: asset-url('seoulnamsanjungm.eot?#iefix') format('embedded-opentype'),
+          asset-url('seoulnamsanjungm.woff2') format('woff2'),
+          asset-url('seoulnamsanjungm.woff') format('woff'),
+          asset-url('seoulnamsanjungm.ttf') format('truetype'),
+          asset-url('seoulnamsanjungm.svg#seoul-namsan-jung-m') format('svg');
+     font-weight: normal;
+     font-style: normal;
+ }
+ /*
+  * Kakao
+  */
+ @font-face {
+     font-family: 'Kakao';
+     font-style: normal;
+     font-weight: 400;
+     src: local('Kakao Regular'), local('KakaoOTF Regular'),
+     asset-url('KakaoOTF-bRg.eot') format('eot'),
+     asset-url('KakaoOTF-bRg.woff2') format('woff2'),
+     asset-url('KakaoOTF-bRg.woff') format('woff'),
+     asset-url('KakaoOTF-bRg.otf') format('opentype');
+ }
+ @font-face {
+     font-family: 'Kakao';
+     font-style: normal;
+     font-weight: 200;
+     src: local('Kakao Light'), local('KakaoOTF Light'),
+     asset-url('KakaoOTF-aLt.eot') format('eot'),
+     asset-url('KakaoOTF-aLt.woff2') format('woff2'),
+     asset-url('KakaoOTF-aLt.woff') format('woff'),
+     asset-url('KakaoOTF-aLt.otf') format('opentype');
+ }
+ @font-face {
+     font-family: 'Kakao';
+     font-style: normal;
+     font-weight: 700;
+     src: local('Kakao Bold'), local('KakaoOTF Bold'),
+     asset-url('KakaoOTF-cBd.eot') format('eot'),
+     asset-url('KakaoOTF-cBd.woff2') format('woff2'),
+     asset-url('KakaoOTF-cBd.woff') format('woff'),
+     asset-url('KakaoOTF-cBd.otf') format('opentype');
+ }
+
+
+
+ /* icon */
+ @font-face {
+   font-family: 'Icons';
+   src: asset-url("icons.eot");
+   src: asset-url("icons.eot?#iefix") format('embedded-opentype'), asset-url("icons.woff2") format('woff2'), asset-url("icons.woff") format('woff'), asset-url("icons.ttf") format('truetype'), asset-url("icons.svg#icons") format('svg');
+   font-style: normal;
+   font-weight: normal;
+   font-variant: normal;
+   text-decoration: inherit;
+   text-transform: none;
+ }
