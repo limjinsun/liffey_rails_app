@@ -1,5 +1,5 @@
 <main class="app-content">
-    <div class="is-gapless">
+  <div class="is-gapless">
         <div class="">
             <section class="hero section is-hero is-warning">
                 <div class="columns is-vcentered">
@@ -31,7 +31,11 @@
                                     <tbody>
                                         <tr style="padding-bottom: 1em !important;">
                                             <td>
-                                                <%= hide_email_detail(@post.user.email) %>
+                                              <% if @post.user.admin %>
+                                                🎈 리피
+                                              <% else %>
+                                               <%= hide_email_detail(@post.user.email) %>
+                                              <% end %>
                                             </td>
                                             <td class="has-text-right">
                                                 <%= @post.created_at.to_date.to_formatted_s(:rfc822) %>
@@ -63,7 +67,11 @@
                                                                 <tr class="comment_tr" style="background-color: #F8F8F8">   
                                                         <% end %>
                                                                     <td class="comment_tr">
-                                                                        <%= hide_email_detail(User.find(comment.user_id).email) %>
+                                                                          <% if @post.user.admin %>
+                                                                              🎈 리피
+                                                                          <% else %>
+                                                                              <%= hide_email_detail(@post.user.email) %>
+                                                                          <% end %>
                                                                     </td>
                                                                     <td class="comment_tr has-text-right">
                                                                         <%= comment.created_at.to_date.to_formatted_s(:rfc822) %>

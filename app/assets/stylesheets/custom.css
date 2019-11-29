@@ -226,6 +226,18 @@ body.has-navbar-fixed-top {
     font-family: 'Kakao', sans-serif;
 }
 
+.font-eng1 {
+    font-family: 'Varela Round', sans-serif;
+}
+
+.font-eng2 {
+    font-family: 'Cantarell', sans-serif;
+}
+
+.font-eng-3 {
+    font-family: 'Krona One', sans-serif;
+}
+
 /* google map styling disable */
 a[href^="http://maps.google.com/maps"] {
     display: none !important

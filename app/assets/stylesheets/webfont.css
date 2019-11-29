@@ -1,7 +1,7 @@
-/*@import url("https://cdn.jsdelivr.net/gh/moonspam/NanumBarunGothic@1.0/nanumbarungothicsubset.css");*/
 @import url("https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css");
-
-/*@font-face {
+@import url('https://fonts.googleapis.com/css?family=Cantarell:700|Krona+One|Varela+Round&display=swap');
+/*
+@font-face {
   font-family: "GTEestiDisplay";
   src: url("GTEestiDisplay-Regular.ttf")
       format("truetype"),
@@ -31,11 +31,11 @@
       format("truetype");
   font-weight: normal;
   font-style: normal;
-}*/
+}
 /*
  * Namsan font
  */
-@font-face {
+/* @font-face {
     font-family: 'seoul-namsan-jung-m';
     src: url('seoulnamsanjungm.eot');
     src: url('seoulnamsanjungm.eot?#iefix') format('embedded-opentype'),
@@ -45,11 +45,11 @@
          url('seoulnamsanjungm.svg#seoul-namsan-jung-m') format('svg');
     font-weight: normal;
     font-style: normal;
-}
+}*/
 /*
  * Kakao
  */
-@font-face {
+/* @font-face {
     font-family: 'Kakao';
     font-style: normal;
     font-weight: 400;
@@ -79,11 +79,11 @@
     url(KakaoOTF-cBd.woff) format('woff'),
     url(KakaoOTF-cBd.otf) format('opentype');
 }
-
+*/
 
 
 /* icon */
-@font-face {
+/* @font-face {
   font-family: 'Icons';
   src: url("icons.eot");
   src: url("icons.eot?#iefix") format('embedded-opentype'), url("icons.woff2") format('woff2'), url("icons.woff") format('woff'), url("icons.ttf") format('truetype'), url("icons.svg#icons") format('svg');
@@ -92,4 +92,5 @@
   font-variant: normal;
   text-decoration: inherit;
   text-transform: none;
-}
+} */
+
