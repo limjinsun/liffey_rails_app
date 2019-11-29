@@ -46,5 +46,3 @@ set :rbenv_type, :user
 set :rbenv_ruby, '2.6.5'
 
 require 'capistrano/secrets_yml'
-
-load 'deploy/assets'

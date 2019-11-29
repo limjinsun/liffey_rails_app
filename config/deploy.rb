@@ -51,6 +51,8 @@ set :deploy_to, "~/#{fetch :application}"
 
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
 
+append :linked_files, ".env.production"
+
 # Only keep the last 5 releases to save disk space
 set :keep_releases, 5
 
@@ -58,6 +60,3 @@ set :keep_releases, 5
 # This is useful if you don't want to use ENV variables
 # append :linked_files, 'config/database.yml', 'config/secrets.yml'
 #
-
-
-
