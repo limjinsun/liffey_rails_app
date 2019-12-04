@@ -674,7 +674,9 @@ input[type=radio][disabled]+label:before {
 }
 
 .post-table td {
-    padding: 0.25em 0.5em 0.25em 0.5em;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+        border-bottom: 1px solid ghostwhite; /* 게시판 글간 밑줄 */
+
 }
 
 
