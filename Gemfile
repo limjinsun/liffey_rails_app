@@ -91,7 +91,7 @@ gem 'ckeditor', github: 'galetahub/ckeditor'
 # gem 'slim-rails', github: 'slim-template/slim-rails'
 
 # for file upload
-gem 'carrierwave', '~> 2.0.2'
+gem 'carrierwave', '~> 2.1.1'
 
 # pagination
 gem 'kaminari'
