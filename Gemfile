@@ -78,7 +78,7 @@ gem 'jquery-rails'
 gem 'rest-client'
 
 ### 11/Nov/2019 for web crawling
-gem 'nokogiri', '~> 1.6', '>= 1.6.8'
+gem 'nokogiri', '~> 1.11'
 
 # Rails_Admin install 23/Nov/2019
 gem 'remotipart', github: 'mshibuya/remotipart'
